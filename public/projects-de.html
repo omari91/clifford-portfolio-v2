@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Clifford Omari Ondieki">
+    <title>Projekte - Clifford Omari Ondieki</title>
+
+    <link rel="icon" type="image/png" href="imgs/man.jpg" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..900&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script type="text/javascript" async defer data-clarity-src="https://www.clarity.ms/tag/t41xxbb71x"></script>
+    
+    <script type="module" src="https://unpkg.com/lucide@latest" defer></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <meta name="description" content="Projekte, die technische Exzellenz mit menschlichem Zweck verbinden – von Kenias Stromnetzen bis zu Berlins Innovationsökosystem.">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        
+        :root {
+            --primary-indigo: #303F9F; 
+            --neutral-charcoal: #374151; 
+            --accent-fire: #880E4F;
+            --highlight-gold: #F59E0B;
+        }
+
+        /* Ensure content isn't hidden behind the fixed nav on small screens */
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--neutral-charcoal);
+            padding-top: 4rem;
+            overflow-x: hidden;
+        }
+        @media (min-width: 768px) { body { padding-top: 5rem; } }
+        
+        .language-toggle.active {
+            background-color: var(--primary-indigo) !important;
+            color: white !important;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .project-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: start;
+        }
+        
+        @media (max-width: 1024px) {
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .content-column {
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        .image-column {
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 antialiased">
+
+<nav class="fixed top-0 z-50 w-full bg-white shadow-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+            <a class="flex items-center space-x-2 text-xl font-bold text-gray-800" href="index-de.html">
+                <div class="flex-shrink-0">
+                    <img src="imgs/man.jpg" alt="Clifford Ondieki Icon" class="w-11 h-11 rounded-full border-4 border-[#303f9f] shadow-md bg-white object-cover" />
+                </div>
+                <span>Clifford Ondieki <span class="text-sm font-normal text-[--primary-indigo] ml-1 hidden sm:inline-block">| Power Systems Engineer</span></span>
+            </a>
+            
+            <div class="md:hidden">
+                <button id="mobile-menu-button" type="button" class="text-gray-500 hover:text-[--primary-indigo] focus:outline-none focus:ring-2 focus:ring-[--primary-indigo] rounded-lg p-2" aria-controls="mobile-menu" aria-expanded="false">
+                    <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path id="menu-icon-open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                        <path id="menu-icon-close" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+
+            <div class="hidden md:flex md:items-center md:space-x-6">
+                <a href="index-de.html" class="text-gray-600 hover:text-[--primary-indigo] px-3 py-2 rounded-md text-sm font-medium transition duration-150">Startseite</a>
+                <a href="about-de.html" class="text-gray-600 hover:text-[--primary-indigo] px-3 py-2 rounded-md text-sm font-medium transition duration-150">Über mich</a>
+                <a href="projects-de.html" class="text-[--primary-indigo] bg-[--primary-indigo]/10 px-3 py-2 rounded-md text-sm font-bold transition duration-150">Projekte</a>
+                <a href="philosophy-de.html" class="text-gray-600 hover:text-[--primary-indigo] px-3 py-2 rounded-md text-sm font-medium transition duration-150">Philosophie</a>
+                <a href="blog-de.html" class="text-gray-600 hover:text-[--primary-indigo] px-3 py-2 rounded-md text-sm font-medium transition duration-150">Einblicke</a>
+                <a href="contact-de.html" class="text-gray-600 hover:text-[--primary-indigo] px-3 py-2 rounded-md text-sm font-medium transition duration-150">Kontakt</a>
+                
+                <div class="flex space-x-1 ml-4 border-l pl-4">
+                    <a href="projects.html" class="language-toggle en text-xs font-semibold py-1 px-3 rounded-full border border-gray-300 hover:bg-gray-100 text-gray-700 transition">EN</a>
+                    <a href="projects-de.html" class="language-toggle de active text-xs font-semibold py-1 px-3 rounded-full border border-[--primary-indigo] text-white transition">DE</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="md:hidden hidden" id="mobile-menu">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+            <a href="index-de.html" class="text-gray-600 hover:text-[--primary-indigo] block px-3 py-2 rounded-md text-base font-medium">Startseite</a>
+            <a href="about-de.html" class="text-gray-600 hover:text-[--primary-indigo] block px-3 py-2 rounded-md text-base font-medium">Über mich</a>
+            <a href="projects-de.html" class="text-[--primary-indigo] bg-[--primary-indigo]/10 block px-3 py-2 rounded-md text-base font-bold">Projekte</a>
+            <a href="philosophy-de.html" class="text-gray-600 hover:text-[--primary-indigo] block px-3 py-2 rounded-md text-base font-medium">Philosophie</a>
+            <a href="blog-de.html" class="text-gray-600 hover:text-[--primary-indigo] block px-3 py-2 rounded-md text-base font-medium">Einblicke</a>
+            <a href="contact-de.html" class="text-gray-600 hover:text-[--primary-indigo] block px-3 py-2 rounded-md text-base font-medium">Kontakt</a>
+            <div class="flex space-x-2 pt-2">
+                <a href="projects.html" class="language-toggle en text-sm font-semibold py-1 px-3 rounded-full border border-gray-300 hover:bg-gray-100 text-gray-700">EN</a>
+                <a href="projects-de.html" class="language-toggle de active text-sm font-semibold py-1 px-3 rounded-full bg-[--primary-indigo] text-white">DE</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<header class="py-20 lg:py-24 text-white relative overflow-hidden" style="background-color: var(--primary-indigo);">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+        <h1 id="hero-title" class="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-4 tracking-tight opacity-0 translate-y-8">
+            Simulation. Optimierung. Validierung.
+        </h1>
+        <p id="hero-subtitle" class="text-xl sm:text-2xl font-light opacity-0 translate-y-8 max-w-3xl mx-auto">
+             Die Brücke zwischen <strong>PowerFactory‑Modellen</strong> und der <strong>realen Feldpraxis</strong> – für eine widerstandsfähige Netzinfrastruktur und die erfolgreiche Integration erneuerbarer Energien.
+        </p>
+    </div>
+</header>
+
+<main class="py-16 lg:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+         
+        <section class="mb-20">
+            <div class="flex items-center mb-10">
+                <div class="bg-indigo-100 p-3 rounded-full mr-4">
+                    <svg data-lucide="cloud-lightning" class="w-8 h-8 text-indigo-700"></svg>
+                </div>
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-900">Cloud-Native Netz-Automatisierung</h2>
+                    <p class="text-gray-600">Serverless-Pipelines und Digital Twins für Redispatch 3.0.</p>
+                </div>
+            </div>
+
+            <div class="gsap-project-card bg-white p-8 rounded-xl shadow-lg border-l-4 border-indigo-800 mb-12 transform transition hover:-translate-y-1 duration-300">
+                <div class="project-grid">
+                    <div class="content-column">
+                        <div>
+                            <div class="flex justify-between items-start">
+                                <h2 class="text-2xl font-bold text-gray-900 mb-3">Serverless Netz-Compliance-Pipeline</h2>
+                                <span class="bg-yellow-100 text-yellow-800 text-xs font-bold px-2.5 py-1 rounded border border-yellow-400">Neu 2026</span>
+                            </div>
+                            <p class="text-lg text-indigo-700 mb-6">Automatisierung von VDE-AR-N 4110 Spannungsstabilitätsprüfungen mit Cloud-Native-Architektur.</p>
+                            
+                            <div class="mb-6 border-l-4 border-teal-700 pl-4 bg-teal-50 p-4 rounded-md">
+                                <h4 class="text-sm font-bold text-teal-900 mb-1">Die Innovation</h4>
+                                <p class="text-gray-600 text-sm">Traditionelle Netzstudien sind manuell. Diese Pipeline löst physikbasierte Simulationen automatisch über <strong>AWS S3 & Lambda</strong> aus und ermöglicht "Cloud-Bursting" für massive Szenarioanalysen ohne On-Premise-Hardware.</p>
+                            </div>
+
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="px-3 py-1 text-xs font-medium bg-gray-100 text-gray-800 rounded-full border">Python</span>
+                                <span class="px-3 py-1 text-xs font-medium bg-gray-100 text-gray-800 rounded-full border">AWS Lambda</span>
+                                <span class="px-3 py-1 text-xs font-medium bg-gray-100 text-gray-800 rounded-full border">Pandapower</span>
+                                <span class="px-3 py-1 text-xs font-medium bg-gray-100 text-gray-800 rounded-full border">DynamoDB</span>
+                            </div>
+                        </div>
+
+                        <a href="https://github.com/omari91/serverless-grid-compliance" target="_blank" class="inline-flex items-center text-white bg-gray-900 hover:bg-gray-700 px-6 py-3 rounded-full font-bold transition w-fit shadow-md">
+                            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                            Architektur & Code ansehen
+                        </a>
+                    </div>
+
+                    <div class="image-column">
+                        <div class="bg-gray-900 rounded-lg shadow-2xl overflow-hidden border border-gray-700 h-full flex flex-col">
+                            <div class="bg-gray-800 px-4 py-2 flex items-center space-x-2 border-b border-gray-700">
+                                <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                                <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                                <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                                <span class="ml-2 text-xs text-gray-400 font-mono">aws-lambda-logs</span>
+                            </div>
+                            <div class="p-4 font-mono text-xs sm:text-sm text-green-400 overflow-y-auto">
+                                <p class="opacity-50">$ aws lambda invoke --function vde4110-check</p>
+                                <p class="mt-2 text-white">> INIT: Pandapower Engine laden...</p>
+                                <p class="text-white">> INGEST: 'berlin_grid_v2.json' von S3 heruntergeladen</p>
+                                <p class="text-yellow-300">> PHYSICS: Newton-Raphson Leistungsfluss ausführen...</p>
+                                <p class="text-white">> CHECK: VDE-AR-N 4110 Konformität</p>
+                                <p class="text-red-400 mt-1">[ALERT] Spannungsverletzung an Bus 42 (0.88 p.u.)</p>
+                                <p class="text-blue-300">> ACTION: Verletzung in DynamoDB protokolliert</p>
+                                <p class="mt-2 animate-pulse">_</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gsap-project-card bg-white p-8 rounded-xl shadow-lg border-l-4 border-indigo-800 mb-12 transform transition hover:-translate-y-1 duration-300">
+                <div class="project-grid">
+                    <div class="image-column">
+                        <div class="bg-gray-900 rounded-lg shadow-2xl overflow-hidden border border-gray-700 h-full flex flex-col">
+                            <div class="bg-gray-800 px-4 py-2 flex items-center space-x-2 border-b border-gray-700">
+                                <span class="ml-2 text-xs text-gray-400 font-mono">cim_parser.xml</span>
+                            </div>
+                            <div class="p-4 font-mono text-xs sm:text-sm text-blue-300 overflow-y-auto">
+                                <p><span class="text-purple-400">&lt;cim:Terminal</span> <span class="text-orange-400">rdf:ID</span>=<span class="text-green-300">"Term_45A"</span>&gt;</p>
+                                <p class="pl-4"><span class="text-purple-400">&lt;cim:Terminal.ConductingEquipment</span></p>
+                                <p class="pl-8"><span class="text-orange-400">rdf:resource</span>=<span class="text-green-300">"#Trafo_Berlin_1"</span>/&gt;</p>
+                                <p class="pl-4"><span class="text-purple-400">&lt;cim:ACDCTerminal.connected</span>&gt;true&lt;/...&gt;</p>
+                                <p><span class="text-purple-400">&lt;/cim:Terminal&gt;</span></p>
+                                <p class="mt-2 text-gray-500">&lt;!-- Interoperability Layer --&gt;</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="content-column">
+                        <div>
+                            <div class="flex justify-between items-start">
+                                <h2 class="text-2xl font-bold text-gray-900 mb-3">Hybrid Netz-Steuerungs-Engine (CIM)</h2>
+                                <span class="bg-blue-100 text-blue-800 text-xs font-bold px-2.5 py-1 rounded border border-blue-400">Forschung</span>
+                            </div>
+                            <p class="text-lg text-indigo-700 mb-6">Eine Python-Engine zum Parsen von IEC 61970 (CIM) Datenmodellen und Ausführen von Fuzzy-Logic Volt-VAR-Steuerung.</p>
+                            
+                            <div class="mb-6 border-l-4 border-teal-700 pl-4 bg-teal-50 p-4 rounded-md">
+                                <h4 class="text-sm font-bold text-teal-900 mb-1">Warum das wichtig ist</h4>
+                                <p class="text-gray-600 text-sm">Deutsche TSOs setzen auf das Common Information Model (CIM) für Datenaustausch. Diese Engine zeigt die Fähigkeit, komplexe XML-Netzdefinitionen zu parsen und eigene Steuerungslogik anzuwenden, und löst das Interoperabilitätsproblem.</p>
+                            </div>
+
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="px-3 py-1 text-xs font-medium bg-gray-100 text-gray-800 rounded-full border">IEC 61970 (CIM)</span>
+                                <span class="px-3 py-1 text-xs font-medium bg-gray-100 text-gray-800 rounded-full border">NetworkX</span>
+                                <span class="px-3 py-1 text-xs font-medium bg-gray-100 text-gray-800 rounded-full border">Fuzzy Logic</span>
+                            </div>
+                        </div>
+                         <a href="https://github.com/omari91/cim-grid-control-engine" target="_blank" class="inline-flex items-center text-white bg-gray-900 hover:bg-gray-700 px-6 py-3 rounded-full font-bold transition w-fit shadow-md">
+                            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                            Architektur & Code ansehen
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-20">
+            <div class="flex items-center mb-10">
+                <div class="bg-indigo-100 p-3 rounded-full mr-4">
+                    <i data-lucide="zap" class="w-8 h-8 text-indigo-700"></i>
+                </div>
+                <div>
+                    <h2 class="text-3xl font-bold text-indigo-900 mb-4">Aktuelle Innovation & Zukunftsvision</h2>
+                    <p class="text-lg text-gray-600">Verbindung von technischer Exzellenz mit menschenzentrierter Wirkung</p>
+                </div>
+            </div>
+       
+            <div class="gsap-project-card bg-white p-8 rounded-xl shadow-lg border-l-4 border-indigo-800">
+                <div class="project-grid">
+                    <div class="content-column">
+                        <div>
+                            <h2 class="text-3xl font-bold text-gray-900 mb-4">Gerechter Ausbau der Ladeinfrastruktur in Berlin</h2>
+                            <p class="text-lg text-indigo-700 mb-6">Eine datengestützte geospaziale Optimierungspipeline zum Ausgleich von Abdeckung und räumlicher Gerechtigkeit in Berlins EV-Ladeinfrastruktur.</p>
+                            
+                            <div class="mb-6 border-l-4 border-rose-800 pl-4 bg-rose-50 p-4 rounded-md">
+                                <h4 class="text-lg font-semibold text-rose-900 mb-2">Die Herausforderung</h4>
+                                <p class="text-gray-600 text-sm">Die öffentliche Ladeinfrastruktur für Elektrofahrzeuge (EV) ist weitgehend nachfrageorientiert, was räumliche Ungleichheiten verstärkt. Dies schafft ein „Henne-Ei“-Problem, bei dem fehlende Infrastruktur die EV-Akzeptanz in unterversorgten Gebieten hemmt.</p>
+                            </div>
+                            
+                            <div class="mb-6 border-l-4 border-teal-700 pl-4 bg-teal-50 p-4 rounded-md">
+                                <h4 class="text-lg font-semibold text-teal-900 mb-2">Unsere datengestützte Lösung</h4>
+                                <p class="text-gray-600 text-sm">Wir implementierten ein multi-objektives NSGA-II-Modell in Python, um Abdeckung und räumliche Gerechtigkeit auszugleichen und den Gini-Koeffizienten von EVs pro Ladepunkt zu minimieren. Dieser Ansatz bietet Stadtplanern verschiedene Pareto-optimale Einsatzstrategien.</p>
+                            </div>
+
+                            <div class="mb-6 border-l-4 border-blue-800 pl-4 bg-blue-50 p-4 rounded-md">
+                                <h4 class="text-lg font-semibold text-blue-900 mb-2">Meine Rolle & Zeitplan</h4>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
+                                    <div>
+                                        <strong class="text-blue-800">Meine Rolle:</strong>
+                                        <ul class="list-disc list-inside mt-1 text-gray-600">
+                                            <li>Lead Data Scientist & Geo-Analyst</li>
+                                            <li>NSGA-II Algorithmus-Entwicklung</li>
+                                            <li>Design der Gerechtigkeitsmetriken (Gini)</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <strong class="text-blue-800">Zeitplan:</strong>
+                                        <ul class="list-disc list-inside mt-1 text-gray-600">
+                                            <li>Forschung: 6 Monate (2025)</li>
+                                            <li>Modellentwicklung: 4 Monate</li>
+                                            <li>Validierung & Analyse: 2 Monate</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="px-3 py-1 text-xs font-medium bg-indigo-100 text-indigo-800 rounded-full">Python</span>
+                                <span class="px-3 py-1 text-xs font-medium bg-indigo-100 text-indigo-800 rounded-full">NSGA-II</span>
+                                <span class="px-3 py-1 text-xs font-medium bg-indigo-100 text-indigo-800 rounded-full">Geospaziale Optimierung</span>
+                                <span class="px-3 py-1 text-xs font-medium bg-indigo-100 text-indigo-800 rounded-full">Stadtplanung</span>
+                            </div>
+                        </div>
+                        
+                        <div class="grid grid-cols-3 gap-4 border-t pt-4 mt-auto">
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-indigo-800">13%</div>
+                                <p class="text-xs text-gray-500 font-medium">Reduktion des Gini-Koeffizienten</p>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-indigo-800">6x</div>
+                                <p class="text-xs text-gray-500 font-medium">Mehr Lader in Außenbezirken</p>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-indigo-800">21%</div>
+                                <p class="text-xs text-gray-500 font-medium">Anstieg lokaler Zugänglichkeit</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="image-column">
+                        <img src="imgs/berlin.png" alt="Verteilung der EV-Ladestationen in Berlin" class="w-full h-64 object-cover rounded-lg shadow-lg border border-gray-200" />
+                        <div class="bg-gray-50 p-5 rounded-xl shadow-inner border border-gray-200 flex-1">
+                            <h5 class="text-lg font-bold text-gray-800 mb-2">Philosophie in Aktion</h5>
+                            <p class="text-sm text-gray-600 mb-4">Das Ziel ist nicht nur, mehr Ladestationen zu bauen, sondern sie strategisch so zu platzieren, dass ein gerechter Zugang und nachhaltige urbane Mobilität gefördert werden.</p>
+                            <a href="ev-de.html" class="block w-full text-center py-2 px-4 rounded-full bg-indigo-800 text-white font-semibold hover:bg-indigo-700 transition duration-150">
+                                Studie ansehen
+                            </a>
+                        </div>
+                        <img src="imgs/Cert best.png" alt="IEEE Best Paper Award Zertifikat" class="w-full h-auto rounded-lg shadow-lg border border-gray-200" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-16">
+            <div class="gsap-project-card bg-white p-8 rounded-xl shadow-lg border-l-4 border-indigo-800">
+                <div class="project-grid">
+                    <div class="content-column">
+                        <div>
+                            <h2 class="text-2xl font-bold text-gray-900 mb-4">Netzintegration des Kinangop Windparks</h2>
+                            <p class="text-lg text-indigo-700 mb-6">Eine dynamische Spannungsstabilitätsanalyse zur Integration von Kinangop-Windkraft in das kenianische 59-Bus-Nationalnetz.</p>
+                            
+                            <div class="mb-6 border-l-4 border-rose-800 pl-4 bg-rose-50 p-4 rounded-md">
+                                <h4 class="text-lg font-semibold text-rose-900 mb-2">Die Herausforderung</h4>
+                                <p class="text-gray-600 text-sm">Das kenianische Stromnetz musste die intermittierende Natur der Windkraft aufnehmen und gleichzeitig die Systemstabilität aufrechterhalten. Die Herausforderung bestand darin, sicherzustellen, dass Spannungsschwankungen durch Winderzeugung nicht das gesamte Netz destabilisieren.</p>
+                            </div>
+                            
+                            <div class="mb-6 border-l-4 border-teal-700 pl-4 bg-teal-50 p-4 rounded-md">
+                                <h4 class="text-lg font-semibold text-teal-900 mb-2">Unsere datengestützte Lösung</h4>
+                                <p class="text-gray-600 text-sm">Ich entwickelte eine umfassende dynamische Spannungsstabilitätsanalyse mit DIgSILENT PowerFactory, um das gesamte Stromsystem zu modellieren und Spannungsschwankungen zu simulieren und zu mindern.</p>
+                            </div>
+
+                            <div class="mb-6 border-l-4 border-blue-800 pl-4 bg-blue-50 p-4 rounded-md">
+                                <h4 class="text-lg font-semibold text-blue-900 mb-2">Meine Rolle & Zeitplan</h4>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
+                                    <div>
+                                        <strong class="text-blue-800">Meine Rolle:</strong>
+                                        <ul class="list-disc list-inside mt-1 text-gray-600">
+                                            <li>Netzanalyst (Power Systems Analyst)</li>
+                                            <li>Lead für Netzstabilitätsmodellierung</li>
+                                            <li>Verfasser technischer Berichte</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <strong class="text-blue-800">Zeitplan:</strong>
+                                        <ul class="list-disc list-inside mt-1 text-gray-600">
+                                            <li>Systemmodellierung: 4 Monate (2015)</li>
+                                            <li>Simulation & Analyse: 3 Monate</li>
+                                            <li>Dokumentation: 1 Monat</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="px-3 py-1 text-xs font-medium bg-indigo-100 text-indigo-800 rounded-full">DIgSILENT PowerFactory</span>
+                                <span class="px-3 py-1 text-xs font-medium bg-indigo-100 text-indigo-800 rounded-full">Netzanalyse</span>
+                                <span class="px-3 py-1 text-xs font-medium bg-indigo-100 text-indigo-800 rounded-full">Integration Erneuerbarer Energien</span>
+                                <span class="px-3 py-1 text-xs font-medium bg-indigo-100 text-indigo-800 rounded-full">Netzstabilität</span>
+                            </div>
+                        </div>
+                        
+                        <div class="grid grid-cols-3 gap-4 border-t pt-4 mt-auto">
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-indigo-800">25%</div>
+                                <p class="text-xs text-gray-500 font-medium">Verbesserte Netzstabilität</p>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-indigo-800">60MW</div>
+                                <p class="text-xs text-gray-500 font-medium">Saubere Energie integriert</p>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-indigo-800">100k+</div>
+                                <p class="text-xs text-gray-500 font-medium">Haushalte profitiert</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="image-column">
+                        <img src="imgs/wind farm.jpg" alt="Kinangop Wind Integration" class="w-full h-64 object-cover rounded-lg shadow-lg border border-gray-200">
+                        <div class="bg-gray-50 p-5 rounded-xl shadow-inner border border-gray-200 flex-1">
+                            <h5 class="text-lg font-bold text-gray-800 mb-2">Wichtige Lektion</h5>
+                            <p class="text-sm text-gray-600 mb-4">Dieses Projekt lehrte mich, dass Resilienz nicht nur für Stromleitungen gilt – sondern für den Zugang von Menschen zu lebenswichtigen Dienstleistungen.</p>
+                            <a href="https://drive.google.com/file/d/1NBIsal051Oqn_8JWls9Lhgr8mEcLpKhq/view" target="_blank" class="block w-full text-center py-2 px-4 rounded-full bg-indigo-800 text-white font-semibold hover:bg-indigo-700 transition duration-150">
+                                Technischen Bericht lesen
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-20">
+            <div class="flex items-center mb-10">
+                <div class="bg-teal-100 p-3 rounded-full mr-4">
+                    <i data-lucide="cpu" class="w-8 h-8 text-teal-700"></i>
+                </div>
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-900">Digitalization & Automation</h2>
+                    <p class="text-gray-600">SCADA integration, predictive maintenance, and IoT telemetry.</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                
+                <div class="gsap-project-card bg-white p-8 rounded-xl shadow-lg border-l-4 border-indigo-800">
+                    <div class="flex flex-col h-full">
+                        <div class="mb-6">
+                            <img src="imgs/geothermal-drilling-activities.jpg" alt="Vorausschauende Wartung KI" class="w-full h-48 object-cover rounded-lg shadow-lg border border-gray-200">
+                        </div>
+                        
+                        <div class="flex-grow">
+                            <h3 class="text-xl font-bold text-gray-900 mb-3">KI-gestützte vorausschauende Wartung</h3>
+                            <p class="text-sm text-indigo-700 mb-4">Ein maschinelles Lernsystem zur Vorhersage von Geräteausfällen in der geothermischen Stromerzeugung, das Betriebskosten senkt und die Anlagenverfügbarkeit erhöht.</p>
+                            
+                            <div class="mb-4 border-l-4 border-rose-800 pl-3 bg-rose-50 p-3 rounded-md">
+                                <h4 class="text-sm font-semibold text-rose-900 mb-1">Die Herausforderung</h4>
+                                <p class="text-xs text-gray-600">Geothermiekraftwerke verzeichneten unerwartete Geräteausfälle, was zu kostspieligen Ausfallzeiten führte.</p>
+                            </div>
+                            
+                            <div class="mb-4 border-l-4 border-teal-700 pl-3 bg-teal-50 p-3 rounded-md">
+                                <h4 class="text-sm font-semibold text-teal-900 mb-1">Unsere Lösung</h4>
+                                <p class="text-xs text-gray-600">System zur vorausschauenden Wartung mit Machine Learning Algorithmen zur Mustererkennung.</p>
+                            </div>
+                            
+                            <div class="mb-4 border-l-4 border-blue-800 pl-3 bg-blue-50 p-3 rounded-md">
+                                <h4 class="text-sm font-semibold text-blue-900 mb-1">Meine Rolle & Zeitplan</h4>
+                                <div class="space-y-1 text-xs">
+                                    <p><strong class="text-blue-800">Rolle:</strong> Machine Learning Engineer & Datenpipeline-Architekt</p>
+                                    <p><strong class="text-blue-800">Zeitplan:</strong> 6 Monate (2015)</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex flex-wrap gap-1 mb-4">
+                                <span class="px-2 py-1 text-xs font-medium bg-indigo-100 text-indigo-800 rounded-full">Python</span>
+                                <span class="px-2 py-1 text-xs font-medium bg-indigo-100 text-indigo-800 rounded-full">TensorFlow</span>
+                                <span class="px-2 py-1 text-xs font-medium bg-indigo-100 text-indigo-800 rounded-full">Zeitreihen</span>
+                            </div>
+                        </div>
+                        
+                        <div class="grid grid-cols-3 gap-2 border-t pt-3 mt-auto">
+                            <div class="text-center">
+                                <div class="text-2xl font-bold text-indigo-800">40%</div>
+                                <p class="text-xs text-gray-500 font-medium">Ausfallzeit ↓</p>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-2xl font-bold text-indigo-800">$2M</div>
+                                <p class="text-xs text-gray-500 font-medium">Ersparnis/Jahr</p>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-2xl font-bold text-indigo-800">95%</div>
+                                <p class="text-xs text-gray-500 font-medium">Genauigkeit</p>
+                            </div>
+                        </div>
+                        
+                        <a href="https://drive.google.com/file/d/0B2ovMeevnDjZd195VHN4UjNXak0/view?usp=sharing&resourcekey=0-OM41Swf1myiikab1d5w7LQ" target="_blank" class="mt-4 block w-full text-center py-2 px-4 rounded-full bg-indigo-800 text-white font-semibold hover:bg-indigo-700 transition duration-150 text-sm">
+                            Dokumentation
+                        </a>
+                    </div>
+                </div>
+
+                <div class="gsap-project-card bg-white p-8 rounded-xl shadow-lg border-l-4 border-indigo-800">
+                    <div class="flex flex-col h-full">
+                        <div class="mb-6">
+                            <img src="https://images.pexels.com/photos/4386466/pexels-photo-4386466.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Health Tech Lastverteilung" class="w-full h-48 object-cover rounded-lg shadow-lg border border-gray-200">
+                        </div>
+                        
+                        <div class="flex-grow">
+                            <h3 class="text-xl font-bold text-gray-900 mb-3">Lastverteilungssystem für das Gesundheitswesen</h3>
+                            <p class="text-sm text-indigo-700 mb-4">Anwendung von Stromnetz-Prinzipien zur Optimierung der Gesundheitsversorgung im ländlichen Kenia.</p>
+                            
+                            <div class="mb-4 border-l-4 border-rose-800 pl-3 bg-rose-50 p-3 rounded-md">
+                                <h4 class="text-sm font-semibold text-rose-900 mb-1">Die Herausforderung</h4>
+                                <p class="text-xs text-gray-600">Ländliche Gesundheitseinrichtungen verzeichneten ungleiche Patientenlast und lange Wartezeiten.</p>
+                            </div>
+                            
+                            <div class="mb-4 border-l-4 border-teal-700 pl-3 bg-teal-50 p-3 rounded-md">
+                                <h4 class="text-sm font-semibold text-teal-900 mb-1">Unsere Lösung</h4>
+                                <p class="text-xs text-gray-600">Lastverteilungsalgorithmus, der Patientenströme wie elektrischen Strom behandelt.</p>
+                            </div>
+                            
+                            <div class="mb-4 border-l-4 border-blue-800 pl-3 bg-blue-50 p-3 rounded-md">
+                                <h4 class="text-sm font-semibold text-blue-900 mb-1">Meine Rolle & Zeitplan</h4>
+                                <div class="space-y-1 text-xs">
+                                    <p><strong class="text-blue-800">Rolle:</strong> Full-Stack Developer & Systemarchitekt</p>
+                                    <p><strong class="text-blue-800">Zeitplan:</strong> 6 Monate (2023)</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex flex-wrap gap-1 mb-4">
+                                <span class="px-2 py-1 text-xs font-medium bg-indigo-100 text-indigo-800 rounded-full">Node.js</span>
+                                <span class="px-2 py-1 text-xs font-medium bg-indigo-100 text-indigo-800 rounded-full">React</span>
+                                <span class="px-2 py-1 text-xs font-medium bg-indigo-100 text-indigo-800 rounded-full">MongoDB</span>
+                            </div>
+                        </div>
+                        
+                        <div class="grid grid-cols-3 gap-2 border-t pt-3 mt-auto">
+                            <div class="text-center">
+                                <div class="text-2xl font-bold text-indigo-800">50%</div>
+                                <p class="text-xs text-gray-500 font-medium">Wartezeit ↓</p>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-2xl font-bold text-indigo-800">30%</div>
+                                <p class="text-xs text-gray-500 font-medium">Ressource ↑</p>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-2xl font-bold text-indigo-800">15k+</div>
+                                <p class="text-xs text-gray-500 font-medium">Patienten/Mo</p>
+                            </div>
+                        </div>
+                        
+                        <a href="contact-de.html" class="mt-4 block w-full text-center py-2 px-4 rounded-full bg-indigo-800 text-white font-semibold hover:bg-indigo-700 transition duration-150 text-sm">
+                            Mehr erfahren
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="mb-16">
+            <div class="gsap-project-card bg-white p-8 rounded-xl shadow-lg border-l-4 border-indigo-800">
+                <div class="project-grid">
+                    <div class="image-column">
+                        <img src="https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Climate Tech Beratung" class="w-full h-64 object-cover rounded-lg shadow-lg border border-gray-200 mb-4" />
+                        <div class="bg-gray-50 p-5 rounded-xl shadow-inner border border-gray-200 flex-1">
+                            <h5 class="text-lg font-bold text-gray-800 mb-2">Full-Stack Vorteil</h5>
+                            <p class="text-sm text-gray-600 mb-4">Viele Berater glänzen in einem Bereich. Ich verbinde Investitionsanalyse mit operativer Umsetzung und liefere das Gesamtbild, das Investoren und Startups für den Erfolg benötigen.</p>
+                            <a href="https://www.linkedin.com/in/clifford-ondieki-tpm/details/volunteering-experiences/" class="block w-full text-center py-2 px-4 rounded-full bg-indigo-800 text-white font-semibold hover:bg-indigo-700 transition duration-150">
+                                Fallstudie anfordern
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="content-column">
+                        <div>
+                            <h2 class="text-2xl font-bold text-gray-900 mb-4">Beratung für Climate Tech Investitionen</h2>
+                            <p class="text-lg text-indigo-700 mb-6">Verbindung von Venture-Capital-Analysen mit Expertise im Infrastrukturausbau zur Risikominimierung von Climate‑Tech‑Investitionen.</p>
+
+                            <div class="mb-6 border-l-4 border-rose-800 pl-4 bg-rose-50 p-4 rounded-md">
+                                <h4 class="text-lg font-semibold text-rose-900 mb-2">Die Herausforderung</h4>
+                                <p class="text-gray-600 text-sm">Climate Tech steht vor einer Lücke: Investoren fehlt oft die Umsetzungsexpertise, während Infrastrukturexperten der Zugang zum Kapitalmarkt fehlt. Diese Diskrepanz verlangsamt den Klimaschutz und verschwendet vielversprechende Technologien.</p>
+                            </div>
+
+                            <div class="mb-6 border-l-4 border-teal-700 pl-4 bg-teal-50 p-4 rounded-md">
+                                <h4 class="text-lg font-semibold text-teal-900 mb-2">Mein Ansatz</h4>
+                                <p class="text-gray-600 text-sm">Durch meine Externship bei Energy Innovation Capital lerne ich integrierte Frameworks kennen, die Startups durch mehrere Linsen bewerten: Investitionspotenzial, operative Machbarkeit und Einsatzstrategie.</p>
+                            </div>
+
+                            <div class="mb-6 border-l-4 border-blue-800 pl-4 bg-blue-50 p-4 rounded-md">
+                                <h4 class="text-lg font-semibold text-blue-900 mb-2">Meine Rolle & Zeitplan</h4>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
+                                    <div>
+                                        <strong class="text-blue-800">Meine Rolle:</strong>
+                                        <ul class="list-disc list-inside mt-1 text-gray-600">
+                                            <li>Investment Analyst Extern</li>
+                                            <li>Technische Due Diligence Leitung</li>
+                                            <li>Berater für Einsatzstrategien</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <strong class="text-blue-800">Zeitplan:</strong>
+                                        <ul class="list-disc list-inside mt-1 text-gray-600">
+                                            <li>Externship: 3 Monate (2025)</li>
+                                            <li>Startup-Analyse: 5+ Unternehmen</li>
+                                            <li>Entwicklung von Investitionsthesen</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="px-3 py-1 text-xs font-medium bg-indigo-100 text-indigo-800 rounded-full">Venture Capital Analyse</span>
+                                <span class="px-3 py-1 text-xs font-medium bg-indigo-100 text-indigo-800 rounded-full">Operative Due Diligence</span>
+                                <span class="px-3 py-1 text-xs font-medium bg-indigo-100 text-indigo-800 rounded-full">Einsatzstrategie</span>
+                                <span class="px-3 py-1 text-xs font-medium bg-indigo-100 text-indigo-800 rounded-full">Marktforschung</span>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-3 gap-4 border-t pt-4 mt-auto">
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-indigo-800">5+</div>
+                                <p class="text-xs text-gray-500 font-medium">Startups analysiert</p>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-indigo-800">2</div>
+                                <p class="text-xs text-gray-500 font-medium">Investitionsthesen</p>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-indigo-800">3x</div>
+                                <p class="text-xs text-gray-500 font-medium">Analysetiefe</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-16">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-indigo-900 mb-4">Premium-Fallstudien</h2>
+                <p class="text-lg text-gray-600">Fortgeschrittene Projekte und sensible Implementierungen - Details auf Anfrage</p>
+            </div>
+
+            <div class="space-y-12">
+                <div class="gsap-project-card bg-white p-8 rounded-xl shadow-lg border-4 border-amber-400 relative overflow-hidden group">
+                    <div class="absolute inset-0 bg-gray-900/90 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl p-8 z-10">
+                        <div class="text-center text-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-auto mb-4 text-amber-400">
+                                <rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect>
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                            </svg>
+                            <p class="text-xl font-bold">Vollständige Fallstudie auf Anfrage verfügbar</p>
+                            <small class="block text-gray-300 mb-6">Beinhaltet technische Architektur, Implementierungsdetails und Leistungsanalyse</small>
+                            <a href="contact-de.html" class="bg-amber-400 text-gray-900 font-bold py-3 px-6 rounded-full shadow-lg hover:bg-amber-300 transition">
+                                Fallstudie anfordern
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="opacity-50 group-hover:opacity-20 transition-opacity duration-500">
+                        <div class="project-grid">
+                            <div>
+                                <h2 class="text-2xl font-bold text-gray-700 mb-4">Erweiterte Netzoptimierung mit KI-gestützter Lastprognose</h2>
+                                <p class="text-lg text-gray-500 mb-6">Eine umfassende Smart-Grid-Lösung mit Machine-Learning-Algorithmen für prädiktives Lastmanagement in Kenias nationaler Strominfrastruktur.</p>
+                                
+                                <div class="bg-gray-100 p-4 rounded-lg mb-6">
+                                    <h4 class="text-lg font-semibold text-gray-600 mb-2">Meine Rolle & Engagement</h4>
+                                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
+                                        <div>
+                                            <strong class="text-gray-700">Meine Rolle:</strong>
+                                            <p class="text-gray-600 mt-1">Lead AI Engineer & Systemarchitekt</p>
+                                        </div>
+                                        <div>
+                                            <strong class="text-gray-700">Zeitplan:</strong>
+                                            <p class="text-gray-600 mt-1">6-monatiges Enterprise-Projekt (2023)</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-gray-100 p-4 rounded-lg mb-6">
+                                    <h4 class="text-lg font-semibold text-gray-600 mb-2">Projekt-Highlights (Vorschau)</h4>
+                                    <ul class="list-disc list-inside text-gray-600 space-y-1 text-sm">
+                                        <li>Reduzierte Netzinstabilitätsvorfälle um <strong>32%</strong></li>
+                                        <li>Verbesserte Lastprognosegenauigkeit auf <strong>94,7%</strong></li>
+                                        <li>Implementiert über <strong>15 große Umspannwerke</strong></li>
+                                        <li>Integration mit bestehenden SCADA-Systemen</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="px-3 py-1 text-xs font-medium bg-gray-200 text-gray-700 rounded-full">Python</span>
+                                    <span class="px-3 py-1 text-xs font-medium bg-gray-200 text-gray-700 rounded-full">TensorFlow</span>
+                                    <span class="px-3 py-1 text-xs font-medium bg-gray-200 text-gray-700 rounded-full">LSTM Networks</span>
+                                    <span class="px-3 py-1 text-xs font-medium bg-gray-200 text-gray-700 rounded-full">SCADA Integration</span>
+                                </div>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <div class="relative w-full">
+                                    <img src="imgs/saas.png" alt="Erweiterte Netzoptimierung Vorschau" class="w-full h-64 object-cover rounded-lg shadow-lg">
+                                    <div class="absolute inset-0 flex items-center justify-center bg-black/40 rounded-lg">
+                                        <div class="text-center text-white">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-auto mb-1">
+                                                <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path>
+                                                <circle cx="12" cy="12" r="3"></circle>
+                                            </svg>
+                                            <p class="font-semibold">Vorschau verfügbar</p>
+                                            <small>Hover für Details</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gsap-project-card bg-white p-8 rounded-xl shadow-lg border-4 border-amber-400 relative overflow-hidden group">
+                    <div class="absolute inset-0 bg-gray-900/90 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl p-8 z-10">
+                        <div class="text-center text-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-auto mb-4 text-amber-400">
+                                <rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect>
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                            </svg>
+                            <p class="text-xl font-bold">Detaillierte Implementierungsanleitung auf Anfrage</p>
+                            <small class="block text-gray-300 mb-6">Beinhaltet Systemarchitektur, Sensorintegration und ROI-Analyse</small>
+                            <a href="contact-de.html" class="bg-amber-400 text-gray-900 font-bold py-3 px-6 rounded-full shadow-lg hover:bg-amber-300 transition">
+                                Implementierungsdetails anfordern
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="opacity-50 group-hover:opacity-20 transition-opacity duration-500">
+                        <div class="project-grid">
+                            <div class="flex flex-col items-center">
+                                <div class="relative w-full">
+                                    <img src="imgs/iot.png" alt="Industrielle IoT-Plattform Vorschau" class="w-full h-64 object-cover rounded-lg shadow-lg">
+                                    <div class="absolute inset-0 flex items-center justify-center bg-black/40 rounded-lg">
+                                        <div class="text-center text-white">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-auto mb-1">
+                                                <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path>
+                                                <circle cx="12" cy="12" r="3"></circle>
+                                            </svg>
+                                            <p class="font-semibold">Vorschau verfügbar</p>
+                                            <small>Hover für Details</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <h2 class="text-2xl font-bold text-gray-700 mb-4">Industrielle IoT-Plattform für Fertigungsexzellenz</h2>
+                                <p class="text-lg text-gray-500 mb-6">Enterprise-grade IoT-Lösung für Echtzeit-Monitoring und Optimierung von Fertigungsprozessen über mehrere Standorte.</p>
+                                
+                                <div class="bg-gray-100 p-4 rounded-lg mb-6">
+                                    <h4 class="text-lg font-semibold text-gray-600 mb-2">Meine Rolle & Engagement</h4>
+                                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
+                                        <div>
+                                            <strong class="text-gray-700">Meine Rolle:</strong>
+                                            <p class="text-gray-600 mt-1">IoT-Plattform-Architekt & Lead Developer</p>
+                                        </div>
+                                        <div>
+                                            <strong class="text-gray-700">Zeitplan:</strong>
+                                            <p class="text-gray-600 mt-1">8-monatige Multi-Phase-Impl. (2022-2023)</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-gray-100 p-4 rounded-lg mb-6">
+                                    <h4 class="text-lg font-semibold text-gray-600 mb-2">Projekt-Highlights (Vorschau)</h4>
+                                    <ul class="list-disc list-inside text-gray-600 space-y-1 text-sm">
+                                        <li>Erhöhte Gesamtanlageneffektivität um <strong>28%</strong></li>
+                                        <li>Reduzierte ungeplante Ausfallzeiten um <strong>45%</strong></li>
+                                        <li>Vernetzte <strong>500+ Sensoren</strong> über 3 Standorte</li>
+                                        <li>Echtzeit-Dashboard mit prädiktiven Warnungen</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="px-3 py-1 text-xs font-medium bg-gray-200 text-gray-700 rounded-full">Node.js</span>
+                                    <span class="px-3 py-1 text-xs font-medium bg-gray-200 text-gray-700 rounded-full">InfluxDB</span>
+                                    <span class="px-3py-1 text-xs font-medium bg-gray-200 text-gray-700 rounded-full">MQTT</span>
+                                    <span class="px-3 py-1 text-xs font-medium bg-gray-200 text-gray-700 rounded-full">Docker</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+
+<section class="py-16 text-white" style="background-color: var(--primary-indigo);">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl sm:text-4xl font-extrabold mb-4">Bereit, etwas Wirkungsvolles zu bauen?</h2>
+        <p class="text-lg font-light mb-6">Lassen Sie uns technische Exzellenz mit zweckorientierter Innovation verbinden, um Lösungen zu schaffen, die wirklich zählen.</p>
+        <a href="contact-de.html" class="inline-block py-3 px-8 rounded-full bg-white text-indigo-900 font-bold text-lg shadow-xl hover:bg-gray-100 transition duration-300">
+            Lassen Sie uns den Wandel gemeinsam gestalten ⚡
+        </a>
+    </div>
+</section>
+
+<footer class="bg-gray-900 text-white py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="flex justify-center space-x-6 mb-6">
+             <a href="https://www.linkedin.com/in/clifford-ondieki-tpm/"class="text-gray-400 hover:text-[--highlight-gold] transition duration-300" title="LinkedIn Profil">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor" class="lucide lucide-linkedin">
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                    <rect width="4" height="12" x="2" y="9"></rect>
+                    <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+            </a>
+        </div>
+        
+        <p class="text-gray-400 text-sm mb-4">
+            Copyright &copy; <span id="current-year"></span> Clifford Ondieki | Technologie mit Sinn verbinden – Wandel System für System vorantreiben.
+        </p>
+        <p class="text-xs space-x-4">
+            <a href="privacy-policy-de.html" class="text-gray-500 hover:text-white transition">Datenschutz</a>
+            <span class="text-gray-600">|</span>
+            <a href="contact-de.html" class="text-gray-500 hover:text-white transition">Kontakt</a>
+        </p>
+    </div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Initialize lucide icons (retries + fallback loader)
+  function initLucideOnce() {
+    if (window.lucide && typeof window.lucide.createIcons === 'function') {
+      try { 
+        window.lucide.createIcons(); 
+        console.log('✓ Lucide initialized'); 
+      } catch (e) { 
+        console.error('Lucide createIcons error:', e); 
+      }
+      return;
+    }
+    // Fallback: inject script then init
+    const s = document.createElement('script');
+    s.src = 'https://unpkg.com/lucide@latest';
+    s.async = true;
+    s.onload = function() {
+      try { 
+        if (window.lucide && typeof window.lucide.createIcons === 'function') {
+          window.lucide.createIcons(); 
+          console.log('✓ Lucide loaded & initialized'); 
+        }
+      } catch(e){ 
+        console.error('Lucide init error:', e); 
+      }
+    };
+    s.onerror = function(){ 
+      console.error('✗ Failed to load lucide script'); 
+    };
+    document.head.appendChild(s);
+  }
+
+  initLucideOnce();
+
+  // Mobile Menu Toggle (guarded)
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  if (mobileMenuButton) {
+    const mobileMenu = document.getElementById('mobile-menu');
+    const iconOpen = document.getElementById('menu-icon-open');
+    const iconClose = document.getElementById('menu-icon-close');
+
+    mobileMenuButton.addEventListener('click', function() {
+      const isHidden = mobileMenu ? mobileMenu.classList.toggle('hidden') : false;
+      this.setAttribute('aria-expanded', isHidden ? 'false' : 'true');
+      if (iconOpen) iconOpen.classList.toggle('hidden', !isHidden);
+      if (iconClose) iconClose.classList.toggle('hidden', isHidden);
+    });
+  }
+
+  // Dynamic Copyright Year
+  const yearEl = document.getElementById('current-year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  // --- GSAP ANIMATION LOGIC ---
+  gsap.registerPlugin(ScrollTrigger);
+
+  // 1. HERO ANIMATION (On Load)
+  const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
+  
+  tl.to("#hero-title", {
+      y: 0,
+      opacity: 1,
+      duration: 1,
+      delay: 0.2
+  })
+  .to("#hero-subtitle", {
+      y: 0,
+      opacity: 1,
+      duration: 1
+  }, "-=0.6");
+
+  // 2. PROJECT CARD REVEAL (On Scroll)
+  gsap.utils.toArray('.gsap-project-card').forEach((card, index) => {
+      gsap.from(card, {
+          scrollTrigger: {
+              trigger: card,
+              start: "top 85%", // Animation starts when top of card hits 85% of viewport
+              toggleActions: "play none none reverse"
+          },
+          y: 50,
+          opacity: 0,
+          duration: 0.8,
+          ease: "power2.out"
+      });
+  });
+});
+</script>
+
+<div id="cookie-banner" class="fixed bottom-0 left-0 right-0 bg-gray-900 text-white p-6 shadow-2xl z-50 hidden border-t-4 border-indigo-600">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div class="text-sm text-gray-300">
+            <p class="mb-1 font-bold text-white">🍪 Cookie Consent / Cookie-Hinweis</p>
+            <p>
+                We use cookies (Microsoft Clarity) to analyze traffic and improve user experience. 
+                <span class="italic text-gray-400">(Wir verwenden Cookies, um den Traffic zu analysieren.)</span>
+            </p>
+            <a href="privacy-policy-de.html" class="underline hover:text-indigo-400 mt-1 inline-block">Read Privacy Policy / Datenschutzerklärung</a>
+        </div>
+        <div class="flex gap-3">
+            <button onclick="declineCookies()" class="px-4 py-2 text-sm font-medium text-gray-300 hover:text-white border border-gray-600 rounded-md hover:bg-gray-800 transition">
+                Decline / Ablehnen
+            </button>
+            <button onclick="acceptCookies()" class="px-6 py-2 text-sm font-bold text-white bg-indigo-600 rounded-md hover:bg-indigo-700 shadow-lg transition">
+                Accept / Akzeptieren
+            </button>
+        </div>
+    </div>
+</div>
+
+<script>
+    const consent = localStorage.getItem('cookie_consent');
+    const banner = document.getElementById('cookie-banner');
+
+    if (!consent) {
+        banner.classList.remove('hidden');
+    } else if (consent === 'accepted') {
+        loadClarityScript();
+    }
+
+    function loadClarityScript() {
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "t41xxbb71x");
+    }
+
+    function acceptCookies() {
+        localStorage.setItem('cookie_consent', 'accepted');
+        banner.classList.add('hidden');
+        loadClarityScript();
+    }
+
+    function declineCookies() {
+        localStorage.setItem('cookie_consent', 'declined');
+        banner.classList.add('hidden');
+    }
+</script>
+</body>
+</html>
