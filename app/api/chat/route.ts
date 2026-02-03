@@ -9,8 +9,8 @@ export async function POST(req: Request) {
   const tools = {
     searchKnowledgeBase: tool({
       description: "Search Clifford's IEEE research and power system projects.",
-      parameters: z.object({ query: z.string() }),
-      execute: async ({ query }) => await queryResearch(query),
+      inputSchema: z.object({ query: z.string() }),
+      execute: async ({ query }: { query: string }) => await queryResearch(query),
     }),
   };
 
@@ -25,5 +25,5 @@ export async function POST(req: Request) {
     tools,
   });
 
-  return result.toDataStreamResponse();
+  return result.toTextStreamResponse();
 }

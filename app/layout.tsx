@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import ChatWidget from "@/components/ChatWidget";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -26,7 +27,9 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Clifford Omari Ondieki" }],
   robots: { index: true, follow: true },
-  themeColor: "#303F9F",
+  other: {
+    language: "en",
+  },
   icons: { icon: "/imgs/man.jpg" },
   openGraph: {
     type: "website",
@@ -48,6 +51,7 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
+  themeColor: "#303F9F",
 };
 
 export default function RootLayout({
@@ -57,7 +61,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} antialiased`}>{children}</body>
+      <body className={`${inter.variable} antialiased`}>
+        {children}
+        <ChatWidget />
+      </body>
     </html>
   );
 }
