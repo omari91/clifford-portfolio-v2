@@ -1,47 +1,39 @@
 "use client";
 
-import { useMemo, useState } from "react";
-import { sendChatMessage, type ChatMessage } from "@/lib/chat";
-
-const starterMessages: ChatMessage[] = [
-  {
-    role: "assistant",
-    content: "Hi! I can answer questions about Clifford’s research, projects, and experience.",
-  },
-];
+import { useEffect, useState } from "react";
 
 export default function ChatWidget() {
   const [open, setOpen] = useState(false);
-  const [messages, setMessages] = useState<ChatMessage[]>(starterMessages);
-  const [input, setInput] = useState("");
-  const [loading, setLoading] = useState(false);
-  const canSend = input.trim().length > 0 && !loading;
+  const [language, setLanguage] = useState<"en" | "de">("en");
+  const [activeHash, setActiveHash] = useState<string>("");
 
-  const thread = useMemo(() => messages, [messages]);
-
-  const handleSend = async () => {
-    if (!canSend) return;
-    const content = input.trim();
-    setInput("");
-    const nextMessages = [...thread, { role: "user", content }];
-    setMessages(nextMessages);
-    setLoading(true);
-    try {
-      const reply = await sendChatMessage(nextMessages);
-      setMessages((prev) => [...prev, { role: "assistant", content: reply }]);
-    } catch {
-      setMessages((prev) => [
-        ...prev,
-        {
-          role: "assistant",
-          content:
-            "Sorry, I’m having trouble right now. Please try again in a moment.",
-        },
-      ]);
-    } finally {
-      setLoading(false);
+  useEffect(() => {
+    const stored = localStorage.getItem("site-language");
+    if (stored === "de" || stored === "en") {
+      setLanguage(stored);
     }
-  };
+
+    const handleLanguageChange = (event: Event) => {
+      const detail = (event as CustomEvent<string>).detail;
+      if (detail === "de" || detail === "en") {
+        setLanguage(detail);
+      }
+    };
+
+    window.addEventListener("language-change", handleLanguageChange);
+    return () =>
+      window.removeEventListener("language-change", handleLanguageChange);
+  }, []);
+
+  useEffect(() => {
+    const syncHash = () => {
+      setActiveHash(window.location.hash || "");
+    };
+
+    syncHash();
+    window.addEventListener("hashchange", syncHash);
+    return () => window.removeEventListener("hashchange", syncHash);
+  }, []);
 
   return (
     <div className="fixed bottom-6 right-6 z-[60]">
@@ -57,48 +49,65 @@ export default function ChatWidget() {
               Close
             </button>
           </div>
-          <div className="max-h-[320px] overflow-y-auto px-4 py-3 space-y-3 text-sm">
-            {messages.map((m, idx) => (
-              <div
-                key={`${m.role}-${idx}`}
-                className={`rounded-xl px-3 py-2 ${
-                  m.role === "user"
-                    ? "bg-indigo-50 text-indigo-900 ml-6"
-                    : "bg-slate-100 text-slate-700 mr-6"
+          <div className="px-4 py-6 text-sm text-slate-700 space-y-3">
+            <div className="rounded-xl bg-slate-100 px-3 py-2">
+              {language === "de"
+                ? "Chat ist in Entwicklung."
+                : "Chat is under development."}
+            </div>
+            <p className="text-xs text-slate-500">
+              {language === "de"
+                ? "Bitte nutzen Sie vorerst diese Bereiche:"
+                : "For now, please explore these sections:"}
+            </p>
+            <div className="flex flex-wrap gap-2 pt-1">
+              <a
+                href="#projects"
+                aria-disabled={activeHash === "#projects"}
+                onClick={(event) => {
+                  if (activeHash === "#projects") {
+                    event.preventDefault();
+                  }
+                }}
+                className={`rounded-full border border-slate-200 px-3 py-1 text-xs font-semibold text-slate-700 hover:bg-slate-50 ${
+                  activeHash === "#projects"
+                    ? "opacity-50 cursor-not-allowed"
+                    : ""
                 }`}
               >
-                {m.content}
-              </div>
-            ))}
-            {loading && (
-              <div className="text-xs text-slate-400">Thinking…</div>
-            )}
-          </div>
-          <div className="border-t border-slate-200 p-3 flex gap-2">
-            <input
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
-              onKeyDown={(e) => {
-                if (e.key === "Enter") {
-                  e.preventDefault();
-                  handleSend();
-                }
-              }}
-              placeholder="Ask about projects or research..."
-              className="flex-1 rounded-lg border border-slate-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
-            />
-            <button
-              type="button"
-              onClick={handleSend}
-              disabled={!canSend}
-              className={`px-4 py-2 rounded-lg text-sm font-semibold ${
-                canSend
-                  ? "bg-indigo-700 text-white hover:bg-indigo-600"
-                  : "bg-slate-200 text-slate-500"
-              }`}
-            >
-              Send
-            </button>
+                {language === "de" ? "Projekte" : "Projects"}
+              </a>
+              <a
+                href="#about"
+                aria-disabled={activeHash === "#about"}
+                onClick={(event) => {
+                  if (activeHash === "#about") {
+                    event.preventDefault();
+                  }
+                }}
+                className={`rounded-full border border-slate-200 px-3 py-1 text-xs font-semibold text-slate-700 hover:bg-slate-50 ${
+                  activeHash === "#about" ? "opacity-50 cursor-not-allowed" : ""
+                }`}
+              >
+                {language === "de" ? "Über mich" : "About"}
+              </a>
+              <a
+                href="#contact"
+                aria-disabled={activeHash === "#contact"}
+                onClick={(event) => {
+                  if (activeHash === "#contact") {
+                    event.preventDefault();
+                  }
+                }}
+                className={`rounded-full border border-slate-200 px-3 py-1 text-xs font-semibold text-slate-700 hover:bg-slate-50 ${
+                  activeHash === "#contact"
+                    ? "opacity-50 cursor-not-allowed"
+                    : ""
+                }`}
+              >
+                {language === "de" ? "Kontakt" : "Contact"}
+              </a>
+            </div>
           </div>
         </div>
       )}

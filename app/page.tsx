@@ -3844,6 +3844,78 @@ const App = () => {
     }
   }, []);
 
+  useEffect(() => {
+    localStorage.setItem('site-language', language);
+    window.dispatchEvent(
+      new CustomEvent('language-change', { detail: language })
+    );
+  }, [language]);
+
+  useEffect(() => {
+    const pageFromHash = (hash: string): PageId | null => {
+      switch (hash) {
+        case 'about':
+          return 'about';
+        case 'projects':
+          return 'projects';
+        case 'philosophy':
+          return 'philosophy';
+        case 'blog':
+          return 'blog';
+        case 'contact':
+          return 'contact';
+        case 'ev-study':
+          return 'ev-study';
+        case 'privacy':
+          return 'privacy';
+        default:
+          return null;
+      }
+    };
+
+    const syncFromHash = () => {
+      const hash = window.location.hash.replace('#', '');
+      const page = pageFromHash(hash);
+      if (!page) return;
+      setCurrentPage((prev) => (page === prev ? prev : page));
+    };
+
+    syncFromHash();
+    window.addEventListener('hashchange', syncFromHash);
+    return () => window.removeEventListener('hashchange', syncFromHash);
+  }, []);
+
+  useEffect(() => {
+    const hashFromPage = (page: PageId) => {
+      switch (page) {
+        case 'about':
+          return '#about';
+        case 'projects':
+          return '#projects';
+        case 'philosophy':
+          return '#philosophy';
+        case 'blog':
+          return '#blog';
+        case 'contact':
+          return '#contact';
+        case 'ev-study':
+          return '#ev-study';
+        case 'privacy':
+          return '#privacy';
+        default:
+          return '';
+      }
+    };
+
+    const hash = hashFromPage(currentPage);
+    if (hash && window.location.hash !== hash) {
+      window.history.replaceState(null, '', hash);
+    }
+    if (!hash && window.location.hash) {
+      window.history.replaceState(null, '', window.location.pathname);
+    }
+  }, [currentPage]);
+
   const renderPage = () => {
     switch (currentPage) {
       case 'home':
