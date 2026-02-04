@@ -133,7 +133,7 @@ const Home = ({ setPage, t, language }: { setPage: SetPage; t: T; language: Lang
               {t.home.hero_title.split('&').map((part: string, i: number) => (
                 <React.Fragment key={i}>
                   {part} {i === 0 && <br className="hidden md:block" />}
-                  {i === 0 && <span className="text-indigo-600">&</span>}
+                  {i === 0 && <span className="text-indigo-300">&</span>}
                 </React.Fragment>
               ))}
             </h1>
@@ -3306,12 +3306,12 @@ const App = () => {
       <footer className="bg-gradient-to-b from-slate-900 to-slate-950 text-slate-400 py-12 text-center">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="liquid-card inline-flex items-center justify-center px-5 py-3 rounded-full mb-6">
-            <a href="https://www.linkedin.com/in/clifford-ondieki-tpm/" target="_blank" rel="noreferrer" className="text-gray-500 hover:text-[--highlight-gold] transition duration-300" title="LinkedIn Profile" aria-label="LinkedIn Profile">
+            <a href="https://www.linkedin.com/in/clifford-ondieki-tpm/" target="_blank" rel="noreferrer" className="text-gray-300 hover:text-[--highlight-gold] transition duration-300" title="LinkedIn Profile" aria-label="LinkedIn Profile">
               <Linkedin size={28} />
             </a>
           </div>
 
-          <p className="text-gray-400 text-sm mb-4">
+          <p className="text-gray-300 text-sm mb-4">
             Copyright &copy; {new Date().getFullYear()} {t.nav.brand} | {t.footer.tagline}
           </p>
           <p className="text-xs flex items-center justify-center gap-2">
