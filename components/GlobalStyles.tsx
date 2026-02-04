@@ -1,7 +1,5 @@
 const GlobalStyles = () => (
   <style dangerouslySetInnerHTML={{ __html: `
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600;700;800;900&display=swap');
-    
     :root {
       --primary-indigo: #303F9F;
       --neutral-charcoal: #374151;
@@ -9,11 +7,8 @@ const GlobalStyles = () => (
       --highlight-gold: #F59E0B;
     }
 
-    * {
-      font-family: 'Inter', sans-serif;
-    }
-
     body {
+      font-family: var(--font-inter), system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
       color: var(--neutral-charcoal);
       background: #FFFFFF;
       overflow-x: hidden;

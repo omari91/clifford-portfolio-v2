@@ -111,7 +111,16 @@ const Home = ({ setPage, t, language }: { setPage: SetPage; t: T; language: Lang
   return (
   <div className="page-fade-in">
     {/* HERO */}
-    <section className="relative min-h-[100svh] md:min-h-screen flex items-start md:items-center justify-center bg-cover bg-center text-white overflow-hidden py-20 md:py-0" style={{ backgroundImage: "url('/imgs/website.png')" }}>
+    <section className="relative min-h-[100svh] md:min-h-screen flex items-start md:items-center justify-center text-white overflow-hidden py-20 md:py-0">
+      <Image
+        src="/imgs/website.png"
+        alt="Power systems engineer hero background"
+        fill
+        priority
+        quality={60}
+        sizes="100vw"
+        className="object-cover object-center"
+      />
       <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-indigo-900/70 to-gray-900/80"></div>
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10 w-full">
         <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
@@ -243,7 +252,7 @@ const Home = ({ setPage, t, language }: { setPage: SetPage; t: T; language: Lang
             </button>
           </div>
           <div className="bg-gradient-to-br from-indigo-900 to-gray-700 p-8 rounded-xl text-white shadow-xl">
-            <h4 className="text-xl font-semibold mb-3">{t.home.sim_title}</h4>
+            <h3 className="text-xl font-semibold mb-3">{t.home.sim_title}</h3>
             <p className="opacity-90">{t.home.sim_quote}</p>
           </div>
         </div>
@@ -340,6 +349,7 @@ const Home = ({ setPage, t, language }: { setPage: SetPage; t: T; language: Lang
                   alt={t.home.research_main_title}
                   width={1400}
                   height={900}
+                  sizes="(max-width: 640px) 100vw, 1200px"
                   className="w-full h-[300px] sm:h-[520px] object-cover transition-opacity duration-500 group-hover:opacity-95"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-900/50 to-transparent" />
@@ -531,7 +541,7 @@ const Home = ({ setPage, t, language }: { setPage: SetPage; t: T; language: Lang
         <h2 className="type-section-title mb-4">{t.home.philosophy_section_title}</h2>
         <p className="type-section-sub mb-8">{t.home.philosophy_section_sub}</p>
         <div className="bg-gradient-to-br from-indigo-900 to-gray-700 p-8 rounded-xl text-white">
-          <h4 className="text-2xl font-semibold mb-4">"Smart Laziness" & Systemic Efficiency</h4>
+          <h3 className="text-2xl font-semibold mb-4">"Smart Laziness" & Systemic Efficiency</h3>
           <p className="text-lg mb-4">{t.home.phil_body}</p>
           <p className="opacity-90">{t.home.phil_sub}</p>
         </div>
@@ -3177,6 +3187,7 @@ const App = () => {
                 className="liquid-pill text-slate-700 hover:text-[--primary-indigo] focus:outline-none focus:ring-2 focus:ring-[--primary-indigo] rounded-lg p-2 transition duration-300"
                 aria-controls="mobile-menu"
                 aria-expanded={menuOpen}
+                aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'}
               >
                 <svg className="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path
