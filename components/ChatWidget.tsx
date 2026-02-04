@@ -565,7 +565,7 @@ export default function ChatWidget() {
                         <a
                           key={`${message.id}-${link.href}-${link.label}`}
                           href={link.href}
-                          className="rounded-full liquid-pill px-3 py-1 text-xs font-semibold text-slate-700 transition duration-300"
+                          className="rounded-full liquid-pill px-3 py-1 text-xs font-semibold text-slate-700 ui-lift"
                         >
                           {link.label}
                         </a>
@@ -583,7 +583,7 @@ export default function ChatWidget() {
                     key={prompt}
                     type="button"
                     onClick={() => ask(prompt)}
-                    className="rounded-full liquid-pill px-3 py-1 text-xs font-semibold text-slate-700 transition duration-300"
+                    className="rounded-full liquid-pill px-3 py-1 text-xs font-semibold text-slate-700 ui-lift"
                   >
                     {prompt}
                   </button>
@@ -628,14 +628,14 @@ export default function ChatWidget() {
                   <button
                     type="button"
                     onClick={() => handleDecisionNudge("active")}
-                    className="rounded-full liquid-pill px-3 py-1 font-semibold"
+                    className="rounded-full liquid-pill px-3 py-1 font-semibold ui-lift"
                   >
                     {language === "de" ? "Ja, aktuelles Projekt" : "Yes, current project"}
                   </button>
                   <button
                     type="button"
                     onClick={() => handleDecisionNudge("explore")}
-                    className="rounded-full liquid-pill px-3 py-1 font-semibold"
+                    className="rounded-full liquid-pill px-3 py-1 font-semibold ui-lift"
                   >
                     {language === "de" ? "Nur am Erkunden" : "Just exploring"}
                   </button>

@@ -185,7 +185,8 @@ const Home = ({ setPage, t, language }: { setPage: SetPage; t: T; language: Lang
         <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4">
           <span className="text-xs uppercase tracking-[0.3em] text-slate-300 mr-2">Trusted Stack</span>
           {TECH_STACK.slice(0, 6).map((stack) => (
-            <span key={stack.key} className="text-xs sm:text-sm px-3 py-1.5 rounded-full border border-white/20 bg-white/5">
+            <span key={stack.key} className="inline-flex items-center text-xs sm:text-sm px-3 py-1.5 rounded-full border border-white/20 bg-white/5 ui-lift transition duration-300 hover:bg-white/15 hover:border-white/35 cursor-default">
+              <span className="w-1.5 h-1.5 rounded-full bg-indigo-300 mr-2 ui-pulse" />
               {t.home.tech_stack_labels[stack.key] ?? stack.name}
             </span>
           ))}
@@ -193,7 +194,7 @@ const Home = ({ setPage, t, language }: { setPage: SetPage; t: T; language: Lang
       </div>
     </section>
 
-    {/* SERVICE AREAS */}
+    {/* AREAS OF EXPERTISE */}
     <section className="section-space bg-white">
       <div className="section-shell">
         <div className="bg-white p-10 rounded-xl shadow-2xl border-l-8 border-indigo-800">
@@ -411,16 +412,16 @@ const Home = ({ setPage, t, language }: { setPage: SetPage; t: T; language: Lang
           <div className="bg-indigo-50 p-8 rounded-xl shadow-lg border-t-4 border-indigo-600">
             <h3 className="text-2xl font-semibold text-indigo-900 mb-6 text-center">{t.home.regulatory_title}</h3>
             <div className="space-y-4">
-              <div className="flex items-center bg-white p-3 rounded shadow-sm">
-                <div className="bg-indigo-100 p-2 rounded mr-3 text-indigo-700 font-bold">VDE</div>
+              <div className="flex items-center bg-white p-3 rounded shadow-sm ui-lift">
+                <div className="bg-indigo-100 p-2 rounded mr-3 text-indigo-700 font-bold ui-pulse">VDE</div>
                 <span className="text-gray-800 font-medium">{t.home.regulatory_vde}</span>
               </div>
-              <div className="flex items-center bg-white p-3 rounded shadow-sm">
-                <div className="bg-indigo-100 p-2 rounded mr-3 text-indigo-700 font-bold">EnWG</div>
+              <div className="flex items-center bg-white p-3 rounded shadow-sm ui-lift">
+                <div className="bg-indigo-100 p-2 rounded mr-3 text-indigo-700 font-bold ui-pulse">EnWG</div>
                 <span className="text-gray-800 font-medium">{t.home.regulatory_enwg}</span>
               </div>
-              <div className="flex items-center bg-white p-3 rounded shadow-sm">
-                <div className="bg-indigo-100 p-2 rounded mr-3 text-indigo-700 font-bold">IEC</div>
+              <div className="flex items-center bg-white p-3 rounded shadow-sm ui-lift">
+                <div className="bg-indigo-100 p-2 rounded mr-3 text-indigo-700 font-bold ui-pulse">IEC</div>
                 <span className="text-gray-800 font-medium">{t.home.regulatory_iec}</span>
               </div>
             </div>
@@ -456,7 +457,7 @@ const Home = ({ setPage, t, language }: { setPage: SetPage; t: T; language: Lang
                   {TECH_STACK.map((stack) => (
                     <div key={`${dup}-${stack.key}`} className="flex flex-col items-center group min-w-[100px]">
                       <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center mb-3 group-hover:-translate-y-0.5 transition-transform duration-300 p-2 shadow-sm border border-gray-100">
-                        <Image src={`/imgs/${stack.icon}`} alt={stack.name} width={64} height={64} className="w-full h-full object-contain" />
+                        <Image src={`/imgs/${stack.icon}`} alt={stack.name} width={64} height={64} className="w-full h-full object-contain ui-pulse" />
                       </div>
                       <span className="text-sm text-gray-600 text-center font-medium">
                         {t.home.tech_stack_labels[stack.key] ?? stack.name}
@@ -476,56 +477,56 @@ const Home = ({ setPage, t, language }: { setPage: SetPage; t: T; language: Lang
       <div className="section-shell-narrow text-center">
         <h2 className="text-3xl font-bold text-gray-900 mb-8">{t.home.affiliations_title}</h2>
         <div className="flex gap-6 overflow-x-auto py-4 px-2 -mx-2 snap-x snap-mandatory">
-          <div className="w-48 flex-shrink-0 snap-start flex flex-col items-center bg-white p-4 rounded-lg shadow-md border border-gray-200">
+          <div className="w-48 flex-shrink-0 snap-start flex flex-col items-center bg-white p-4 rounded-lg shadow-md border border-gray-200 ui-lift">
             <a href="https://www.ieee.org" target="_blank" rel="noopener noreferrer" title="Visit IEEE Website" className="mb-3">
               <Image src="/imgs/ieee.png" alt="IEEE Logo" width={160} height={40} className="h-10 w-auto transition duration-300 hover:opacity-80" />
             </a>
             <p className="text-xs text-gray-600 text-center">{t.home.aff_ieee}</p>
           </div>
 
-          <div className="w-48 flex-shrink-0 snap-start flex flex-col items-center bg-white p-4 rounded-lg shadow-md border border-gray-200">
+          <div className="w-48 flex-shrink-0 snap-start flex flex-col items-center bg-white p-4 rounded-lg shadow-md border border-gray-200 ui-lift">
             <a href="https://www.vdi.de/" target="_blank" rel="noopener noreferrer" title="Visit VDI Website" className="mb-3">
               <Image src="/imgs/VDI.svg" alt="VDI Logo" width={160} height={40} className="h-10 w-auto transition duration-300 hover:opacity-80" />
             </a>
             <p className="text-xs text-gray-600 text-center">{t.home.aff_vdi}</p>
           </div>
 
-          <div className="w-48 flex-shrink-0 snap-start flex flex-col items-center bg-white p-4 rounded-lg shadow-md border border-gray-200">
+          <div className="w-48 flex-shrink-0 snap-start flex flex-col items-center bg-white p-4 rounded-lg shadow-md border border-gray-200 ui-lift">
             <a href="https://www.vde.com/en" target="_blank" rel="noopener noreferrer" title="Visit VDE Website" className="mb-3">
               <Image src="/imgs/VDE.svg" alt="VDE Logo" width={160} height={40} className="h-10 w-auto transition duration-300 hover:opacity-80" />
             </a>
             <p className="text-xs text-gray-600 text-center">{t.home.aff_vde}</p>
           </div>
 
-          <div className="w-48 flex-shrink-0 snap-start flex flex-col items-center bg-blue-100 p-4 rounded-lg shadow-md border border-blue-200">
+          <div className="w-48 flex-shrink-0 snap-start flex flex-col items-center bg-blue-100 p-4 rounded-lg shadow-md border border-blue-200 ui-lift">
             <a href="https://www.kiron.ngo" target="_blank" rel="noopener noreferrer" title="Visit Kiron Website" className="mb-3">
               <Image src="/imgs/kiron.svg" alt="Kiron Logo" width={160} height={40} className="h-10 w-auto transition duration-300 hover:opacity-80" />
             </a>
             <p className="text-xs text-gray-600 text-center">{t.home.aff_kiron}</p>
           </div>
 
-          <div className="w-48 flex-shrink-0 snap-start flex flex-col items-center bg-white p-4 rounded-lg shadow-md border border-gray-200">
+          <div className="w-48 flex-shrink-0 snap-start flex flex-col items-center bg-white p-4 rounded-lg shadow-md border border-gray-200 ui-lift">
             <a href="https://www.joinimagine.com" target="_blank" rel="noopener noreferrer" title="Visit Imagine Foundation Website" className="mb-3">
               <Image src="/imgs/imagine.webp" alt="Imagine Foundation Logo" width={160} height={40} className="h-10 w-auto transition duration-300 hover:opacity-80" />
             </a>
             <p className="text-xs text-gray-600 text-center">{t.home.aff_imagine}</p>
           </div>
 
-          <div className="w-48 flex-shrink-0 snap-start flex flex-col items-center bg-white p-4 rounded-lg shadow-md border border-gray-200">
+          <div className="w-48 flex-shrink-0 snap-start flex flex-col items-center bg-white p-4 rounded-lg shadow-md border border-gray-200 ui-lift">
             <a href="https://www.ashoka.org" target="_blank" rel="noopener noreferrer" title="Visit Ashoka Website" className="mb-3">
               <Image src="/imgs/ashoka.png" alt="Ashoka Logo" width={160} height={40} className="h-10 w-auto transition duration-300 hover:opacity-80" />
             </a>
             <p className="text-xs text-gray-600 text-center">{t.home.aff_ashoka}</p>
           </div>
 
-          <div className="w-48 flex-shrink-0 snap-start flex flex-col items-center bg-white p-4 rounded-lg shadow-md border border-gray-200">
+          <div className="w-48 flex-shrink-0 snap-start flex flex-col items-center bg-white p-4 rounded-lg shadow-md border border-gray-200 ui-lift">
             <a href="https://www.alxafrica.com" target="_blank" rel="noopener noreferrer" title="Visit Alx Website" className="mb-3">
               <Image src="/imgs/alx.svg" alt="alx Logo" width={160} height={40} className="h-10 w-auto transition duration-300 hover:opacity-80" />
             </a>
             <p className="text-xs text-gray-600 text-center">{t.home.aff_alx}</p>
           </div>
 
-          <div className="w-48 flex-shrink-0 snap-start flex flex-col items-center bg-white p-4 rounded-lg shadow-md border border-gray-200">
+          <div className="w-48 flex-shrink-0 snap-start flex flex-col items-center bg-white p-4 rounded-lg shadow-md border border-gray-200 ui-lift">
             <a href="https://www.ebk.go.ke/" target="_blank" rel="noopener noreferrer" title="Visit EBK Website" className="mb-3">
               <Image src="/imgs/ebk.png" alt="ebk Logo" width={160} height={40} className="h-10 w-auto transition duration-300 hover:opacity-80" />
             </a>
@@ -605,6 +606,45 @@ const AboutView = ({ t, setPage }: { t: T; setPage: SetPage }) => {
   return (
   <div className="page-fade-in">
     <SectionHeader title={t.about.hero_title} sub={t.about.hero_subtitle} />
+    <section className="py-4 bg-slate-950 text-white border-b border-white/10">
+      <div className="section-shell">
+        <div className="overflow-hidden">
+          <div className="animate-scroll motion-reduce:animate-none hover:[animation-play-state:paused] gap-2">
+            {[0, 1].map((dup) => (
+              <div key={dup} className="flex items-center gap-2 pr-2">
+                <span className="inline-flex items-center rounded-full border border-white/25 bg-white/10 px-3 py-1 text-[11px] font-semibold text-white ui-lift transition duration-300 hover:bg-white/15 hover:border-white/35">
+                  <Award className="w-3.5 h-3.5 mr-1.5 text-yellow-300 ui-pulse" />
+                  IEEE Best Paper 2025
+                </span>
+                <span className="inline-flex items-center rounded-full border border-white/25 bg-white/10 px-3 py-1 text-[11px] font-semibold text-white ui-lift transition duration-300 hover:bg-white/15 hover:border-white/35">
+                  <Cpu className="w-3.5 h-3.5 mr-1.5 text-indigo-300 ui-pulse" />
+                  PowerFactory MV/HV Simulation
+                </span>
+                <span className="inline-flex items-center rounded-full border border-white/25 bg-white/10 px-3 py-1 text-[11px] font-semibold text-white ui-lift transition duration-300 hover:bg-white/15 hover:border-white/35">
+                  <Layers className="w-3.5 h-3.5 mr-1.5 text-blue-300 ui-pulse" />
+                  500+ Time-Series Scenarios
+                </span>
+                <span className="inline-flex items-center rounded-full border border-white/25 bg-white/10 px-3 py-1 text-[11px] font-semibold text-white ui-lift transition duration-300 hover:bg-white/15 hover:border-white/35">
+                  <Shield className="w-3.5 h-3.5 mr-1.5 text-emerald-300 ui-pulse" />
+                  VDE-AR-N 4110 / §14a EnWG
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section className="py-4 bg-white border-b border-slate-200">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-3 text-sm text-slate-700">
+          <span className="font-semibold uppercase tracking-[0.14em] text-[11px] text-slate-500">{t.home.seen_title}</span>
+          <p className="m-0">
+            {t.home.seen_1} · {t.home.seen_2} · {t.home.seen_3} · {t.home.seen_4}
+          </p>
+        </div>
+      </div>
+    </section>
     
     <section className="section-space">
       <div className="section-shell">
@@ -832,9 +872,14 @@ const AboutView = ({ t, setPage }: { t: T; setPage: SetPage }) => {
         <h2 className="text-4xl font-bold mb-4">{t.about.outlook_title}</h2>
         <p className="text-xl font-light mb-6">{t.about.outlook_p1}</p>
         <p className="mb-8 opacity-90">{t.about.outlook_p2}</p>
-        <button onClick={() => setPage('contact')} className="btn-cta btn-cta-light inline-flex items-center">
-          {t.about.outlook_button} <ArrowRight className="w-5 h-5 ml-2" />
-        </button>
+        <div className="flex flex-col sm:flex-row gap-3 justify-center">
+          <button onClick={() => setPage('contact')} className="btn-cta btn-cta-light inline-flex items-center justify-center">
+            {t.about.outlook_button} <ArrowRight className="w-5 h-5 ml-2" />
+          </button>
+          <button onClick={() => setPage('blog')} className="btn-cta btn-cta-outline inline-flex items-center justify-center">
+            {t.about.outlook_insights_button} <ArrowRight className="w-5 h-5 ml-2" />
+          </button>
+        </div>
       </div>
     </section>
   </div>
@@ -1194,6 +1239,22 @@ const ProjectsView = ({ t, language }: { t: T; language: Language }) => {
         </p>
       </div>
     </header>
+
+    <section className="py-3 bg-slate-900 text-slate-100 border-y border-white/10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3">
+          {[t.home.cred_1, t.home.cred_2, t.home.cred_3, t.home.cred_4].map((item) => (
+            <span
+              key={item}
+              className="inline-flex items-center rounded-full border border-white/20 bg-white/5 px-3 py-1 text-[11px] sm:text-xs font-semibold tracking-[0.02em] text-slate-100 ui-lift"
+            >
+              <span className="mr-2 h-1.5 w-1.5 rounded-full bg-emerald-300 motion-safe:animate-pulse-soft" />
+              {item}
+            </span>
+          ))}
+        </div>
+      </div>
+    </section>
 
     {/* Main */}
     <main className="pt-4 lg:pt-6 pb-0">
@@ -1561,15 +1622,15 @@ const ProjectsView = ({ t, language }: { t: T; language: Language }) => {
                 </div>
                 
                 <div className="grid grid-cols-3 gap-4 border-t pt-4 mt-auto">
-                  <div className="text-center">
+                  <div className="text-center ui-lift">
                     <div className="text-3xl font-bold text-indigo-800">13%</div>
                     <p className="text-xs text-gray-500 font-medium">{t.projects.p4_stat_1_label}</p>
                   </div>
-                  <div className="text-center">
+                  <div className="text-center ui-lift">
                     <div className="text-3xl font-bold text-indigo-800">6x</div>
                     <p className="text-xs text-gray-500 font-medium">{t.projects.p4_stat_2_label}</p>
                   </div>
-                  <div className="text-center">
+                  <div className="text-center ui-lift">
                     <div className="text-3xl font-bold text-indigo-800">21%</div>
                     <p className="text-xs text-gray-500 font-medium">{t.projects.p4_stat_3_label}</p>
                   </div>
@@ -1582,7 +1643,7 @@ const ProjectsView = ({ t, language }: { t: T; language: Language }) => {
                 <div className="bg-gray-50 p-5 rounded-xl shadow-inner border border-gray-200">
                   <h5 className="text-lg font-bold text-gray-800 mb-2">{t.projects.p4_side_title}</h5>
                   <p className="text-sm text-gray-600 mb-4">{t.projects.p4_side_p}</p>
-                  <button onClick={() => window.location.href = '/ev-study'} className="btn-cta btn-cta-sm btn-cta-primary btn-cta-block mb-4">
+                  <button onClick={() => window.location.hash = 'ev-study'} className="btn-cta btn-cta-sm btn-cta-primary btn-cta-block mb-4">
                     {ctaCaseStudy}
                   </button>
                 </div>
@@ -1678,7 +1739,7 @@ const ProjectsView = ({ t, language }: { t: T; language: Language }) => {
                     <div className="text-3xl font-bold text-indigo-800">25%</div>
                     <p className="text-xs text-gray-500 font-medium">{t.projects.p5_stat_1_label}</p>
                   </div>
-                  <div className="text-center">
+                  <div className="text-center ui-lift">
                     <div className="text-3xl font-bold text-indigo-800">60MW</div>
                     <p className="text-xs text-gray-500 font-medium">{t.projects.p5_stat_2_label}</p>
                   </div>
@@ -1761,15 +1822,15 @@ const ProjectsView = ({ t, language }: { t: T; language: Language }) => {
                 </div>
                 
                 <div className="grid grid-cols-3 gap-2 border-t pt-3 mt-auto">
-                  <div className="text-center">
+                  <div className="text-center ui-lift">
                     <div className="text-2xl font-bold text-indigo-800">40%</div>
                     <p className="text-xs text-gray-500 font-medium">{t.projects.p6_stat_1_label}</p>
                   </div>
-                  <div className="text-center">
+                  <div className="text-center ui-lift">
                     <div className="text-2xl font-bold text-indigo-800">$2M</div>
                     <p className="text-xs text-gray-500 font-medium">{t.projects.p6_stat_2_label}</p>
                   </div>
-                  <div className="text-center">
+                  <div className="text-center ui-lift">
                     <div className="text-2xl font-bold text-indigo-800">95%</div>
                     <p className="text-xs text-gray-500 font-medium">{t.projects.p6_stat_3_label}</p>
                   </div>
@@ -1820,15 +1881,15 @@ const ProjectsView = ({ t, language }: { t: T; language: Language }) => {
                 </div>
                 
                 <div className="grid grid-cols-3 gap-2 border-t pt-3 mt-auto">
-                  <div className="text-center">
+                  <div className="text-center ui-lift">
                     <div className="text-2xl font-bold text-indigo-800">50%</div>
                     <p className="text-xs text-gray-500 font-medium">{t.projects.health_stat_1_label}</p>
                   </div>
-                  <div className="text-center">
+                  <div className="text-center ui-lift">
                     <div className="text-2xl font-bold text-indigo-800">30%</div>
                     <p className="text-xs text-gray-500 font-medium">{t.projects.health_stat_2_label}</p>
                   </div>
-                  <div className="text-center">
+                  <div className="text-center ui-lift">
                     <div className="text-2xl font-bold text-indigo-800">15k+</div>
                     <p className="text-xs text-gray-500 font-medium">{t.projects.health_stat_3_label}</p>
                   </div>
@@ -1923,15 +1984,15 @@ const ProjectsView = ({ t, language }: { t: T; language: Language }) => {
                 </div>
                 
                 <div className="grid grid-cols-3 gap-4 border-t pt-4 mt-auto">
-                  <div className="text-center">
+                  <div className="text-center ui-lift">
                     <div className="text-3xl font-bold text-indigo-800">5+</div>
                     <p className="text-xs text-gray-500 font-medium">{t.projects.climate_stat_1_label}</p>
                   </div>
-                  <div className="text-center">
+                  <div className="text-center ui-lift">
                     <div className="text-3xl font-bold text-indigo-800">2</div>
                     <p className="text-xs text-gray-500 font-medium">{t.projects.climate_stat_2_label}</p>
                   </div>
-                  <div className="text-center">
+                  <div className="text-center ui-lift">
                     <div className="text-3xl font-bold text-indigo-800">3x</div>
                     <p className="text-xs text-gray-500 font-medium">{t.projects.climate_stat_3_label}</p>
                   </div>
@@ -2202,8 +2263,22 @@ const BlogView = ({ t }: { t: T }) => (
             <div className="liquid-card card-pad rounded-xl shadow-lg border-l-4 border-indigo-800 text-center">
               <h3 className="text-2xl font-bold text-gray-900 mb-4">{t.blog.newsletter_title}</h3>
               <p className="text-gray-600 mb-6">{t.blog.newsletter_body}</p>
-              <form className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <input type="email" placeholder={t.blog.newsletter_placeholder} className="px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 w-full sm:w-80" />
+              <form
+                action="https://formspree.io/f/xoqooyrz"
+                method="POST"
+                className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+              >
+                <input type="hidden" name="_subject" defaultValue="Newsletter signup - cliffordomari.com" />
+                <input type="text" name="_gotcha" defaultValue="" className="hidden" tabIndex={-1} autoComplete="off" />
+                <input
+                  type="email"
+                  name="email"
+                  defaultValue=""
+                  required
+                  placeholder={t.blog.newsletter_placeholder}
+                  aria-label={t.blog.newsletter_placeholder}
+                  className="px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 w-full sm:w-80"
+                />
                 <button type="submit" className="btn-cta btn-cta-primary btn-cta-block">
                   {t.blog.newsletter_button}
                 </button>
@@ -3145,8 +3220,6 @@ const App = () => {
     { id: 'home', label: t.nav.home },
     { id: 'about', label: t.nav.about },
     { id: 'projects', label: t.nav.projects },
-    { id: 'philosophy', label: t.nav.philosophy },
-    { id: 'blog', label: t.nav.blog },
     { id: 'contact', label: t.nav.contact }
   ];
 
@@ -3184,7 +3257,7 @@ const App = () => {
               <button
                 type="button"
                 onClick={() => setMenuOpen((open) => !open)}
-                className="liquid-pill text-slate-700 hover:text-[--primary-indigo] focus:outline-none focus:ring-2 focus:ring-[--primary-indigo] rounded-lg p-2 transition duration-300"
+                className="liquid-pill text-slate-700 hover:text-[--primary-indigo] focus:outline-none focus:ring-2 focus:ring-[--primary-indigo] rounded-lg p-2 transition duration-300 ui-lift"
                 aria-controls="mobile-menu"
                 aria-expanded={menuOpen}
                 aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'}
@@ -3214,7 +3287,7 @@ const App = () => {
                   key={item.id}
                   type="button"
                   onClick={() => setCurrentPage(item.id)}
-                  className={`px-3 py-2 rounded-full text-sm transition duration-300 ${
+                  className={`px-3 py-2 rounded-full text-sm transition duration-300 ui-lift ${
                     currentPage === item.id
                       ? 'liquid-pill-active font-bold'
                       : 'liquid-pill text-gray-700 hover:text-[--primary-indigo] font-medium'
@@ -3228,7 +3301,7 @@ const App = () => {
                 <button
                   type="button"
                   onClick={() => setLanguage('en')}
-                  className={`language-toggle text-xs font-semibold py-1 px-3 rounded-full transition whitespace-nowrap ${
+                  className={`language-toggle text-xs font-semibold py-1 px-3 rounded-full transition whitespace-nowrap ui-lift ${
                     language === 'en'
                       ? 'active liquid-pill-active'
                       : 'liquid-pill text-gray-700'
@@ -3239,7 +3312,7 @@ const App = () => {
                 <button
                   type="button"
                   onClick={() => setLanguage('de')}
-                  className={`language-toggle text-xs font-semibold py-1 px-3 rounded-full transition whitespace-nowrap ${
+                  className={`language-toggle text-xs font-semibold py-1 px-3 rounded-full transition whitespace-nowrap ui-lift ${
                     language === 'de'
                       ? 'active liquid-pill-active'
                       : 'liquid-pill text-gray-700'
@@ -3262,7 +3335,7 @@ const App = () => {
                   setCurrentPage(item.id);
                   setMenuOpen(false);
                 }}
-                className={`block w-full text-left px-3 py-2 rounded-full text-base transition duration-300 ${
+                className={`block w-full text-left px-3 py-2 rounded-full text-base transition duration-300 ui-lift ${
                   currentPage === item.id
                     ? 'liquid-pill-active font-bold'
                     : 'liquid-pill text-gray-700 hover:text-[--primary-indigo] font-medium'
@@ -3275,7 +3348,7 @@ const App = () => {
               <button
                 type="button"
                 onClick={() => setLanguage('en')}
-                className={`language-toggle text-sm font-semibold py-1 px-3 rounded-full whitespace-nowrap transition duration-300 ${
+                className={`language-toggle text-sm font-semibold py-1 px-3 rounded-full whitespace-nowrap transition duration-300 ui-lift ${
                   language === 'en'
                     ? 'active liquid-pill-active'
                     : 'liquid-pill text-gray-700'
@@ -3286,7 +3359,7 @@ const App = () => {
               <button
                 type="button"
                 onClick={() => setLanguage('de')}
-                className={`language-toggle text-sm font-semibold py-1 px-3 rounded-full whitespace-nowrap transition duration-300 ${
+                className={`language-toggle text-sm font-semibold py-1 px-3 rounded-full whitespace-nowrap transition duration-300 ui-lift ${
                   language === 'de'
                     ? 'active liquid-pill-active'
                     : 'liquid-pill text-gray-700'
@@ -3299,15 +3372,18 @@ const App = () => {
         </div>
       </nav>
 
-      <div key={currentPage} ref={pageContentRef} tabIndex={-1} className="pt-0 page-fade-in focus:outline-none">
+      <div id="main-content" key={currentPage} ref={pageContentRef} tabIndex={-1} className="pt-0 page-fade-in focus:outline-none">
         {renderPage()}
       </div>
 
       <footer className="bg-gradient-to-b from-slate-900 to-slate-950 text-slate-400 py-12 text-center">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="liquid-card inline-flex items-center justify-center px-5 py-3 rounded-full mb-6">
-            <a href="https://www.linkedin.com/in/clifford-ondieki-tpm/" target="_blank" rel="noreferrer" className="text-gray-300 hover:text-[--highlight-gold] transition duration-300" title="LinkedIn Profile" aria-label="LinkedIn Profile">
-              <Linkedin size={28} />
+          <div className="liquid-card inline-flex items-center justify-center gap-4 px-5 py-3 rounded-full mb-6">
+            <a href="https://www.linkedin.com/in/clifford-ondieki-tpm/" target="_blank" rel="noreferrer" className="group text-black hover:text-[--highlight-gold] ui-lift transition duration-300" title="LinkedIn Profile" aria-label="LinkedIn Profile">
+              <Linkedin size={28} className="ui-pulse transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:scale-105" />
+            </a>
+            <a href="https://github.com/omari91" target="_blank" rel="noreferrer" className="group text-black hover:text-[--highlight-gold] ui-lift transition duration-300" title="GitHub Profile" aria-label="GitHub Profile">
+              <Github size={28} className="ui-pulse transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:scale-105" />
             </a>
           </div>
 
@@ -3315,11 +3391,11 @@ const App = () => {
             Copyright &copy; {new Date().getFullYear()} {t.nav.brand} | {t.footer.tagline}
           </p>
           <p className="text-xs flex items-center justify-center gap-2">
-            <button onClick={() => setCurrentPage('privacy')} className="liquid-pill px-3 py-1 rounded-full text-slate-700 hover:text-slate-900 transition duration-300">
+            <button onClick={() => setCurrentPage('privacy')} className="liquid-pill px-3 py-1 rounded-full text-slate-700 hover:text-slate-900 transition duration-300 ui-lift">
               {t.footer.privacy}
             </button>
             <span className="text-gray-600">|</span>
-            <button onClick={() => setCurrentPage('home')} className="liquid-pill px-3 py-1 rounded-full text-slate-700 hover:text-slate-900 transition duration-300">
+            <button onClick={() => setCurrentPage('home')} className="liquid-pill px-3 py-1 rounded-full text-slate-700 hover:text-slate-900 transition duration-300 ui-lift">
               {t.footer.home}
             </button>
           </p>

@@ -20,6 +20,48 @@ const GlobalStyles = () => (
       scroll-behavior: smooth;
     }
 
+    h1, h2, h3, h4 {
+      letter-spacing: -0.015em;
+      text-wrap: balance;
+    }
+
+    h1 {
+      line-height: 1.1;
+    }
+
+    h2, h3, h4 {
+      line-height: 1.2;
+    }
+
+    p {
+      line-height: 1.72;
+      font-weight: 400;
+    }
+
+    :focus-visible {
+      outline: 2px solid #4f46e5;
+      outline-offset: 2px;
+      border-radius: 0.5rem;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: 0.75rem;
+      top: -100%;
+      z-index: 100;
+      background: #111827;
+      color: #ffffff;
+      padding: 0.5rem 0.875rem;
+      border-radius: 0.5rem;
+      font-size: 0.875rem;
+      font-weight: 700;
+      transition: top 200ms ease;
+    }
+
+    .skip-link:focus {
+      top: 0.75rem;
+    }
+
     .section-shell {
       max-width: 80rem;
       margin-inline: auto;
@@ -232,6 +274,18 @@ const GlobalStyles = () => (
       50% { opacity: 0.8; }
     }
 
+    .ui-lift {
+      transition: transform 300ms ease, color 300ms ease;
+    }
+
+    .ui-lift:hover {
+      transform: translateY(-2px);
+    }
+
+    .ui-pulse {
+      animation: pulse-soft 3s ease-in-out infinite;
+    }
+
     .page-fade-in {
       animation: page-fade-in 700ms ease-out;
       will-change: opacity, transform;
@@ -268,6 +322,16 @@ const GlobalStyles = () => (
         animation: none !important;
         opacity: 1 !important;
         transform: none !important;
+      }
+
+      .ui-lift,
+      .ui-lift:hover {
+        transition: none !important;
+        transform: none !important;
+      }
+
+      .ui-pulse {
+        animation: none !important;
       }
     }
 
@@ -345,6 +409,7 @@ const GlobalStyles = () => (
       background: #ecfdf5;
       border: 1px solid #a7f3d0;
       white-space: nowrap;
+      transition: transform 300ms ease;
     }
 
     .chip-tech {
@@ -359,6 +424,12 @@ const GlobalStyles = () => (
       background: #f3f4f6;
       border: 1px solid #e5e7eb;
       white-space: nowrap;
+      transition: transform 300ms ease;
+    }
+
+    .chip-proof:hover,
+    .chip-tech:hover {
+      transform: translateY(-2px);
     }
 
   `}} />
