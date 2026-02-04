@@ -3,6 +3,9 @@ const nextConfig = {
   reactStrictMode: true,
   productionBrowserSourceMaps: false,
   poweredByHeader: false,
+  turbopack: {
+    root: __dirname,
+  },
   async headers() {
     return [
       {
