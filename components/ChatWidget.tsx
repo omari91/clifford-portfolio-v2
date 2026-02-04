@@ -36,21 +36,21 @@ export default function ChatWidget() {
   }, []);
 
   return (
-    <div className="fixed bottom-6 right-6 z-[60]">
+    <div className="fixed bottom-3 right-3 sm:bottom-6 sm:right-6 z-[60]">
       {open && (
-        <div className="w-[340px] sm:w-[380px] rounded-2xl shadow-2xl border border-slate-200 bg-white overflow-hidden mb-3">
-          <div className="flex items-center justify-between px-4 py-3 bg-indigo-900 text-white">
+        <div className="w-[calc(100vw-1.5rem)] max-w-[340px] sm:max-w-[380px] liquid-card rounded-2xl shadow-2xl overflow-hidden mb-3">
+          <div className="flex items-center justify-between px-4 py-3 liquid-pill">
             <div className="font-semibold text-sm">Clifford AI</div>
             <button
               type="button"
               onClick={() => setOpen(false)}
-              className="text-white/80 hover:text-white text-xs"
+              className="text-slate-600 hover:text-slate-900 text-xs transition duration-300"
             >
               Close
             </button>
           </div>
           <div className="px-4 py-6 text-sm text-slate-700 space-y-3">
-            <div className="rounded-xl bg-slate-100 px-3 py-2">
+            <div className="rounded-xl liquid-pill px-3 py-2">
               {language === "de"
                 ? "Chat ist in Entwicklung."
                 : "Chat is under development."}
@@ -69,7 +69,7 @@ export default function ChatWidget() {
                     event.preventDefault();
                   }
                 }}
-                className={`rounded-full border border-slate-200 px-3 py-1 text-xs font-semibold text-slate-700 hover:bg-slate-50 ${
+                className={`rounded-full liquid-pill px-3 py-1 text-xs font-semibold text-slate-700 transition duration-300 ${
                   activeHash === "#projects"
                     ? "opacity-50 cursor-not-allowed"
                     : ""
@@ -85,7 +85,7 @@ export default function ChatWidget() {
                     event.preventDefault();
                   }
                 }}
-                className={`rounded-full border border-slate-200 px-3 py-1 text-xs font-semibold text-slate-700 hover:bg-slate-50 ${
+                className={`rounded-full liquid-pill px-3 py-1 text-xs font-semibold text-slate-700 transition duration-300 ${
                   activeHash === "#about" ? "opacity-50 cursor-not-allowed" : ""
                 }`}
               >
@@ -99,7 +99,7 @@ export default function ChatWidget() {
                     event.preventDefault();
                   }
                 }}
-                className={`rounded-full border border-slate-200 px-3 py-1 text-xs font-semibold text-slate-700 hover:bg-slate-50 ${
+                className={`rounded-full liquid-pill px-3 py-1 text-xs font-semibold text-slate-700 transition duration-300 ${
                   activeHash === "#contact"
                     ? "opacity-50 cursor-not-allowed"
                     : ""
@@ -115,7 +115,7 @@ export default function ChatWidget() {
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
-        className="rounded-full bg-indigo-700 text-white px-4 py-3 shadow-lg hover:bg-indigo-600 transition"
+        className="rounded-full liquid-pill-active px-3 py-2 sm:px-4 sm:py-3 text-sm sm:text-base shadow-lg transition duration-300"
       >
         {open ? "Hide Chat" : "Chat"}
       </button>

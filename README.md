@@ -144,7 +144,16 @@ This hybrid background allows me to connect engineering precision with operation
 
 ## ⚖️ License
 
-This project is released under the [MIT License](LICENSE). You are welcome to reference or build upon the included research materials with appropriate attribution.
+This project is available under a [Permission Required License](LICENSE). Reuse, modification, or redistribution is allowed only after receiving prior written permission from the author.
+
+## 🔐 Frontend Protection Notes
+
+Client-side source code cannot be fully hidden in any browser.  
+This project uses practical deterrents for production:
+
+- Source maps disabled in production (`productionBrowserSourceMaps: false`)
+- Anti-embed protection (`X-Frame-Options: DENY`, `CSP frame-ancestors 'none'`)
+- Additional hardening headers (`X-Content-Type-Options`, `Referrer-Policy`, `Permissions-Policy`)
 
 ---
 

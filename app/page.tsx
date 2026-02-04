@@ -6,43 +6,23 @@ import {
   Cpu, 
   Activity, 
   GraduationCap, 
-  Menu, 
-  X, 
   Linkedin, 
   Github, 
   Award, 
   ArrowRight, 
-  Mail, 
   MapPin, 
   Globe, 
   CheckCircle2, 
   CloudLightning, 
-  MessageSquare, 
   Shield, 
   Layers, 
   Puzzle, 
   Lightbulb,
   TrendingUp, 
   Leaf, 
-  Database, 
-  Laptop, 
+  Wind,
   Users, 
-  FileText, 
-  Search,
-  TrendingDown, 
-  Rocket, 
-  ExternalLink,
-  Code,
-  Terminal,
-  Server,
-  BarChart3,
-  Clock,
-  Compass,
-  Check,
-  Star,
-  BookOpen,
   Eye,
-  Heart
 } from 'lucide-react';
 import CookieBanner from '../components/CookieBanner';
 
@@ -135,6 +115,7 @@ const TRANSLATIONS = {
       tech_stack_title: "Tech Stack & Platforms",
       tech_stack_sub: "A blend of technical and professional proficiencies",
       research_tag: "Featured Research",
+      article_tag: "Featured Article",
       research_title: "Solving the §14a EnWG Challenge with Math",
       research_main_title: "IEEE Best Paper Award (2025): Robust EV Grid Integration",
       research_desc: "Traditional grid planning fails under uncertainty. My research developed a Fuzzy Multi-Objective Optimization Framework that balances grid constraints with user equity, creating a robust solution for the deployment of EV infrastructure in Berlin.",
@@ -206,7 +187,7 @@ const TRANSLATIONS = {
       hero_subtitle: "From Kenya’s power grids to Berlin’s energy transition — blending engineering precision with systemic thinking.",
       bio_title: "Who I Am: The System Builder",
       bio_p1: "I'm Clifford Ondieki, a Power Systems Engineer who believes true innovation springs from a deep understanding of connections whether in high-voltage grids or human teams.",
-      bio_p2: "My path from analyzing grid stability in Kenya to optimizing energy systems in Berlin has been defined by one goal: bridging the gap between simulation and reality. Every challenge—from commissioning hardware to modeling renewable integration—shapes my approach to grid resilience and technical architecture.",
+      bio_p2: "My path from analyzing grid stability in Kenya to optimizing energy systems in Berlin has been defined by one goal: bridging the gap between simulation and reality. Every challenge from commissioning hardware to modeling renewable integration shapes my approach to grid resilience and technical architecture.",
       bio_quote: "For me, engineering is not just about efficiency; it's about building robust systems that adapt to the future.",
       edu_title: "Technical Foundation",
       edu_msc: "M.Sc. Engineering Management (Candidate)",
@@ -227,12 +208,12 @@ const TRANSLATIONS = {
       stars_title: "My Guiding Stars",
       stars_q: "\"Understanding is more important than memorization\"",
       stars_f: "— My Grandfather's Wisdom, shaping my approach to First Principles Engineering",
-      photo_caption: "From Kitale to Europe – validating models in the field.",
+      photo_caption: "From Kitale to Europe – validating models in the field. Where cliffs become stairs, each step carved with quiet strength. 🐐",
       overcome_title: "Overcoming & Development",
       overcome_1_t: "Finding the Balance: Systemic Intelligence",
-      overcome_1_p: "One of my biggest challenges was balancing academic rigor with field operations. This led me to develop \"Smart Laziness\" – the engineering art of deep analysis to find the single, strategic change that solves ten problems. It's about optimization over brute force.",
+      overcome_1_p: "One of my biggest challenges was balancing academic rigor with field operations. This led me to develop \"Smart Laziness\" - the engineering art of deep analysis to find the single, strategic change that solves ten problems. It's about optimization over brute force.",
       overcome_2_t: "Cultural Navigation: The Competitive Advantage",
-      overcome_2_p: "Settling in Berlin brought the challenge of adapting my problem-solving style. I've learned that diversity is a technical advantage—my heritage emphasizes resilience and adaptation, qualities essential for stabilizing modern power grids.",
+      overcome_2_p: "Settling in Berlin brought the challenge of adapting my problem solving style. I've learned that diversity is a technical advantage and my heritage emphasizes resilience and adaptation, qualities essential for stabilizing modern power grids.",
       stars_card1_t: "Technical Mentors",
       stars_card1_p: "Engineers who showed me that true mastery lies in understanding the \"why\" behind every Grid Code and VDE regulation, not just following the manual.",
       stars_card2_t: "Community Leaders",
@@ -240,7 +221,7 @@ const TRANSLATIONS = {
       skills_title: "Skills Forged Through Experience",
       skills_sub: "A hybrid skill set combining technical precision with operational strategy.",
       skills_1_t: "Grid & Systems Architecture",
-      skills_1_p: "From 11kV power lines to complex data pipelines – mastering system topology.",
+      skills_1_p: "From 11kV power lines to complex data pipelines by mastering system topology.",
       skills_2_t: "Intercultural Engineering",
       skills_2_p: "Bridging German standards (VDE) with adaptable problem-solving from emerging markets.",
       skills_3_t: "Operational Strategy",
@@ -258,6 +239,9 @@ const TRANSLATIONS = {
       endorse_2_name: "Valerie O.",
       endorse_2_role: "Customer Success Manager",
       endorse_2_quote: "\"Clifford embodies leadership with his hands-on approach to execute and deliver on set objectives... I strongly recommend him.\"",
+      endorse_3_name: "Abdul Idris",
+      endorse_3_role: "Key Account Manager - Contractor Consulting (Mentor)",
+      endorse_3_quote: "\"Clifford impressed me with his motivation, openness, and genuine commitment to integrating into the German job market. He consistently sought feedback on how to improve, actively implemented it, and showed a strong drive to grow both professionally and personally. His enthusiasm and proactive mindset made working with him a real pleasure.\"",
       outlook_title: "Looking Ahead: Grid Transformation",
       outlook_p1: "I aim to apply my hybrid skills in simulation and operations to the challenges of the German grid. My goal is to create systems that are resilient, efficient, and future-proof.",
       outlook_p2: "Long-term, I will continue to mentor the next generation of engineers, advance STEM education in Africa, and break barriers – always driven by purpose-oriented problem-solving.",
@@ -687,6 +671,7 @@ const TRANSLATIONS = {
       tech_stack_title: "Tech-Stack & Plattformen",
       tech_stack_sub: "Eine Mischung aus technischen und professionellen Kompetenzen",
       research_tag: "Ausgewählte Forschung",
+      article_tag: "Ausgewählter Artikel",
       research_title: "Die §14a EnWG-Herausforderung mit Mathematik lösen",
       research_main_title: "IEEE Best Paper Award (2025): Robuste EV-Netzintegration",
       research_desc: "Meine Forschung entwickelte ein Framework, das Netzbeschränkungen mit Nutzergerechtigkeit ausbalanciert und robuste Lösungen für Berlin bietet.",
@@ -810,6 +795,9 @@ const TRANSLATIONS = {
       endorse_2_name: "Valerie O.",
       endorse_2_role: "Customer Success Managerin",
       endorse_2_quote: "\"Clifford verkörpert Leadership mit praxisnaher Umsetzung... ich empfehle ihn ausdrücklich.\"",
+      endorse_3_name: "Abdul Idris",
+      endorse_3_role: "Key Account Manager - Contractor Consulting (Mentor)",
+      endorse_3_quote: "\"Clifford hat mich mit seiner Motivation, Offenheit und seinem echten Einsatz für die Integration in den deutschen Arbeitsmarkt beeindruckt. Er hat aktiv Feedback gesucht, es konsequent umgesetzt und großen Willen zur fachlichen wie persönlichen Weiterentwicklung gezeigt. Seine positive, proaktive Art machte die Zusammenarbeit besonders angenehm.\"",
       outlook_title: "Ausblick: Netztransformation",
       outlook_p1: "Ich möchte meine hybriden Skills in Simulation und Betrieb auf die Herausforderungen des deutschen Netzes anwenden. Mein Ziel: Systeme, die resilient, effizient und zukunftssicher sind.",
       outlook_p2: "Langfristig werde ich die nächste Generation von Ingenieurinnen und Ingenieuren fördern, STEM‑Bildung in Afrika voranbringen und Barrieren abbauen – immer getrieben von sinnorientiertem Problemlösen.",
@@ -1219,30 +1207,10 @@ type PageId =
   | 'privacy';
 type SetPage = React.Dispatch<React.SetStateAction<PageId>>;
 
-type ImageBoxProps = {
-  src?: string;
-  alt?: string;
-  className?: string;
-  type?: 'default' | 'avatar';
-};
-
 type SectionHeaderProps = {
   title: string;
   sub: string;
   dark?: boolean;
-};
-
-type ProjectCardProps = {
-  title: string;
-  tag: string;
-  sub: string;
-  desc: string;
-  innovation: string;
-  whyMatters: string;
-  tags: string[];
-  sideContent: React.ReactNode;
-  iTag: string;
-  wTag: string;
 };
 
 // --- GLOBAL STYLES COMPONENT ---
@@ -1266,12 +1234,199 @@ const GlobalStyles = () => (
       color: var(--neutral-charcoal);
       background: #FFFFFF;
       overflow-x: hidden;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .section-shell {
+      max-width: 80rem;
+      margin-inline: auto;
+      padding-inline: 1rem;
+    }
+
+    .section-shell-narrow {
+      max-width: 56rem;
+      margin-inline: auto;
+      padding-inline: 1rem;
+    }
+
+    .section-space {
+      padding-block: clamp(3rem, 6vw, 5rem);
+    }
+
+    .type-section-title {
+      font-size: clamp(1.875rem, 3.5vw, 2.5rem);
+      line-height: 1.1;
+      letter-spacing: -0.015em;
+      font-weight: 800;
+      color: #0f172a;
+    }
+
+    .type-section-sub {
+      font-size: clamp(1rem, 1.4vw, 1.125rem);
+      line-height: 1.7;
+      color: #475569;
+      max-width: 52rem;
+      margin-inline: auto;
+    }
+
+    .card-pad {
+      padding: 1.25rem;
+    }
+
+    @media (min-width: 640px) {
+      .section-shell,
+      .section-shell-narrow {
+        padding-inline: 1.5rem;
+      }
+
+      .card-pad {
+        padding: 1.5rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .section-shell,
+      .section-shell-narrow {
+        padding-inline: 2rem;
+      }
+
+      .card-pad {
+        padding: 2rem;
+      }
     }
 
     .glass-nav {
-      background: rgba(255, 255, 255, 0.8);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
+      background: linear-gradient(135deg, rgba(255,255,255,0.86), rgba(255,255,255,0.7));
+      backdrop-filter: blur(18px) saturate(140%);
+      -webkit-backdrop-filter: blur(18px) saturate(140%);
+      border-bottom: 1px solid rgba(148, 163, 184, 0.35);
+      box-shadow: 0 10px 28px rgba(15, 23, 42, 0.08), inset 0 1px 0 rgba(255,255,255,0.65);
+    }
+
+    .liquid-card {
+      background: linear-gradient(160deg, rgba(255,255,255,0.88), rgba(255,255,255,0.74));
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      backdrop-filter: blur(14px) saturate(135%);
+      -webkit-backdrop-filter: blur(14px) saturate(135%);
+      box-shadow: 0 12px 26px rgba(15, 23, 42, 0.09), inset 0 1px 0 rgba(255,255,255,0.72);
+    }
+
+    .liquid-pill {
+      background: rgba(255,255,255,0.88);
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.75);
+    }
+
+    .liquid-pill:hover {
+      background: rgba(255,255,255,0.95);
+    }
+
+    .liquid-pill-active {
+      background: linear-gradient(145deg, rgba(67,56,202,0.95), rgba(79,70,229,0.9));
+      border: 1px solid rgba(99,102,241,0.85);
+      color: #fff;
+      box-shadow: 0 10px 20px rgba(67, 56, 202, 0.25), inset 0 1px 0 rgba(255,255,255,0.25);
+    }
+
+    .btn-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 3rem;
+      padding: 0.75rem 1.5rem;
+      border-radius: 9999px;
+      font-size: 1rem;
+      line-height: 1.25rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      text-align: center;
+      transition: all 300ms ease;
+      white-space: nowrap;
+    }
+
+    .btn-cta-sm {
+      min-height: 2.5rem;
+      padding: 0.5rem 1rem;
+      font-size: 0.875rem;
+      line-height: 1.25rem;
+      font-weight: 700;
+    }
+
+    .btn-cta-block {
+      width: 100%;
+    }
+
+    @media (min-width: 640px) {
+      .btn-cta {
+        min-height: 3.25rem;
+        padding: 0.8rem 1.75rem;
+      }
+
+      .btn-cta-block {
+        width: auto;
+      }
+    }
+
+    .btn-cta-primary {
+      background: #4f46e5;
+      border: 1px solid #4f46e5;
+      color: #ffffff;
+      box-shadow: 0 12px 28px rgba(79, 70, 229, 0.28);
+    }
+
+    .btn-cta-primary:hover {
+      background: #4338ca;
+      border-color: #4338ca;
+    }
+
+    .btn-cta-outline {
+      background: transparent;
+      border: 2px solid #facc15;
+      color: #facc15;
+    }
+
+    .btn-cta-outline:hover {
+      background: #fefce8;
+      color: #111827;
+    }
+
+    .btn-cta-light {
+      background: #ffffff;
+      border: 1px solid #ffffff;
+      color: #312e81;
+      box-shadow: 0 12px 28px rgba(15, 23, 42, 0.2);
+    }
+
+    .btn-cta-light:hover {
+      background: #f8fafc;
+    }
+
+    .btn-cta-dark {
+      background: #111827;
+      border: 1px solid #111827;
+      color: #ffffff;
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.24);
+    }
+
+    .btn-cta-dark:hover {
+      background: #1f2937;
+      border-color: #1f2937;
+    }
+
+    @media (max-width: 640px) {
+      .glass-nav,
+      .liquid-card,
+      .liquid-pill {
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+      }
     }
 
     .hero-mesh {
@@ -1295,8 +1450,47 @@ const GlobalStyles = () => (
     }
 
     @keyframes pulse-soft {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.8; transform: scale(0.98); }
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.8; }
+    }
+
+    .page-fade-in {
+      animation: page-fade-in 700ms ease-out;
+      will-change: opacity, transform;
+    }
+
+    @keyframes page-fade-in {
+      0% { opacity: 0; transform: translateY(8px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .page-fade-in section {
+      opacity: 0;
+      transform: translateY(10px);
+      animation: section-focus-in 700ms ease-out forwards;
+    }
+
+    .page-fade-in section:nth-of-type(1) { animation-delay: 60ms; }
+    .page-fade-in section:nth-of-type(2) { animation-delay: 100ms; }
+    .page-fade-in section:nth-of-type(3) { animation-delay: 140ms; }
+    .page-fade-in section:nth-of-type(4) { animation-delay: 180ms; }
+    .page-fade-in section:nth-of-type(5) { animation-delay: 220ms; }
+    .page-fade-in section:nth-of-type(6) { animation-delay: 260ms; }
+    .page-fade-in section:nth-of-type(7) { animation-delay: 300ms; }
+    .page-fade-in section:nth-of-type(8) { animation-delay: 340ms; }
+
+    @keyframes section-focus-in {
+      0% { opacity: 0; transform: translateY(10px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .page-fade-in,
+      .page-fade-in section {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+      }
     }
 
     .paper-texture {
@@ -1318,43 +1512,81 @@ const GlobalStyles = () => (
     .animate-scroll {
       display: flex;
       width: max-content;
-      animation: scroll 30s linear infinite;
+      animation: scroll 55s linear infinite;
     }
 
     @keyframes scroll {
       0% { transform: translateX(0); }
       100% { transform: translateX(-50%); }
     }
+
+    .journey-timeline {
+      position: relative;
+      margin: 0 auto;
+      padding-left: 1.5rem;
+      border-left: 2px solid rgba(136, 14, 79, 0.25);
+    }
+
+    .journey-item {
+      position: relative;
+      background: #ffffff;
+      border-radius: 0.75rem;
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 8px 24px rgba(2, 6, 23, 0.06);
+      padding: 1.25rem 1.25rem 1.25rem 1.5rem;
+      margin-bottom: 1rem;
+      transition: transform 300ms ease, box-shadow 300ms ease;
+    }
+
+    .journey-item::before {
+      content: "";
+      position: absolute;
+      left: -2.1rem;
+      top: 1.4rem;
+      width: 0.75rem;
+      height: 0.75rem;
+      border-radius: 9999px;
+      background: var(--accent-fire);
+      box-shadow: 0 0 0 4px rgba(136, 14, 79, 0.15);
+    }
+
+    .journey-item:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 30px rgba(2, 6, 23, 0.1);
+    }
+
+    .chip-proof {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.25rem 0.625rem;
+      border-radius: 9999px;
+      font-size: 11px;
+      font-weight: 700;
+      line-height: 1;
+      color: #065f46;
+      background: #ecfdf5;
+      border: 1px solid #a7f3d0;
+      white-space: nowrap;
+    }
+
+    .chip-tech {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 1;
+      color: #1f2937;
+      background: #f3f4f6;
+      border: 1px solid #e5e7eb;
+      white-space: nowrap;
+    }
+
   `}} />
 );
 
 // --- UTILITY COMPONENTS ---
-
-const ImageBox = ({ src, alt, className, type = "default" }: ImageBoxProps) => {
-  const [error, setError] = useState(false);
-  
-  if (error || !src) {
-    return (
-      <div className={`${className} bg-slate-100 flex flex-col items-center justify-center text-indigo-900 font-black p-4 text-center border border-slate-200`}>
-        {type === "avatar" ? (
-          <Users size={48} className="opacity-20 mb-2" />
-        ) : (
-          <Layers size={64} className="opacity-10 mb-4" />
-        )}
-        <span className="text-[10px] uppercase tracking-widest opacity-40">{alt}</span>
-      </div>
-    );
-  }
-
-  return (
-    <img 
-      src={src} 
-      alt={alt} 
-      className={className} 
-      onError={() => setError(true)}
-    />
-  );
-};
 
 const SectionHeader = ({ title, sub, dark = false }: SectionHeaderProps) => (
   <header className={`py-16 lg:py-20 text-center ${dark ? 'bg-slate-950 text-white' : 'bg-indigo-900 text-white'} relative overflow-hidden`}>
@@ -1363,63 +1595,51 @@ const SectionHeader = ({ title, sub, dark = false }: SectionHeaderProps) => (
   </header>
 );
 
-const ProjectCard = ({
-  title,
-  tag,
-  sub,
-  desc,
-  innovation,
-  whyMatters,
-  tags,
-  sideContent,
-  iTag,
-  wTag
-}: ProjectCardProps) => (
-  <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-slate-100 mb-16 hover:shadow-2xl transition-all duration-700 group">
-    <div className="grid lg:grid-cols-2">
-      <div className="p-8 flex flex-col justify-center">
-        <h2 className="text-2xl font-black text-slate-950 tracking-tighter leading-none">{title}</h2>
-        <span className="bg-indigo-50 text-indigo-700 text-sm font-black px-4 py-1.5 rounded-full uppercase tracking-[0.2em]">{tag}</span>
-        <p className="text-indigo-600 font-extrabold mb-8 text-lg tracking-tight">{sub}</p>
-        <div className="mb-8 border-l-4 border-teal-500 pl-6 bg-teal-50/30 p-6 rounded-r-2xl">
-          <h4 className="text-sm font-black text-teal-900 mb-2 uppercase tracking-[0.3em]">{iTag}</h4>
-          <p className="text-gray-600 text-base italic leading-relaxed font-medium">{innovation}</p>
-        </div>
-        <div className="mb-8 border-l-4 border-indigo-600 pl-6 bg-indigo-50/30 p-6 rounded-r-2xl">
-          <h4 className="text-sm font-black text-indigo-900 mb-2 uppercase tracking-[0.3em]">{wTag}</h4>
-          <p className="text-gray-600 text-base italic leading-relaxed font-medium">{whyMatters}</p>
-        </div>
-        <p className="text-gray-500 mb-12 leading-relaxed text-base font-light">{desc}</p>
-        <div className="flex flex-wrap gap-3 mb-10">
-          {tags.map(t => <span key={t} className="px-4 py-2 bg-slate-50 text-slate-500 text-sm font-black uppercase tracking-widest rounded-xl border border-slate-100">{t}</span>)}
-        </div>
-        <button className="inline-flex items-center text-indigo-700 font-black text-sm uppercase tracking-[0.4em] group-hover:translate-x-4 transition-all duration-500">
-          Explore Technical Case <ArrowRight className="ml-3" size={18} />
-        </button>
-      </div>
-      <div className="bg-slate-950 p-8 flex items-center justify-center relative overflow-hidden min-h-[400px]">
-        <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/20 to-transparent"></div>
-        {sideContent}
-      </div>
+const ProblemSolutionImpact = ({
+  language,
+  problem,
+  solution,
+  impact
+}: {
+  language: Language;
+  problem: string;
+  solution: string;
+  impact: string;
+}) => (
+  <div className="mb-5 space-y-2 sm:space-y-3">
+    <div className="border-l-4 border-rose-800 pl-3 sm:pl-4 bg-rose-50 p-3 sm:p-4 rounded-md">
+      <h4 className="text-xs sm:text-sm font-black text-rose-900 mb-1">{language === 'en' ? 'Problem' : 'Problem'}</h4>
+      <p className="text-gray-600 text-xs sm:text-sm">{problem}</p>
+    </div>
+    <div className="border-l-4 border-teal-700 pl-3 sm:pl-4 bg-teal-50 p-3 sm:p-4 rounded-md">
+      <h4 className="text-xs sm:text-sm font-black text-teal-900 mb-1">{language === 'en' ? 'Solution' : 'Loesung'}</h4>
+      <p className="text-gray-600 text-xs sm:text-sm">{solution}</p>
+    </div>
+    <div className="border-l-4 border-blue-800 pl-3 sm:pl-4 bg-blue-50 p-3 sm:p-4 rounded-md">
+      <h4 className="text-xs sm:text-sm font-black text-blue-900 mb-1">{language === 'en' ? 'Impact' : 'Wirkung'}</h4>
+      <p className="text-gray-600 text-xs sm:text-sm">{impact}</p>
     </div>
   </div>
 );
 
 // --- MAIN VIEWS ---
 
-const Home = ({ setPage, t, language }: { setPage: SetPage; t: T; language: Language }) => (
-  <div className="animate-in fade-in duration-1000">
+const Home = ({ setPage, t, language }: { setPage: SetPage; t: T; language: Language }) => {
+  const [activeFeatureTile, setActiveFeatureTile] = useState<'research' | 'article'>('research');
+
+  return (
+  <div className="page-fade-in">
     {/* HERO */}
-    <section className="relative h-screen flex items-center justify-center bg-cover bg-center text-white overflow-hidden" style={{ backgroundImage: "url('/imgs/website.png')" }}>
+    <section className="relative min-h-[100svh] md:min-h-screen flex items-start md:items-center justify-center bg-cover bg-center text-white overflow-hidden py-20 md:py-0" style={{ backgroundImage: "url('/imgs/website.png')" }}>
       <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-indigo-900/70 to-gray-900/80"></div>
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10 w-full">
-        <div className="flex flex-col md:flex-row items-center gap-12">
-          <div className="md:w-3/5 lg:w-1/2 text-center md:text-left">
-            <div className="inline-flex items-center space-x-4 bg-indigo-500/10 border border-indigo-500/20 px-6 py-2.5 rounded-full mb-12 backdrop-blur-xl">
-               <span className="w-3 h-3 rounded-full bg-teal-400 animate-pulse shadow-[0_0_20px_rgba(45,212,191,0.6)]"></span>
-               <span className="text-[11px] font-black uppercase tracking-[0.5em] text-indigo-200">{t.home.status_badge}</span>
+        <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+          <div className="w-full md:w-3/5 lg:w-1/2 text-center md:text-left">
+            <div className="inline-flex items-center space-x-3 bg-indigo-500/10 border border-indigo-500/20 px-4 sm:px-6 py-2 rounded-full mb-5 md:mb-8 backdrop-blur-xl">
+              <span className="w-3 h-3 rounded-full bg-teal-400 animate-pulse shadow-[0_0_20px_rgba(45,212,191,0.6)]"></span>
+              <span className="text-[10px] sm:text-[11px] font-black uppercase tracking-[0.35em] sm:tracking-[0.5em] text-indigo-200">{t.home.status_badge}</span>
             </div>
-            <h1 className="text-4xl sm:text-5xl font-extrabold text-white leading-tight mb-6">
+            <h1 className="text-3xl sm:text-5xl font-extrabold text-white leading-tight mb-4 md:mb-6">
               {t.home.hero_title.split('&').map((part: string, i: number) => (
                 <React.Fragment key={i}>
                   {part} {i === 0 && <br className="hidden md:block" />}
@@ -1427,7 +1647,7 @@ const Home = ({ setPage, t, language }: { setPage: SetPage; t: T; language: Lang
                 </React.Fragment>
               ))}
             </h1>
-            <p className="text-lg text-gray-200 mb-8">
+            <p className="text-base sm:text-lg text-gray-200 mb-6 md:mb-8">
               {t.home.hero_subtitle_pre}{" "}
               <span className="font-semibold text-yellow-400">{t.home.hero_subtitle_grid}</span>{" "}
               {t.home.hero_subtitle_mid}{" "}
@@ -1435,36 +1655,57 @@ const Home = ({ setPage, t, language }: { setPage: SetPage; t: T; language: Lang
               {t.home.hero_subtitle_tail}{" "}
               <span className="font-semibold text-rose-400">{t.home.hero_subtitle_target}</span>.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center md:justify-start">
               <button 
                 onClick={() => setPage('projects')} 
-                className="py-3 px-8 rounded-full bg-yellow-500 text-gray-900 font-bold shadow-lg transition duration-300 transform hover:scale-105 text-center"
+                className="btn-cta btn-cta-block bg-yellow-500 text-gray-900 hover:bg-yellow-400"
               >
                 {t.home.cta_portfolio}
               </button>
               <button 
                 onClick={() => setPage('contact')} 
-                className="py-3 px-8 rounded-full border-2 border-yellow-400 text-yellow-400 font-bold transition duration-300 transform hover:bg-yellow-50 hover:text-gray-900 hover:scale-105 text-center"
+                className="btn-cta btn-cta-block btn-cta-outline"
               >
                 {t.home.cta_contact}
               </button>
             </div>
           </div>
-          <div className="md:w-2/5 lg:w-1/2 flex justify-center mt-12 md:mt-0">
+          <div className="hidden md:flex md:w-2/5 lg:w-1/2 justify-center mt-12 md:mt-0">
             <div className="relative w-64 h-64 sm:w-80 sm:h-80">
               <img src="/imgs/GOAT.jpg" alt="Clifford Ondieki" className="rounded-full w-full h-full object-cover shadow-2xl border-8 border-white/10" />
               <div className="absolute -bottom-4 -right-4 bg-white text-indigo-900 px-4 py-2 rounded-lg shadow-xl font-bold text-sm flex items-center animate-blink">
                 <span className="text-yellow-500 mr-2">🏆</span> {t.home.ieee_badge}
               </div>
+              <a
+                href="https://berlin.cwiemeevents.com/articles/how-cwieme-shaped-clifford-ondiekis-future"
+                target="_blank"
+                rel="noreferrer"
+                className="absolute -bottom-16 right-0 bg-emerald-600 text-white px-3 py-1.5 rounded-lg shadow-lg font-semibold text-xs hover:bg-emerald-500 transition"
+              >
+                {t.home.article_tag}
+              </a>
             </div>
           </div>
         </div>
       </div>
     </section>
 
+    <section className="py-6 bg-slate-950 text-white border-y border-white/10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4">
+          <span className="text-xs uppercase tracking-[0.3em] text-slate-300 mr-2">Trusted Stack</span>
+          {TECH_STACK.slice(0, 6).map((stack) => (
+            <span key={stack.key} className="text-xs sm:text-sm px-3 py-1.5 rounded-full border border-white/20 bg-white/5">
+              {t.home.tech_stack_labels[stack.key] ?? stack.name}
+            </span>
+          ))}
+        </div>
+      </div>
+    </section>
+
     {/* SERVICE AREAS */}
-    <section className="py-12 lg:py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-8">
+    <section className="section-space bg-white">
+      <div className="section-shell">
         <div className="bg-white p-10 rounded-xl shadow-2xl border-l-8 border-indigo-800">
           <h2 className="text-3xl font-extrabold text-indigo-800 mb-4 text-center">{t.home.future_title}</h2>
           <p className="text-center text-lg text-gray-700 max-w-4xl mx-auto mb-8">{t.home.future_desc}</p>
@@ -1474,8 +1715,8 @@ const Home = ({ setPage, t, language }: { setPage: SetPage; t: T; language: Lang
               { icon: <Cpu size={48} />, title: t.home.card2_title, body: t.home.card2_body },
               { icon: <Activity size={48} />, title: t.home.card3_title, body: t.home.card3_body }
             ].map((pillar, i) => (
-              <a key={i} href="#projects" onClick={() => setPage('projects')} className="block p-4 rounded-lg border-2 border-transparent transition-all duration-300 hover:shadow-lg hover:border-indigo-600 hover:scale-[1.03] group">
-                <div className="w-10 h-10 mx-auto mb-3 text-yellow-400 transition-all duration-300 group-hover:scale-110">
+              <a key={i} href="#projects" onClick={() => setPage('projects')} className="block p-4 rounded-lg border-2 border-transparent transition-all duration-300 hover:shadow-lg hover:border-indigo-600 hover:-translate-y-1 group">
+                <div className="w-10 h-10 mx-auto mb-3 text-yellow-400 transition-transform duration-300 group-hover:-translate-y-0.5">
                   {pillar.icon}
                 </div>
                 <h3 className="text-xl font-semibold text-gray-800 mb-1 transition-all duration-300 group-hover:text-indigo-700">{pillar.title}</h3>
@@ -1489,11 +1730,11 @@ const Home = ({ setPage, t, language }: { setPage: SetPage; t: T; language: Lang
     </section>
 
     {/* BIO SECTION */}
-    <section className="py-12 lg:py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-8">
+    <section className="section-space bg-white">
+      <div className="section-shell">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">{t.home.bio_title}</h2>
+            <h2 className="type-section-title mb-4">{t.home.bio_title}</h2>
             <p className="text-lg leading-relaxed mb-4">{t.home.bio_p1}</p>
             <p className="text-base mb-6">
               {t.home.bio_p2_pre}{' '}
@@ -1516,7 +1757,7 @@ const Home = ({ setPage, t, language }: { setPage: SetPage; t: T; language: Lang
                 <span>{t.home.stat_location}</span>
               </div>
             </div>
-            <button onClick={() => setPage('about')} className="inline-block py-3 px-6 rounded-full bg-indigo-800 text-white font-semibold hover:bg-indigo-700 transition duration-300 mt-6">
+            <button onClick={() => setPage('about')} className="btn-cta btn-cta-primary mt-6">
               {t.home.bio_button}
             </button>
           </div>
@@ -1529,41 +1770,130 @@ const Home = ({ setPage, t, language }: { setPage: SetPage; t: T; language: Lang
     </section>
 
     {/* RESEARCH */}
-    <section className="py-12 lg:py-20 bg-slate-950 text-white">
-      <div className="max-w-7xl mx-auto px-8">
+    <section className="section-space bg-slate-950 text-white">
+      <div className="section-shell">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-white mb-4">{t.home.research_tag}</h2>
-          <p className="text-lg text-gray-300">{t.home.research_title}</p>
-        </div>
-        <div className="max-w-5xl mx-auto">
-          <div className="bg-blue-50 p-8 rounded-xl border-l-4 border-blue-500 text-center shadow-lg">
-            <h3 className="text-3xl font-bold text-blue-800 mb-4">
-              {t.home.research_main_title}
-            </h3>
-            <p className="text-lg text-gray-700 mb-8 max-w-3xl mx-auto">
-              {t.home.research_desc}
-            </p>
-            <div className="inline-block bg-white p-6 rounded-2xl shadow-xl border-4 border-green-500 mb-4">
-              <p className="text-xl font-semibold text-gray-600 mb-2">{t.home.research_stat_title}</p>
-              <p className="text-6xl font-black text-green-600">{t.home.research_stat_val}</p>
-              <p className="text-lg mt-2 text-gray-700">{t.home.research_stat_label}</p>
-            </div>
-            <div className="mt-4">
-              <button onClick={() => setPage('ev-study')} className="inline-block py-3 px-8 rounded-full bg-indigo-800 text-white font-bold shadow-xl hover:bg-indigo-700 transition duration-300">
-                {t.home.research_button}
-              </button>
-            </div>
+          <div className="flex items-center justify-center gap-3 mb-4 flex-wrap">
+            <button
+              type="button"
+              onClick={() => setActiveFeatureTile('research')}
+              className={`inline-flex items-center rounded-full border px-4 py-1.5 text-sm font-semibold transition ${
+                activeFeatureTile === 'research'
+                  ? 'border-white/50 bg-white/20 text-white'
+                  : 'border-white/30 bg-white/10 text-white hover:bg-white/15'
+              }`}
+            >
+              {t.home.research_tag}
+            </button>
+            <button
+              type="button"
+              onClick={() => setActiveFeatureTile('article')}
+              className={`inline-flex items-center rounded-full border px-4 py-1.5 text-sm font-semibold transition ${
+                activeFeatureTile === 'article'
+                  ? 'border-emerald-300/60 bg-emerald-500/30 text-emerald-100'
+                  : 'border-emerald-300/40 bg-emerald-500/20 text-emerald-200 hover:bg-emerald-500/30'
+              }`}
+            >
+              {t.home.article_tag}
+            </button>
           </div>
+          <p className="text-lg text-gray-300">
+            {activeFeatureTile === 'research'
+              ? t.home.research_title
+              : "How CWIEME shaped My future"}
+          </p>
         </div>
+        {activeFeatureTile === 'article' ? (
+          <div className="max-w-6xl mx-auto">
+            <a
+              href="https://berlin.cwiemeevents.com/articles/how-cwieme-shaped-clifford-ondiekis-future"
+              target="_blank"
+              rel="noreferrer"
+              className="group block w-full text-left"
+            >
+              <div className="relative overflow-hidden rounded-3xl border border-white/15 shadow-2xl">
+                <img
+                  src="/imgs/1769782529906_1.jpg"
+                  alt="Featured article cover"
+                  className="w-full h-[300px] sm:h-[520px] object-contain object-center bg-[#0b4e62] transition-opacity duration-500 group-hover:opacity-95"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-900/10 to-transparent" />
+                <div className="relative sm:absolute inset-x-0 bottom-0 p-4 sm:p-8 bg-slate-950/92 sm:bg-transparent">
+                  <span className="inline-flex items-center rounded-full bg-emerald-500/20 border border-emerald-300/30 px-3 py-1 text-[11px] tracking-[0.25em] uppercase text-emerald-200 mb-3">
+                    {t.home.article_tag}
+                  </span>
+                  <h3 className="text-lg sm:text-2xl font-extrabold text-white mb-2">
+                    How CWIEME shaped My future
+                  </h3>
+                  <p className="text-sm sm:text-base text-slate-200 mb-4 sm:mb-6 max-w-4xl">
+                    Can curiosity turn into direction? One conversation about EV charging became an IEEE award-winning paper.
+                  </p>
+                  <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
+                    <div className="inline-flex items-center gap-3 bg-white/10 border border-white/20 rounded-xl px-3 sm:px-4 py-3 max-w-full">
+                      <span className="text-2xl font-black text-emerald-300">CWIEME</span>
+                      <div className="text-sm text-slate-200">
+                        <p className="font-semibold">Featured Article</p>
+                        <p className="opacity-80">Conference career story</p>
+                      </div>
+                    </div>
+                    <span className="btn-cta btn-cta-sm btn-cta-primary">
+                      Read Featured Article <ArrowRight className="ml-2 w-4 h-4" />
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+        ) : (
+          <div className="max-w-6xl mx-auto">
+            <button
+              onClick={() => setPage('ev-study')}
+              className="group block w-full text-left"
+              aria-label={t.home.research_button}
+            >
+              <div className="relative overflow-hidden rounded-3xl border border-white/15 shadow-2xl">
+                <img
+                  src="/imgs/berlin.png"
+                  alt={t.home.research_main_title}
+                  className="w-full h-[300px] sm:h-[520px] object-cover transition-opacity duration-500 group-hover:opacity-95"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-900/50 to-transparent" />
+                <div className="relative sm:absolute inset-x-0 bottom-0 p-4 sm:p-8 bg-slate-950/92 sm:bg-transparent">
+                  <span className="inline-flex items-center rounded-full bg-emerald-500/20 border border-emerald-300/30 px-3 py-1 text-[11px] tracking-[0.25em] uppercase text-emerald-200 mb-3">
+                    {language === 'en' ? 'Featured Case' : 'Featured Case'}
+                  </span>
+                  <h3 className="text-2xl sm:text-4xl font-extrabold text-white mb-3 max-w-4xl">
+                    {t.home.research_main_title}
+                  </h3>
+                  <p className="text-base sm:text-lg text-slate-200 max-w-4xl mb-4 sm:mb-6">
+                    {t.home.research_desc}
+                  </p>
+                  <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
+                    <div className="inline-flex items-center gap-3 bg-white/10 border border-white/20 rounded-xl px-3 sm:px-4 py-3 max-w-full">
+                      <span className="text-2xl sm:text-3xl font-black text-emerald-300">{t.home.research_stat_val}</span>
+                      <div className="text-xs sm:text-sm text-slate-200">
+                        <p className="font-semibold">{t.home.research_stat_title}</p>
+                        <p className="opacity-80">{t.home.research_stat_label}</p>
+                      </div>
+                    </div>
+                    <span className="btn-cta btn-cta-sm btn-cta-primary">
+                      {t.home.research_button} <ArrowRight className="ml-2 w-4 h-4" />
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </button>
+          </div>
+        )}
       </div>
     </section>
 
     {/* SKILLS & TECH STACK */}
-    <section className="py-12 lg:py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-8">
+    <section className="section-space bg-white">
+      <div className="section-shell">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">{t.home.skills_title}</h2>
-          <p className="text-lg text-gray-600">{t.home.skills_sub}</p>
+          <h2 className="type-section-title mb-4">{t.home.skills_title}</h2>
+          <p className="type-section-sub">{t.home.skills_sub}</p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           <div className="bg-white p-8 rounded-xl shadow-lg border-t-4 border-indigo-800">
@@ -1630,7 +1960,7 @@ const Home = ({ setPage, t, language }: { setPage: SetPage; t: T; language: Lang
                 <div key={dup} className="flex space-x-8 min-w-max">
                   {TECH_STACK.map((stack) => (
                     <div key={`${dup}-${stack.key}`} className="flex flex-col items-center group min-w-[100px]">
-                      <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center mb-3 group-hover:scale-110 transition duration-300 p-2 shadow-sm border border-gray-100">
+                      <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center mb-3 group-hover:-translate-y-0.5 transition-transform duration-300 p-2 shadow-sm border border-gray-100">
                         <img src={`imgs/${stack.icon}`} alt={stack.name} className="w-full h-full object-contain" />
                       </div>
                       <span className="text-sm text-gray-600 text-center font-medium">
@@ -1647,8 +1977,8 @@ const Home = ({ setPage, t, language }: { setPage: SetPage; t: T; language: Lang
     </section>
 
     {/* AFFILIATIONS */}
-    <section className="py-12 lg:py-20">
-      <div className="max-w-4xl mx-auto px-8 text-center">
+    <section className="section-space">
+      <div className="section-shell-narrow text-center">
         <h2 className="text-3xl font-bold text-gray-900 mb-8">{t.home.affiliations_title}</h2>
         <div className="flex gap-6 overflow-x-auto py-4 px-2 -mx-2 snap-x snap-mandatory">
           <div className="w-48 flex-shrink-0 snap-start flex flex-col items-center bg-white p-4 rounded-lg shadow-md border border-gray-200">
@@ -1711,16 +2041,16 @@ const Home = ({ setPage, t, language }: { setPage: SetPage; t: T; language: Lang
     </section>
 
     {/* PHILOSOPHY */}
-    <section className="py-12 lg:py-20 bg-white">
-      <div className="max-w-4xl mx-auto px-8 text-center">
-        <h2 className="text-3xl font-bold text-gray-900 mb-4">{t.home.philosophy_section_title}</h2>
-        <p className="text-lg text-gray-600 mb-8">{t.home.philosophy_section_sub}</p>
+    <section className="section-space bg-white">
+      <div className="section-shell-narrow text-center">
+        <h2 className="type-section-title mb-4">{t.home.philosophy_section_title}</h2>
+        <p className="type-section-sub mb-8">{t.home.philosophy_section_sub}</p>
         <div className="bg-gradient-to-br from-indigo-900 to-gray-700 p-8 rounded-xl text-white">
           <h4 className="text-2xl font-semibold mb-4">"Smart Laziness" & Systemic Efficiency</h4>
           <p className="text-lg mb-4">{t.home.phil_body}</p>
           <p className="opacity-90">{t.home.phil_sub}</p>
         </div>
-        <button onClick={() => setPage('philosophy')} className="inline-block py-3 px-6 rounded-full border border-indigo-800 text-indigo-800 font-semibold hover:bg-indigo-800 hover:text-white transition duration-300 mt-6">
+        <button onClick={() => setPage('philosophy')} className="btn-cta mt-6 border border-indigo-800 text-indigo-800 hover:bg-indigo-800 hover:text-white">
           {t.home.philosophy_button}
         </button>
       </div>
@@ -1731,24 +2061,62 @@ const Home = ({ setPage, t, language }: { setPage: SetPage; t: T; language: Lang
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 className="text-3xl sm:text-4xl font-extrabold mb-4">{t.home.cta_title2}</h2>
         <p className="text-lg font-light mb-6">{t.home.cta_body2}</p>
-        <button onClick={() => window.location.href = '/contact'} className="inline-block py-3 px-8 rounded-full bg-white text-indigo-900 font-bold text-lg shadow-xl hover:bg-gray-100 transition duration-300">
+        <button onClick={() => window.location.href = '/contact'} className="btn-cta btn-cta-light">
           {t.home.cta_button2}
         </button>
       </div>
     </section>
   </div>
-);
+  );
+};
 
-const AboutView = ({ t, language, setPage }: { t: T; language: Language; setPage: SetPage }) => (
-  <div className="animate-in fade-in duration-1000">
+const AboutView = ({ t, setPage }: { t: T; setPage: SetPage }) => {
+  const endorsements = [
+    {
+      name: t.about.endorse_1_name,
+      role: t.about.endorse_1_role,
+      quote: t.about.endorse_1_quote,
+      image: "/imgs/testimonials/Yukabeth.jpg",
+      alt: "Yukabeth Kidenda"
+    },
+    {
+      name: t.about.endorse_2_name,
+      role: t.about.endorse_2_role,
+      quote: t.about.endorse_2_quote,
+      image: "/imgs/testimonials/Valarie.jpg",
+      alt: "Valerie O."
+    },
+    {
+      name: t.about.endorse_3_name,
+      role: t.about.endorse_3_role,
+      quote: t.about.endorse_3_quote,
+      image: "/imgs/abdul-idris.jpg",
+      alt: "Abdul Idris"
+    }
+  ];
+  const [activeEndorsement, setActiveEndorsement] = useState(0);
+  const [isEndorsementPaused, setIsEndorsementPaused] = useState(false);
+
+  useEffect(() => {
+    if (isEndorsementPaused) return;
+
+    const timer = window.setInterval(() => {
+      setActiveEndorsement((prev) => (prev + 1) % endorsements.length);
+    }, 5000);
+
+    return () => window.clearInterval(timer);
+  }, [endorsements.length, isEndorsementPaused]);
+
+  return (
+  <div className="page-fade-in">
     <SectionHeader title={t.about.hero_title} sub={t.about.hero_subtitle} />
     
-    <section className="py-12 lg:py-20">
-      <div className="max-w-7xl mx-auto px-8">
+    <section className="section-space">
+      <div className="section-shell">
         <div className="grid lg:grid-cols-2 gap-12 items-start lg:items-center">
           <div className="order-2 lg:order-1">
             <div className="bg-white p-6 sm:p-8 rounded-xl shadow-lg border-l-4 border-indigo-600 mb-8">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">{t.about.bio_title}</h2>
+              <h2 className="type-section-title mb-4">{t.about.bio_title}</h2>
               <p className="text-lg leading-relaxed mb-4">{t.about.bio_p1}</p>
               <p className="text-base mb-4">{t.about.bio_p2}</p>
               <p className="text-base font-medium">{t.about.bio_quote}</p>
@@ -1771,8 +2139,19 @@ const AboutView = ({ t, language, setPage }: { t: T; language: Language; setPage
             </div>
           </div>
           <div className="order-2 lg:order-3 flex justify-center">
-            <div className="bg-white p-6 sm:p-8 rounded-xl shadow-lg w-full max-w-md h-full flex flex-col items-center justify-center border-l-4 border-indigo-600 min-h-[520px]">
-              <img src="/imgs/GOAT.jpg" alt="Clifford Ondieki" className="w-full h-80 object-cover rounded-lg mb-4" />
+            <div className="bg-white p-6 sm:p-8 rounded-xl shadow-lg w-full max-w-lg h-full flex flex-col items-center justify-center border-l-4 border-indigo-600 min-h-[620px]">
+              <img
+                src="/imgs/GOAT.jpg"
+                alt="Clifford Ondieki, The Innovator"
+                className="profile-image mb-3"
+                width={300}
+                height={340}
+                loading="lazy"
+                onError={(e) => {
+                  e.currentTarget.onerror = null;
+                  e.currentTarget.src = "https://placehold.co/300x340/303F9F/ffffff?text=The+Architect";
+                }}
+              />
               <p className="text-sm font-medium text-indigo-600 text-center">{t.about.photo_caption}</p>
             </div>
           </div>
@@ -1781,7 +2160,7 @@ const AboutView = ({ t, language, setPage }: { t: T; language: Language; setPage
     </section>
 
     <section className="py-16 bg-gray-100">
-      <div className="max-w-4xl mx-auto px-8">
+      <div className="section-shell-narrow">
         <h2 className="text-4xl font-bold text-center text-gray-900 mb-12">{t.about.moments_title}</h2>
         <div className="journey-timeline">
           <div className="journey-item">
@@ -1811,8 +2190,8 @@ const AboutView = ({ t, language, setPage }: { t: T; language: Language; setPage
       </div>
     </section>
 
-    <section className="py-12 lg:py-20">
-      <div className="max-w-4xl mx-auto px-8">
+    <section className="section-space">
+      <div className="section-shell-narrow">
         <h2 className="text-4xl font-bold text-center text-gray-900 mb-12">{t.about.overcome_title}</h2>
         <div className="space-y-8">
           <div className="p-6 sm:p-8 bg-white rounded-xl shadow-lg" style={{ borderTop: "4px solid var(--accent-fire)" }}>
@@ -1829,7 +2208,7 @@ const AboutView = ({ t, language, setPage }: { t: T; language: Language; setPage
     </section>
 
     <section className="py-16 bg-gray-100">
-      <div className="max-w-7xl mx-auto px-8">
+      <div className="section-shell">
         <h2 className="text-4xl font-bold text-center text-gray-900 mb-12">{t.about.stars_title}</h2>
         <div className="max-w-3xl mx-auto p-8 sm:p-10 text-white rounded-2xl shadow-xl mb-12 bg-gray-900">
           <blockquote className="text-center">
@@ -1839,7 +2218,7 @@ const AboutView = ({ t, language, setPage }: { t: T; language: Language; setPage
             <footer className="text-sm opacity-80">{t.about.stars_f}</footer>
           </blockquote>
         </div>
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           <div className="p-6 bg-white rounded-xl shadow-md" style={{ borderBottom: "4px solid var(--primary-indigo)" }}>
             <div className="flex items-center space-x-3 mb-2">
               <span style={{ color: "var(--highlight-gold)" }}>
@@ -1862,8 +2241,8 @@ const AboutView = ({ t, language, setPage }: { t: T; language: Language; setPage
       </div>
     </section>
 
-    <section className="py-12 lg:py-20">
-      <div className="max-w-7xl mx-auto px-8">
+    <section className="section-space">
+      <div className="section-shell">
         <h2 className="text-4xl font-bold text-center text-gray-900 mb-6">{t.about.skills_title}</h2>
         <p className="text-xl text-center text-gray-600 max-w-3xl mx-auto mb-12">{t.about.skills_sub}</p>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -1901,45 +2280,74 @@ const AboutView = ({ t, language, setPage }: { t: T; language: Language; setPage
     </section>
 
     <section className="py-16 bg-gray-100">
-      <div className="max-w-7xl mx-auto px-8">
+      <div className="section-shell">
         <h2 className="text-4xl font-bold text-center text-gray-900 mb-6">{t.about.endorsements_title}</h2>
-        <div className="grid md:grid-cols-2 gap-8">
-          <div className="p-6 bg-white rounded-2xl shadow-xl flex flex-col h-full border-l-4 border-indigo-600">
-            <div className="flex items-center mb-4">
-              <img src="/imgs/testimonials/Yukabeth.jpg" alt="Yukabeth Kidenda" className="w-16 h-16 rounded-full object-cover border-4 border-indigo-200 mr-4" />
-              <div>
-                <h5 className="text-lg font-semibold text-gray-900">{t.about.endorse_1_name}</h5>
-                <div className="text-sm font-medium text-indigo-600">{t.about.endorse_1_role}</div>
-              </div>
+        <div className="max-w-4xl mx-auto">
+          <div
+            className="overflow-hidden rounded-2xl"
+            onMouseEnter={() => setIsEndorsementPaused(true)}
+            onMouseLeave={() => setIsEndorsementPaused(false)}
+            onTouchStart={() => setIsEndorsementPaused(true)}
+            onTouchEnd={() => setIsEndorsementPaused(false)}
+            onTouchCancel={() => setIsEndorsementPaused(false)}
+            onFocus={() => setIsEndorsementPaused(true)}
+            onBlur={() => setIsEndorsementPaused(false)}
+          >
+            <div
+              className="flex transition-transform duration-500 ease-out"
+              style={{ transform: `translateX(-${activeEndorsement * 100}%)` }}
+            >
+              {endorsements.map((endorsement, idx) => (
+                <article
+                  key={`${endorsement.name}-${idx}`}
+                  className="w-full shrink-0 p-6 bg-white rounded-2xl shadow-xl flex flex-col border-l-4 border-indigo-600 min-h-[240px]"
+                >
+                  <div className="flex items-center mb-4">
+                    <img
+                      src={endorsement.image}
+                      alt={endorsement.alt}
+                      className="w-16 h-16 rounded-full object-cover border-4 border-indigo-200 mr-4"
+                    />
+                    <div>
+                      <h5 className="text-lg font-semibold text-gray-900">{endorsement.name}</h5>
+                      <div className="text-sm font-medium text-indigo-600">{endorsement.role}</div>
+                    </div>
+                  </div>
+                  <p className="text-gray-700 italic">{endorsement.quote}</p>
+                </article>
+              ))}
             </div>
-            <p className="text-gray-700 italic flex-grow">{t.about.endorse_1_quote}</p>
           </div>
-          <div className="p-6 bg-white rounded-2xl shadow-xl flex flex-col h-full border-l-4 border-indigo-600">
-            <div className="flex items-center mb-4">
-              <img src="/imgs/testimonials/Valarie.jpg" alt="Valerie O." className="w-16 h-16 rounded-full object-cover border-4 border-indigo-200 mr-4" />
-              <div>
-                <h5 className="text-lg font-semibold text-gray-900">{t.about.endorse_2_name}</h5>
-                <div className="text-sm font-medium text-indigo-600">{t.about.endorse_2_role}</div>
-              </div>
-            </div>
-            <p className="text-gray-700 italic flex-grow">{t.about.endorse_2_quote}</p>
+          <div className="mt-5 flex items-center justify-center gap-2">
+            {endorsements.map((endorsement, idx) => (
+              <button
+                key={`${endorsement.name}-dot-${idx}`}
+                type="button"
+                onClick={() => setActiveEndorsement(idx)}
+                aria-label={`Show endorsement ${idx + 1}`}
+                className={`h-2.5 rounded-full transition-all duration-300 ${
+                  idx === activeEndorsement ? "w-8 bg-indigo-600" : "w-2.5 bg-indigo-300 hover:bg-indigo-400"
+                }`}
+              />
+            ))}
           </div>
         </div>
       </div>
     </section>
 
     <section className="py-16 text-white bg-indigo-900">
-      <div className="max-w-4xl mx-auto px-8 text-center">
+      <div className="section-shell-narrow text-center">
         <h2 className="text-4xl font-bold mb-4">{t.about.outlook_title}</h2>
         <p className="text-xl font-light mb-6">{t.about.outlook_p1}</p>
         <p className="mb-8 opacity-90">{t.about.outlook_p2}</p>
-        <button onClick={() => setPage('contact')} className="inline-flex items-center px-8 py-3 border border-transparent text-lg font-medium rounded-full shadow-lg bg-white hover:bg-gray-100 transition duration-300 text-indigo-900">
+        <button onClick={() => setPage('contact')} className="btn-cta btn-cta-light inline-flex items-center">
           {t.about.outlook_button} <ArrowRight className="w-5 h-5 ml-2" />
         </button>
       </div>
     </section>
   </div>
 );
+};
 
 const PhilosophyView = ({ t, language, setPage }: { t: T; language: Language; setPage: SetPage }) => {
   const reflectionsByLang: Record<Language, Array<{ title: string; quote: string; text: string }>> = {
@@ -2104,7 +2512,7 @@ const PhilosophyView = ({ t, language, setPage }: { t: T; language: Language; se
   const cta = ctaByLang[language];
 
   return (
-    <div className="animate-in fade-in duration-1000">
+    <div className="page-fade-in">
       <header
         className="py-20 lg:py-24 text-white"
         style={{ backgroundColor: "var(--primary-indigo)" }}
@@ -2123,8 +2531,8 @@ const PhilosophyView = ({ t, language, setPage }: { t: T; language: Language; se
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <section className="mb-16">
             <div className="max-w-4xl mx-auto">
-              <div className="bg-white p-8 rounded-xl shadow-lg border-l-4 border-indigo-800">
-                <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              <div className="liquid-card card-pad rounded-xl shadow-lg border-l-4 border-indigo-800">
+                <h2 className="type-section-title mb-4">
                   {t.philosophy.core_title}
                 </h2>
                 <p className="text-lg text-gray-700 mb-4">{t.philosophy.core_p1}</p>
@@ -2135,8 +2543,8 @@ const PhilosophyView = ({ t, language, setPage }: { t: T; language: Language; se
 
           <section className="mb-16">
             <div className="max-w-4xl mx-auto">
-              <div className="bg-white p-8 rounded-xl shadow-lg border-l-4 border-indigo-800">
-                <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              <div className="liquid-card card-pad rounded-xl shadow-lg border-l-4 border-indigo-800">
+                <h2 className="type-section-title mb-4">
                   {t.philosophy.smart_title}
                 </h2>
                 <div className="bg-gray-50 p-6 rounded-lg text-center mb-6">
@@ -2190,7 +2598,7 @@ const PhilosophyView = ({ t, language, setPage }: { t: T; language: Language; se
 
           <section className="mb-16">
             <div className="max-w-6xl mx-auto">
-              <div className="bg-white p-8 rounded-xl shadow-lg border-l-4 border-indigo-800">
+              <div className="liquid-card card-pad rounded-xl shadow-lg border-l-4 border-indigo-800">
                 <h2 className="text-3xl font-bold text-gray-900 mb-8">
                   {t.philosophy.practice_title}
                 </h2>
@@ -2246,7 +2654,7 @@ const PhilosophyView = ({ t, language, setPage }: { t: T; language: Language; se
           <p className="text-lg font-light mb-8 opacity-90">{cta.body}</p>
           <button
             onClick={() => setPage("contact")}
-            className="inline-flex items-center px-8 py-4 border border-transparent text-lg font-bold rounded-full shadow-lg bg-white text-[--primary-indigo] hover:bg-gray-100 transition duration-300 transform hover:scale-105"
+            className="btn-cta btn-cta-light inline-flex items-center"
             style={{ color: "var(--primary-indigo)" }}
           >
             {cta.button}
@@ -2258,8 +2666,31 @@ const PhilosophyView = ({ t, language, setPage }: { t: T; language: Language; se
   );
 };
 
-const ProjectsView = ({ t, language }: { t: T; language: Language }) => (
-  <div className="animate-in fade-in duration-1000">
+const ProjectsView = ({ t, language }: { t: T; language: Language }) => {
+  const [projectDomain, setProjectDomain] = useState<'all' | 'grid' | 'optimization' | 'digitalization' | 'advisory'>('grid');
+  const ctaCaseStudy = language === 'en' ? 'View Case Study' : 'Fallstudie ansehen';
+  const ctaOpenRepo = language === 'en' ? 'Open Repo' : 'Repository öffnen';
+  const ctaFullBrief = language === 'en' ? 'Request Full Brief' : 'Vollständiges Briefing anfragen';
+
+  useEffect(() => {
+    const saved = localStorage.getItem('projects-domain');
+    if (
+      saved === 'all' ||
+      saved === 'grid' ||
+      saved === 'optimization' ||
+      saved === 'digitalization' ||
+      saved === 'advisory'
+    ) {
+      setProjectDomain(saved);
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('projects-domain', projectDomain);
+  }, [projectDomain]);
+
+  return (
+  <div className="page-fade-in">
     {/* Header */}
     <header className="py-16 lg:py-20 text-white relative overflow-hidden" style={{ backgroundColor: 'var(--primary-indigo)' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
@@ -2273,11 +2704,155 @@ const ProjectsView = ({ t, language }: { t: T; language: Language }) => (
     </header>
 
     {/* Main */}
-    <main className="py-4 lg:py-6">
+    <main className="pt-4 lg:pt-6 pb-0">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+        <section className="mb-6 py-2">
+          <div className="relative">
+            <div className="absolute left-0 top-0 bottom-0 w-6 bg-gradient-to-r from-white to-transparent pointer-events-none md:hidden" />
+            <div className="absolute right-0 top-0 bottom-0 w-6 bg-gradient-to-l from-white to-transparent pointer-events-none md:hidden" />
+            <div className="overflow-x-auto no-scrollbar">
+          <div className="flex gap-2 justify-start md:justify-center min-w-max px-1">
+            {[
+              { key: 'all', label: language === 'en' ? 'All' : 'Alle' },
+              { key: 'grid', label: language === 'en' ? 'Grid' : 'Netz' },
+              { key: 'optimization', label: language === 'en' ? 'Optimization' : 'Optimierung' },
+              { key: 'digitalization', label: language === 'en' ? 'Digitalization' : 'Digitalisierung' },
+              { key: 'advisory', label: language === 'en' ? 'Advisory' : 'Beratung' }
+            ].map((tab) => (
+              <button
+                key={tab.key}
+                type="button"
+                onClick={() => setProjectDomain(tab.key as 'all' | 'grid' | 'optimization' | 'digitalization' | 'advisory')}
+                className={`px-4 py-2 rounded-full text-sm font-semibold transition duration-300 ${
+                  projectDomain === tab.key
+                    ? 'liquid-pill-active'
+                    : 'liquid-pill text-slate-700'
+                }`}
+              >
+                {tab.label}
+              </button>
+            ))}
+          </div>
+          </div>
+          </div>
+        </section>
+
+        {projectDomain === 'all' && (
+        <section className="mb-8">
+          <div className="max-w-5xl mx-auto px-1 sm:px-2">
+            <div className="overflow-hidden rounded-2xl liquid-card px-2 py-2">
+            <div className="animate-scroll gap-3">
+              <a href="#projects-serverless" className="block liquid-pill rounded-xl px-4 py-3 shadow-sm hover:shadow-md transition duration-300 min-w-[340px]">
+                <p className="text-sm font-bold text-slate-900 flex items-center gap-2">
+                  <CloudLightning className="w-4 h-4 text-indigo-700" />
+                  1. Serverless Grid Compliance Pipeline
+                </p>
+                <p className="text-xs text-slate-600 mt-1">Serverless pipelines and Digital Twins for Redispatch 3.0.</p>
+              </a>
+              <a href="#projects-equitable" className="block liquid-pill rounded-xl px-4 py-3 shadow-sm hover:shadow-md transition duration-300 min-w-[340px]">
+                <p className="text-sm font-bold text-slate-900 flex items-center gap-2">
+                  <Zap className="w-4 h-4 text-indigo-700" />
+                  2. Equitable EV Charger Deployment
+                </p>
+                <p className="text-xs text-slate-600 mt-1">Geospatial optimization to balance coverage and spatial equity.</p>
+              </a>
+              <a href="#projects-cim" className="block liquid-pill rounded-xl px-4 py-3 shadow-sm hover:shadow-md transition duration-300 min-w-[340px]">
+                <p className="text-sm font-bold text-slate-900 flex items-center gap-2">
+                  <Globe className="w-4 h-4 text-indigo-700" />
+                  3. {t.projects.p3_t}
+                </p>
+                <p className="text-xs text-slate-600 mt-1">
+                  {language === 'en' ? 'Interoperability layer for standards-based grid data exchange.' : 'Interoperabilitaets-Schicht fuer standardbasierten Datenaustausch.'}
+                </p>
+              </a>
+              <a href="#projects-kinangop" className="block liquid-pill rounded-xl px-4 py-3 shadow-sm hover:shadow-md transition duration-300 min-w-[340px]">
+                <p className="text-sm font-bold text-slate-900 flex items-center gap-2">
+                  <Wind className="w-4 h-4 text-indigo-700" />
+                  4. {t.projects.p5_t}
+                </p>
+                <p className="text-xs text-slate-600 mt-1">{t.projects.p5_d}</p>
+              </a>
+              <a href="#projects-digital" className="block liquid-pill rounded-xl px-4 py-3 shadow-sm hover:shadow-md transition duration-300 min-w-[340px]">
+                <p className="text-sm font-bold text-slate-900 flex items-center gap-2">
+                  <Cpu className="w-4 h-4 text-teal-700" />
+                  5. {t.projects.section_digital_title}
+                </p>
+                <p className="text-xs text-slate-600 mt-1">{t.projects.section_digital_sub}</p>
+              </a>
+              <a href="#projects-climate" className="block liquid-pill rounded-xl px-4 py-3 shadow-sm hover:shadow-md transition duration-300 min-w-[340px]">
+                <p className="text-sm font-bold text-slate-900 flex items-center gap-2">
+                  <Leaf className="w-4 h-4 text-emerald-700" />
+                  6. {t.projects.climate_title}
+                </p>
+                <p className="text-xs text-slate-600 mt-1">{t.projects.climate_sub}</p>
+              </a>
+              <a href="#projects-premium" className="block liquid-pill rounded-xl px-4 py-3 shadow-sm hover:shadow-md transition duration-300 min-w-[340px]">
+                <p className="text-sm font-bold text-slate-900 flex items-center gap-2">
+                  <Shield className="w-4 h-4 text-amber-700" />
+                  7. {t.projects.premium_title}
+                </p>
+                <p className="text-xs text-slate-600 mt-1">{t.projects.premium_sub}</p>
+              </a>
+              <a href="#projects-serverless" className="block liquid-pill rounded-xl px-4 py-3 shadow-sm hover:shadow-md transition duration-300 min-w-[340px]">
+                <p className="text-sm font-bold text-slate-900 flex items-center gap-2">
+                  <CloudLightning className="w-4 h-4 text-indigo-700" />
+                  1. Serverless Grid Compliance Pipeline
+                </p>
+                <p className="text-xs text-slate-600 mt-1">Serverless pipelines and Digital Twins for Redispatch 3.0.</p>
+              </a>
+              <a href="#projects-equitable" className="block liquid-pill rounded-xl px-4 py-3 shadow-sm hover:shadow-md transition duration-300 min-w-[340px]">
+                <p className="text-sm font-bold text-slate-900 flex items-center gap-2">
+                  <Zap className="w-4 h-4 text-indigo-700" />
+                  2. Equitable EV Charger Deployment
+                </p>
+                <p className="text-xs text-slate-600 mt-1">Geospatial optimization to balance coverage and spatial equity.</p>
+              </a>
+              <a href="#projects-cim" className="block liquid-pill rounded-xl px-4 py-3 shadow-sm hover:shadow-md transition duration-300 min-w-[340px]">
+                <p className="text-sm font-bold text-slate-900 flex items-center gap-2">
+                  <Globe className="w-4 h-4 text-indigo-700" />
+                  3. {t.projects.p3_t}
+                </p>
+                <p className="text-xs text-slate-600 mt-1">
+                  {language === 'en' ? 'Interoperability layer for standards-based grid data exchange.' : 'Interoperabilitaets-Schicht fuer standardbasierten Datenaustausch.'}
+                </p>
+              </a>
+              <a href="#projects-kinangop" className="block liquid-pill rounded-xl px-4 py-3 shadow-sm hover:shadow-md transition duration-300 min-w-[340px]">
+                <p className="text-sm font-bold text-slate-900 flex items-center gap-2">
+                  <Wind className="w-4 h-4 text-indigo-700" />
+                  4. {t.projects.p5_t}
+                </p>
+                <p className="text-xs text-slate-600 mt-1">{t.projects.p5_d}</p>
+              </a>
+              <a href="#projects-digital" className="block liquid-pill rounded-xl px-4 py-3 shadow-sm hover:shadow-md transition duration-300 min-w-[340px]">
+                <p className="text-sm font-bold text-slate-900 flex items-center gap-2">
+                  <Cpu className="w-4 h-4 text-teal-700" />
+                  5. {t.projects.section_digital_title}
+                </p>
+                <p className="text-xs text-slate-600 mt-1">{t.projects.section_digital_sub}</p>
+              </a>
+              <a href="#projects-climate" className="block liquid-pill rounded-xl px-4 py-3 shadow-sm hover:shadow-md transition duration-300 min-w-[340px]">
+                <p className="text-sm font-bold text-slate-900 flex items-center gap-2">
+                  <Leaf className="w-4 h-4 text-emerald-700" />
+                  6. {t.projects.climate_title}
+                </p>
+                <p className="text-xs text-slate-600 mt-1">{t.projects.climate_sub}</p>
+              </a>
+              <a href="#projects-premium" className="block liquid-pill rounded-xl px-4 py-3 shadow-sm hover:shadow-md transition duration-300 min-w-[340px]">
+                <p className="text-sm font-bold text-slate-900 flex items-center gap-2">
+                  <Shield className="w-4 h-4 text-amber-700" />
+                  7. {t.projects.premium_title}
+                </p>
+                <p className="text-xs text-slate-600 mt-1">{t.projects.premium_sub}</p>
+              </a>
+            </div>
+            </div>
+          </div>
+        </section>
+        )}
+
         {/* Cloud-Native Grid Automation */}
-        <section className="mb-20">
+        {(projectDomain === 'all' || projectDomain === 'grid') && (
+        <section id="projects-cloud" className="mb-20 scroll-mt-32">
           <div className="flex items-center mb-10">
             <div className="bg-indigo-100 p-3 rounded-full mr-4">
               <CloudLightning className="w-8 h-8 text-indigo-700" />
@@ -2288,7 +2863,7 @@ const ProjectsView = ({ t, language }: { t: T; language: Language }) => (
             </div>
           </div>
 
-          <div className="bg-white p-8 rounded-xl shadow-lg border-l-4 border-indigo-800 mb-12 transform transition hover:-translate-y-1 duration-300">
+          <div id="projects-serverless" className="liquid-card card-pad rounded-xl shadow-lg border-l-4 border-indigo-800 mb-12 transform transition hover:-translate-y-1 duration-300 scroll-mt-32">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               <div className="min-h-[400px] flex flex-col justify-between">
                 <div>
@@ -2298,22 +2873,34 @@ const ProjectsView = ({ t, language }: { t: T; language: Language }) => (
                 </div>
                 <p className="text-lg text-indigo-700 mb-6">{t.projects.p2_d}</p>
                 
-                <div className="mb-6 border-l-4 border-teal-700 pl-4 bg-teal-50 p-4 rounded-md">
-                  <h4 className="text-sm font-black text-teal-900 mb-2">{t.projects.innovation_tag}</h4>
-                  <p className="text-gray-600 text-base italic leading-relaxed font-medium">{t.projects.p2_d}</p>
-                </div>
+                <ProblemSolutionImpact
+                  language={language}
+                  problem={
+                    language === 'en'
+                      ? 'Traditional studies are manual, slow, and hard to scale for compliance-heavy planning.'
+                      : 'Traditionelle Studien sind manuell, langsam und fuer compliance-intensive Planung schwer skalierbar.'
+                  }
+                  solution={t.projects.p2_d}
+                  impact={
+                    language === 'en'
+                      ? 'Faster scenario throughput and stronger Redispatch readiness using cloud-native execution.'
+                      : 'Schnellerer Szenario-Durchsatz und bessere Redispatch-Bereitschaft durch cloud-native Ausfuehrung.'
+                  }
+                />
 
                 <div className="flex flex-wrap gap-2 mb-6">
-                  <span className="px-3 py-1 text-xs font-medium bg-gray-100 text-gray-800 rounded-full border">Python</span>
-                  <span className="px-3 py-1 text-xs font-medium bg-gray-100 text-gray-800 rounded-full border">AWS Lambda</span>
-                  <span className="px-3 py-1 text-xs font-medium bg-gray-100 text-gray-800 rounded-full border">Pandapower</span>
-                  <span className="px-3 py-1 text-xs font-medium bg-gray-100 text-gray-800 rounded-full border">DynamoDB</span>
+                  <span className="chip-proof">VDE 4110 aligned</span>
+                  <span className="chip-proof">Cloud-native</span>
+                  <span className="chip-tech">Python</span>
+                  <span className="chip-tech">AWS Lambda</span>
+                  <span className="chip-tech">Pandapower</span>
+                  <span className="chip-tech">DynamoDB</span>
                 </div>
               </div>
 
-              <a href="https://github.com/omari91/serverless-grid-compliance" target="_blank" className="inline-flex items-center text-white bg-gray-900 hover:bg-gray-700 px-6 py-3 rounded-full font-bold transition w-fit shadow-md">
+              <a href="https://github.com/omari91/serverless-grid-compliance" target="_blank" className="btn-cta btn-cta-sm btn-cta-dark inline-flex items-center w-fit">
                 <Github className="w-5 h-5 mr-2" />
-                {t.projects.p2_button}
+                {ctaOpenRepo}
               </a>
             </div>
 
@@ -2340,7 +2927,24 @@ const ProjectsView = ({ t, language }: { t: T; language: Language }) => (
           </div>
           </div>
 
-          <div className="bg-white p-8 rounded-xl shadow-lg border-l-4 border-indigo-800 mb-12 transform transition hover:-translate-y-1 duration-300">
+          <details id="projects-cim" className="mb-12 group scroll-mt-32">
+            <summary className="list-none cursor-pointer liquid-pill rounded-xl px-5 py-4 shadow-sm hover:shadow-md transition duration-300 flex items-center justify-between">
+              <div className="flex items-start gap-3">
+                <div className="mt-0.5 text-indigo-700">
+                  <Globe className="w-4 h-4" />
+                </div>
+                <div>
+                <p className="font-semibold text-slate-900">{t.projects.p3_t}</p>
+                <p className="text-sm text-slate-600 mt-1">
+                  {language === 'en'
+                    ? 'Interoperability layer for standards-based grid data exchange.'
+                    : 'Interoperabilitaets-Schicht fuer standardbasierten Austausch von Netzdaten.'}
+                </p>
+              </div>
+              </div>
+              <span className="text-slate-500 text-sm group-open:rotate-180 transition-transform">⌄</span>
+            </summary>
+            <div className="liquid-card card-pad rounded-xl shadow-lg border-l-4 border-indigo-800 mt-3 transform transition hover:-translate-y-1 duration-300">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               <div className="min-h-[400px] flex flex-col gap-6">
                 <div className="bg-gray-900 rounded-lg shadow-2xl overflow-hidden border border-gray-700 h-full flex flex-col">
@@ -2366,29 +2970,44 @@ const ProjectsView = ({ t, language }: { t: T; language: Language }) => (
                   </div>
                   <p className="text-lg text-indigo-700 mb-6">{t.projects.p3_d}</p>
                   
-                  <div className="mb-6 border-l-4 border-teal-700 pl-4 bg-teal-50 p-4 rounded-md">
-                    <h4 className="text-sm font-black text-teal-900 mb-2">{t.projects.why_matters}</h4>
-                    <p className="text-gray-600 text-base italic leading-relaxed font-medium">{t.projects.p3_d}</p>
-                  </div>
+                  <ProblemSolutionImpact
+                    language={language}
+                    problem={
+                      language === 'en'
+                        ? 'Grid data often lives in fragmented formats that block automation and interoperability.'
+                        : 'Netzdaten liegen oft in fragmentierten Formaten vor, die Automatisierung und Interoperabilitaet blockieren.'
+                    }
+                    solution={t.projects.p3_d}
+                    impact={
+                      language === 'en'
+                        ? 'Portable, machine-readable models reduce vendor lock-in and improve toolchain compatibility.'
+                        : 'Portable, maschinenlesbare Modelle reduzieren Vendor-Lock-in und verbessern Toolchain-Kompatibilitaet.'
+                    }
+                  />
 
                   <div className="flex flex-wrap gap-2 mb-6">
-                    <span className="px-3 py-1 text-xs font-medium bg-gray-100 text-gray-800 rounded-full border">IEC 61970 (CIM)</span>
-                    <span className="px-3 py-1 text-xs font-medium bg-gray-100 text-gray-800 rounded-full border">NetworkX</span>
-                    <span className="px-3 py-1 text-xs font-medium bg-gray-100 text-gray-800 rounded-full border">Fuzzy Logic</span>
+                    <span className="chip-proof">IEC 61970 ready</span>
+                    <span className="chip-proof">Vendor lock-in ↓</span>
+                    <span className="chip-tech">IEC 61970 (CIM)</span>
+                    <span className="chip-tech">NetworkX</span>
+                    <span className="chip-tech">Fuzzy Logic</span>
                   </div>
                 </div>
                 
-                <a href="https://github.com/omari91/cim-grid-control-engine" target="_blank" className="inline-flex items-center text-white bg-gray-900 hover:bg-gray-700 px-6 py-3 rounded-full font-bold transition w-fit shadow-md">
+                <a href="https://github.com/omari91/cim-grid-control-engine" target="_blank" className="btn-cta btn-cta-sm btn-cta-dark inline-flex items-center w-fit">
                   <Github className="w-5 h-5 mr-2" />
-                  {t.projects.p2_button}
+                  {ctaOpenRepo}
                 </a>
               </div>
             </div>
           </div>
+          </details>
         </section>
+        )}
 
         {/* Grid Integration & Power Systems */}
-        <section className="mb-20">
+        {(projectDomain === 'all' || projectDomain === 'optimization') && (
+        <section id="projects-equitable" className="mb-20 scroll-mt-32">
           <div className="flex items-center mb-10">
             <div className="bg-indigo-100 p-3 rounded-full mr-4">
               <Zap className="w-8 h-8 text-indigo-700" />
@@ -2399,22 +3018,23 @@ const ProjectsView = ({ t, language }: { t: T; language: Language }) => (
             </div>
           </div>
 
-          <div className="bg-white p-8 rounded-xl shadow-lg border-l-4 border-indigo-800">
+          <div className="liquid-card card-pad rounded-xl shadow-lg border-l-4 border-indigo-800">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               <div className="min-h-[400px] flex flex-col justify-between">
                 <div>
-                  <h2 className="text-3xl font-bold text-gray-900 mb-4">{t.projects.p4_t}</h2>
+                  <h2 className="type-section-title mb-4">{t.projects.p4_t}</h2>
                   <p className="text-lg text-indigo-700 mb-6">{t.projects.p4_d}</p>
                   
-                  <div className="mb-6 border-l-4 border-rose-800 pl-4 bg-rose-50 p-4 rounded-md">
-                    <h4 className="text-lg font-semibold text-rose-900 mb-2">{t.projects.challenge_tag}</h4>
-                    <p className="text-gray-600 text-sm">{t.projects.p4_challenge_p}</p>
-                  </div>
-                  
-                  <div className="mb-6 border-l-4 border-teal-700 pl-4 bg-teal-50 p-4 rounded-md">
-                    <h4 className="text-lg font-semibold text-teal-900 mb-2">{t.projects.solution_tag}</h4>
-                    <p className="text-gray-600 text-sm">{t.projects.p4_solution_p}</p>
-                  </div>
+                  <ProblemSolutionImpact
+                    language={language}
+                    problem={t.projects.p4_challenge_p}
+                    solution={t.projects.p4_solution_p}
+                    impact={
+                      language === 'en'
+                        ? 'Reduced inequality by 13% and improved access in underserved districts by up to 21%.'
+                        : 'Ungleichheit um 13% gesenkt und Zugang in unterversorgten Bezirken um bis zu 21% verbessert.'
+                    }
+                  />
 
                   <div className="mb-6 border-l-4 border-blue-800 pl-4 bg-blue-50 p-4 rounded-md">
                     <h4 className="text-lg font-semibold text-blue-900 mb-2">{t.projects.role_timeline_title}</h4>
@@ -2439,10 +3059,12 @@ const ProjectsView = ({ t, language }: { t: T; language: Language }) => (
                   </div>
                   
                   <div className="flex flex-wrap gap-2 mb-6">
-                    <span className="px-3 py-1 text-xs font-medium bg-indigo-100 text-indigo-800 rounded-full">Python</span>
-                    <span className="px-3 py-1 text-xs font-medium bg-indigo-100 text-indigo-800 rounded-full">NSGA-II</span>
-                    <span className="px-3 py-1 text-xs font-medium bg-indigo-100 text-indigo-800 rounded-full">Geospatial Optimization</span>
-                    <span className="px-3 py-1 text-xs font-medium bg-indigo-100 text-indigo-800 rounded-full">Urban Planning</span>
+                    <span className="chip-proof">13% Gini ↓</span>
+                    <span className="chip-proof">+21% access</span>
+                    <span className="chip-tech">Python</span>
+                    <span className="chip-tech">NSGA-II</span>
+                    <span className="chip-tech">Geospatial Optimization</span>
+                    <span className="chip-tech">Urban Planning</span>
                   </div>
                 </div>
                 
@@ -2468,8 +3090,8 @@ const ProjectsView = ({ t, language }: { t: T; language: Language }) => (
                 <div className="bg-gray-50 p-5 rounded-xl shadow-inner border border-gray-200">
                   <h5 className="text-lg font-bold text-gray-800 mb-2">{t.projects.p4_side_title}</h5>
                   <p className="text-sm text-gray-600 mb-4">{t.projects.p4_side_p}</p>
-                  <button onClick={() => window.location.href = '/ev-study'} className="block w-full text-center py-2 px-4 rounded-full bg-indigo-800 text-white font-semibold hover:bg-indigo-700 transition duration-150 mb-4">
-                    {t.projects.p4_side_button}
+                  <button onClick={() => window.location.href = '/ev-study'} className="btn-cta btn-cta-sm btn-cta-primary btn-cta-block mb-4">
+                    {ctaCaseStudy}
                   </button>
                 </div>
                 
@@ -2478,17 +3100,32 @@ const ProjectsView = ({ t, language }: { t: T; language: Language }) => (
             </div>
           </div>
         </section>
+        )}
 
-        <section className="mb-20">
-          <div className="bg-white p-8 rounded-xl shadow-lg border-l-4 border-indigo-800">
+        {(projectDomain === 'all' || projectDomain === 'grid') && (
+        <details id="projects-kinangop" className="mb-20 group scroll-mt-32">
+          <summary className="list-none cursor-pointer liquid-pill rounded-xl px-5 py-4 shadow-sm hover:shadow-md transition duration-300 flex items-center justify-between">
+            <div className="flex items-start gap-3">
+              <div className="mt-0.5 text-indigo-700">
+                <Wind className="w-4 h-4" />
+              </div>
+              <div>
+              <p className="font-semibold text-slate-900">{t.projects.p5_t}</p>
+              <p className="text-sm text-slate-600 mt-1">{t.projects.p5_d}</p>
+              </div>
+            </div>
+            <span className="text-slate-500 text-sm group-open:rotate-180 transition-transform">⌄</span>
+          </summary>
+          <section className="mt-3">
+          <div className="liquid-card card-pad rounded-xl shadow-lg border-l-4 border-indigo-800">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               <div className="min-h-[400px] flex flex-col gap-6">
                 <img src="/imgs/wind farm.jpg" alt="Kinangop Wind Integration" className="w-full h-64 object-cover rounded-lg shadow-lg border border-gray-200" />
                 <div className="bg-gray-50 p-5 rounded-xl shadow-inner border border-gray-200 flex-1">
                   <h5 className="text-lg font-bold text-gray-800 mb-2">{t.projects.p5_key_lesson_title}</h5>
                   <p className="text-sm text-gray-600 mb-4">{t.projects.p5_key_lesson_p}</p>
-                  <a href="https://drive.google.com/file/d/1NBIsal051Oqn_8JWls9Lhgr8mEcLpKhq/view" target="_blank" className="block w-full text-center py-2 px-4 rounded-full bg-indigo-800 text-white font-semibold hover:bg-indigo-700 transition duration-150">
-                    {t.projects.p5_report_button}
+                  <a href="https://drive.google.com/file/d/1NBIsal051Oqn_8JWls9Lhgr8mEcLpKhq/view" target="_blank" className="btn-cta btn-cta-sm btn-cta-primary btn-cta-block">
+                    {ctaCaseStudy}
                   </a>
                 </div>
               </div>
@@ -2501,15 +3138,16 @@ const ProjectsView = ({ t, language }: { t: T; language: Language }) => (
                   </div>
                   <p className="text-lg text-indigo-700 mb-6">{t.projects.p5_d}</p>
                   
-                  <div className="mb-6 border-l-4 border-rose-800 pl-4 bg-rose-50 p-4 rounded-md">
-                    <h4 className="text-lg font-semibold text-rose-900 mb-2">{t.projects.challenge_tag}</h4>
-                    <p className="text-gray-600 text-sm">{t.projects.p5_challenge_p}</p>
-                  </div>
-                  
-                  <div className="mb-6 border-l-4 border-teal-700 pl-4 bg-teal-50 p-4 rounded-md">
-                    <h4 className="text-lg font-semibold text-teal-900 mb-2">{t.projects.solution_tag}</h4>
-                    <p className="text-gray-600 text-sm">{t.projects.p5_solution_p}</p>
-                  </div>
+                  <ProblemSolutionImpact
+                    language={language}
+                    problem={t.projects.p5_challenge_p}
+                    solution={t.projects.p5_solution_p}
+                    impact={
+                      language === 'en'
+                        ? 'Delivered stable integration strategy for 60MW wind while improving voltage profile under stress.'
+                        : 'Stabile Integrationsstrategie fuer 60MW Wind mit verbessertem Spannungsprofil unter Last entwickelt.'
+                    }
+                  />
 
                   <div className="mb-6 border-l-4 border-blue-800 pl-4 bg-blue-50 p-4 rounded-md">
                     <h4 className="text-lg font-semibold text-blue-900 mb-2">{t.projects.role_timeline_title}</h4>
@@ -2534,10 +3172,12 @@ const ProjectsView = ({ t, language }: { t: T; language: Language }) => (
                   </div>
                   
                   <div className="flex flex-wrap gap-2 mb-6">
-                    <span className="px-3 py-1 text-xs font-medium bg-indigo-100 text-indigo-800 rounded-full">DIgSILENT PowerFactory</span>
-                    <span className="px-3 py-1 text-xs font-medium bg-indigo-100 text-indigo-800 rounded-full">Power System Analysis</span>
-                    <span className="px-3 py-1 text-xs font-medium bg-indigo-100 text-indigo-800 rounded-full">Renewable Energy Integration</span>
-                    <span className="px-3 py-1 text-xs font-medium bg-indigo-100 text-indigo-800 rounded-full">Grid Stability Modeling</span>
+                    <span className="chip-proof">60MW integrated</span>
+                    <span className="chip-proof">25% stability gain</span>
+                    <span className="chip-tech">DIgSILENT PowerFactory</span>
+                    <span className="chip-tech">Power System Analysis</span>
+                    <span className="chip-tech">Renewable Energy Integration</span>
+                    <span className="chip-tech">Grid Stability Modeling</span>
                   </div>
                 </div>
                 
@@ -2559,9 +3199,25 @@ const ProjectsView = ({ t, language }: { t: T; language: Language }) => (
             </div>
           </div>
         </section>
+        </details>
+        )}
 
         {/* Digitalization & Automation */}
-        <section className="mb-20">
+        {(projectDomain === 'all' || projectDomain === 'digitalization') && (
+        <details id="projects-digital" className="mb-20 scroll-mt-32 group">
+          <summary className="list-none cursor-pointer liquid-pill rounded-xl px-5 py-4 shadow-sm hover:shadow-md transition duration-300 flex items-center justify-between">
+            <div className="flex items-start gap-3">
+              <div className="mt-0.5 text-teal-700">
+                <Cpu className="w-4 h-4" />
+              </div>
+              <div>
+              <p className="font-semibold text-slate-900">{t.projects.section_digital_title}</p>
+              <p className="text-sm text-slate-600 mt-1">{t.projects.section_digital_sub}</p>
+              </div>
+            </div>
+            <span className="text-slate-500 text-sm group-open:rotate-180 transition-transform">⌄</span>
+          </summary>
+          <section className="mt-3">
           <div className="flex items-center mb-10">
             <div className="bg-teal-100 p-3 rounded-full mr-4">
               <Cpu className="w-8 h-8 text-teal-700" />
@@ -2574,7 +3230,7 @@ const ProjectsView = ({ t, language }: { t: T; language: Language }) => (
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             
-            <div className="bg-white p-8 rounded-xl shadow-lg border-l-4 border-indigo-800">
+            <div className="liquid-card card-pad rounded-xl shadow-lg border-l-4 border-indigo-800">
               <div className="flex flex-col h-full">
                 <div className="mb-6">
                   <img src="/imgs/geothermal-drilling-activities.jpg" alt="Predictive Maintenance AI" className="w-full h-48 object-cover rounded-lg shadow-lg border border-gray-200" />
@@ -2584,15 +3240,16 @@ const ProjectsView = ({ t, language }: { t: T; language: Language }) => (
                   <h3 className="text-xl font-bold text-gray-900 mb-3">{t.projects.p6_t}</h3>
                   <p className="text-sm text-indigo-700 mb-4">{t.projects.p6_d}</p>
                   
-                  <div className="mb-4 border-l-4 border-rose-800 pl-3 bg-rose-50 p-3 rounded-md">
-                    <h4 className="text-sm font-semibold text-rose-900 mb-1">{t.projects.challenge_tag}</h4>
-                    <p className="text-xs text-gray-600">{t.projects.p6_challenge_p}</p>
-                  </div>
-                  
-                  <div className="mb-4 border-l-4 border-teal-700 pl-3 bg-teal-50 p-3 rounded-md">
-                    <h4 className="text-sm font-semibold text-teal-900 mb-1">{t.projects.solution_tag}</h4>
-                    <p className="text-xs text-gray-600">{t.projects.p6_solution_p}</p>
-                  </div>
+                  <ProblemSolutionImpact
+                    language={language}
+                    problem={t.projects.p6_challenge_p}
+                    solution={t.projects.p6_solution_p}
+                    impact={
+                      language === 'en'
+                        ? 'Cut unplanned downtime by 40% and supported measurable OPEX reduction.'
+                        : 'Ungeplante Ausfaelle um 40% reduziert und messbare OPEX-Senkung unterstuetzt.'
+                    }
+                  />
                   
                   <div className="mb-4 border-l-4 border-blue-800 pl-3 bg-blue-50 p-3 rounded-md">
                     <h4 className="text-sm font-semibold text-blue-900 mb-1">{t.projects.role_timeline_title}</h4>
@@ -2602,10 +3259,12 @@ const ProjectsView = ({ t, language }: { t: T; language: Language }) => (
                     </div>
                   </div>
                   
-                  <div className="flex flex-wrap gap-1 mb-4">
-                    <span className="px-2 py-1 text-xs font-medium bg-indigo-100 text-indigo-800 rounded-full">Python</span>
-                    <span className="px-2 py-1 text-xs font-medium bg-indigo-100 text-indigo-800 rounded-full">TensorFlow</span>
-                    <span className="px-2 py-1 text-xs font-medium bg-indigo-100 text-indigo-800 rounded-full">Time Series</span>
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    <span className="chip-proof">40% downtime ↓</span>
+                    <span className="chip-proof">$2M savings</span>
+                    <span className="chip-tech">Python</span>
+                    <span className="chip-tech">TensorFlow</span>
+                    <span className="chip-tech">Time Series</span>
                   </div>
                 </div>
                 
@@ -2624,13 +3283,13 @@ const ProjectsView = ({ t, language }: { t: T; language: Language }) => (
                   </div>
                 </div>
                 
-                <a href="https://drive.google.com/file/d/0B2ovMeevnDjZd195VHN4UjNXak0/view?usp=sharing&resourcekey=0-OM41Swf1myiikab1d5w7LQ" target="_blank" className="mt-4 block w-full text-center py-2 px-4 rounded-full bg-indigo-800 text-white font-semibold hover:bg-indigo-700 transition duration-150 text-sm">
-                  {t.projects.p6_button}
+                <a href="https://drive.google.com/file/d/0B2ovMeevnDjZd195VHN4UjNXak0/view?usp=sharing&resourcekey=0-OM41Swf1myiikab1d5w7LQ" target="_blank" className="btn-cta btn-cta-sm btn-cta-primary btn-cta-block mt-4">
+                  {ctaCaseStudy}
                 </a>
               </div>
             </div>
 
-            <div className="bg-white p-8 rounded-xl shadow-lg border-l-4 border-indigo-800">
+            <div className="liquid-card card-pad rounded-xl shadow-lg border-l-4 border-indigo-800">
               <div className="flex flex-col h-full">
                 <div className="mb-6">
                   <img src="https://images.pexels.com/photos/4386466/pexels-photo-4386466.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Health Tech Load Balancing" className="w-full h-48 object-cover rounded-lg shadow-lg border border-gray-200" />
@@ -2640,15 +3299,16 @@ const ProjectsView = ({ t, language }: { t: T; language: Language }) => (
                   <h3 className="text-xl font-bold text-gray-900 mb-3">{t.projects.health_title}</h3>
                   <p className="text-sm text-indigo-700 mb-4">{t.projects.health_sub}</p>
                   
-                  <div className="mb-4 border-l-4 border-rose-800 pl-3 bg-rose-50 p-3 rounded-md">
-                    <h4 className="text-sm font-semibold text-rose-900 mb-1">{t.projects.challenge_tag}</h4>
-                    <p className="text-xs text-gray-600">{t.projects.health_challenge_p}</p>
-                  </div>
-                  
-                  <div className="mb-4 border-l-4 border-teal-700 pl-3 bg-teal-50 p-3 rounded-md">
-                    <h4 className="text-sm font-semibold text-teal-900 mb-1">{t.projects.solution_tag}</h4>
-                    <p className="text-xs text-gray-600">{t.projects.health_solution_p}</p>
-                  </div>
+                  <ProblemSolutionImpact
+                    language={language}
+                    problem={t.projects.health_challenge_p}
+                    solution={t.projects.health_solution_p}
+                    impact={
+                      language === 'en'
+                        ? 'Improved load balancing with faster triage and stronger continuity of care.'
+                        : 'Lastverteilung verbessert mit schnellerer Triage und besserer Versorgungskontinuitaet.'
+                    }
+                  />
                   
                   <div className="mb-4 border-l-4 border-blue-800 pl-3 bg-blue-50 p-3 rounded-md">
                     <h4 className="text-sm font-semibold text-blue-900 mb-1">{t.projects.role_timeline_title}</h4>
@@ -2658,10 +3318,12 @@ const ProjectsView = ({ t, language }: { t: T; language: Language }) => (
                     </div>
                   </div>
                   
-                  <div className="flex flex-wrap gap-1 mb-4">
-                    <span className="px-2 py-1 text-xs font-medium bg-indigo-100 text-indigo-800 rounded-full">Node.js</span>
-                    <span className="px-2 py-1 text-xs font-medium bg-indigo-100 text-indigo-800 rounded-full">React</span>
-                    <span className="px-2 py-1 text-xs font-medium bg-indigo-100 text-indigo-800 rounded-full">MongoDB</span>
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    <span className="chip-proof">50% wait-time ↓</span>
+                    <span className="chip-proof">30% throughput ↑</span>
+                    <span className="chip-tech">Node.js</span>
+                    <span className="chip-tech">React</span>
+                    <span className="chip-tech">MongoDB</span>
                   </div>
                 </div>
                 
@@ -2680,26 +3342,42 @@ const ProjectsView = ({ t, language }: { t: T; language: Language }) => (
                   </div>
                 </div>
                 
-                <button onClick={() => window.location.href = '/contact'} className="mt-4 block w-full text-center py-2 px-4 rounded-full bg-indigo-800 text-white font-semibold hover:bg-indigo-700 transition duration-150 text-sm">
-                  {t.projects.health_button}
+                <button onClick={() => window.location.href = '/contact'} className="btn-cta btn-cta-sm btn-cta-primary btn-cta-block mt-4">
+                  {ctaFullBrief}
                 </button>
               </div>
             </div>
 
           </div>
         </section>
+        </details>
+        )}
 
         {/* Climate Tech Investment Consultancy */}
-        <section className="mb-20">
-          <div className="bg-white p-8 rounded-xl shadow-lg border-l-4 border-indigo-800">
+        {(projectDomain === 'all' || projectDomain === 'advisory') && (
+        <details id="projects-climate" className="mb-20 group scroll-mt-32">
+          <summary className="list-none cursor-pointer liquid-pill rounded-xl px-5 py-4 shadow-sm hover:shadow-md transition duration-300 flex items-center justify-between">
+            <div className="flex items-start gap-3">
+              <div className="mt-0.5 text-indigo-700">
+                <Leaf className="w-4 h-4" />
+              </div>
+              <div>
+              <p className="font-semibold text-slate-900">{t.projects.climate_title}</p>
+              <p className="text-sm text-slate-600 mt-1">{t.projects.climate_sub}</p>
+              </div>
+            </div>
+            <span className="text-slate-500 text-sm group-open:rotate-180 transition-transform">⌄</span>
+          </summary>
+          <section className="mt-3">
+          <div className="liquid-card card-pad rounded-xl shadow-lg border-l-4 border-indigo-800">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               <div className="min-h-[400px] flex flex-col gap-6">
                 <img src="https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Climate Tech Advisory" className="w-full h-auto rounded-lg shadow-lg border border-gray-200 object-cover mb-4" />
                 <div className="bg-gray-50 p-5 rounded-xl shadow-inner border border-gray-200 flex-1">
                   <h5 className="text-lg font-bold text-gray-800 mb-2">{t.projects.climate_left_title}</h5>
                   <p className="text-sm text-gray-600 mb-4">{t.projects.climate_left_p}</p>
-                  <a href="https://www.linkedin.com/in/clifford-ondieki-tpm/details/volunteering-experiences/" target="_blank" className="block w-full text-center py-2 px-4 rounded-full bg-indigo-800 text-white font-semibold hover:bg-indigo-700 transition duration-150">
-                    {t.projects.climate_left_button}
+                  <a href="https://www.linkedin.com/in/clifford-ondieki-tpm/details/volunteering-experiences/" target="_blank" className="btn-cta btn-cta-sm btn-cta-primary btn-cta-block">
+                    {ctaFullBrief}
                   </a>
                 </div>
               </div>
@@ -2709,15 +3387,16 @@ const ProjectsView = ({ t, language }: { t: T; language: Language }) => (
                   <h2 className="text-2xl font-bold text-gray-900 mb-4">{t.projects.climate_title}</h2>
                   <p className="text-lg text-indigo-700 mb-6">{t.projects.climate_sub}</p>
                   
-                  <div className="mb-6 border-l-4 border-rose-800 pl-4 bg-rose-50 p-4 rounded-md">
-                    <h4 className="text-lg font-semibold text-rose-900 mb-2">{t.projects.challenge_tag}</h4>
-                    <p className="text-gray-600 text-sm">{t.projects.climate_challenge_p}</p>
-                  </div>
-                  
-                  <div className="mb-6 border-l-4 border-teal-700 pl-4 bg-teal-50 p-4 rounded-md">
-                    <h4 className="text-lg font-semibold text-teal-900 mb-2">{t.projects.climate_approach_title}</h4>
-                    <p className="text-gray-600 text-sm">{t.projects.climate_approach_p}</p>
-                  </div>
+                  <ProblemSolutionImpact
+                    language={language}
+                    problem={t.projects.climate_challenge_p}
+                    solution={t.projects.climate_approach_p}
+                    impact={
+                      language === 'en'
+                        ? 'Built stronger founder-investor deployment alignment to de-risk climate commercialization.'
+                        : 'Staerkere Deployment-Ausrichtung zwischen Gruendern und Investoren zur Risikoreduktion in der Kommerzialisierung.'
+                    }
+                  />
 
                   <div className="mb-6 border-l-4 border-blue-800 pl-4 bg-blue-50 p-4 rounded-md">
                     <h4 className="text-lg font-semibold text-blue-900 mb-2">{t.projects.role_timeline_title}</h4>
@@ -2742,10 +3421,12 @@ const ProjectsView = ({ t, language }: { t: T; language: Language }) => (
                   </div>
                   
                   <div className="flex flex-wrap gap-2 mb-6">
-                    <span className="px-3 py-1 text-xs font-medium bg-indigo-100 text-indigo-800 rounded-full">Venture Capital Analysis</span>
-                    <span className="px-3 py-1 text-xs font-medium bg-indigo-100 text-indigo-800 rounded-full">Operational Due Diligence</span>
-                    <span className="px-3 py-1 text-xs font-medium bg-indigo-100 text-indigo-800 rounded-full">Deployment Strategy</span>
-                    <span className="px-3 py-1 text-xs font-medium bg-indigo-100 text-indigo-800 rounded-full">{t.projects.climate_tag_market}</span>
+                    <span className="chip-proof">5+ startups</span>
+                    <span className="chip-proof">3x deployment speed</span>
+                    <span className="chip-tech">Venture Capital Analysis</span>
+                    <span className="chip-tech">Operational Due Diligence</span>
+                    <span className="chip-tech">Deployment Strategy</span>
+                    <span className="chip-tech">{t.projects.climate_tag_market}</span>
                   </div>
                 </div>
                 
@@ -2767,12 +3448,28 @@ const ProjectsView = ({ t, language }: { t: T; language: Language }) => (
             </div>
           </div>
         </section>
+        </details>
+        )}
 
         {/* Premium Case Studies */}
-        <section className="mb-16">
+        {(projectDomain === 'all' || projectDomain === 'digitalization') && (
+        <details id="projects-premium" className="mb-16 group scroll-mt-32">
+          <summary className="list-none cursor-pointer liquid-pill rounded-xl px-5 py-4 shadow-sm hover:shadow-md transition duration-300 flex items-center justify-between">
+            <div className="flex items-start gap-3">
+              <div className="mt-0.5 text-amber-600">
+                <Shield className="w-4 h-4" />
+              </div>
+              <div>
+              <p className="font-semibold text-slate-900">{t.projects.premium_title}</p>
+              <p className="text-sm text-slate-600 mt-1">{t.projects.premium_sub}</p>
+              </div>
+            </div>
+            <span className="text-slate-500 text-sm group-open:rotate-180 transition-transform">⌄</span>
+          </summary>
+          <section className="mt-3">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-indigo-900 mb-4">{t.projects.premium_title}</h2>
-            <p className="text-lg text-gray-600">{t.projects.premium_sub}</p>
+            <p className="type-section-sub">{t.projects.premium_sub}</p>
           </div>
 
           <div className="space-y-12">
@@ -2782,8 +3479,8 @@ const ProjectsView = ({ t, language }: { t: T; language: Language }) => (
                   <Shield className="mx-auto mb-4 w-10 h-10 text-amber-400" />
                   <p className="text-xl font-bold">{t.projects.premium_overlay1_title}</p>
                   <small className="block text-gray-300 mb-6">{t.projects.premium_overlay1_sub}</small>
-                  <button onClick={() => window.location.href = '/contact'} className="bg-amber-400 text-gray-900 font-bold py-3 px-6 rounded-full shadow-lg hover:bg-amber-300 transition">
-                    {t.projects.premium_overlay1_button}
+                  <button onClick={() => window.location.href = '/contact'} className="btn-cta bg-amber-400 text-gray-900 hover:bg-amber-300">
+                    {ctaFullBrief}
                   </button>
                 </div>
               </div>
@@ -2818,10 +3515,10 @@ const ProjectsView = ({ t, language }: { t: T; language: Language }) => (
                     </div>
                     
                     <div className="flex flex-wrap gap-2 mb-4">
-                      <span className="px-3 py-1 text-xs font-medium bg-gray-200 text-gray-700 rounded-full">Python</span>
-                      <span className="px-3 py-1 text-xs font-medium bg-gray-200 text-gray-700 rounded-full">TensorFlow</span>
-                      <span className="px-3 py-1 text-xs font-medium bg-gray-200 text-gray-700 rounded-full">LSTM Networks</span>
-                      <span className="px-3 py-1 text-xs font-medium bg-gray-200 text-gray-700 rounded-full">SCADA Integration</span>
+                      <span className="chip-tech">Python</span>
+                      <span className="chip-tech">TensorFlow</span>
+                      <span className="chip-tech">LSTM Networks</span>
+                      <span className="chip-tech">SCADA Integration</span>
                     </div>
                   </div>
                   <div className="flex flex-col items-center">
@@ -2846,8 +3543,8 @@ const ProjectsView = ({ t, language }: { t: T; language: Language }) => (
                   <Shield className="mx-auto mb-4 w-10 h-10 text-amber-400" />
                   <p className="text-xl font-bold">{t.projects.premium_overlay2_title}</p>
                   <small className="block text-gray-300 mb-6">{t.projects.premium_overlay2_sub}</small>
-                  <button onClick={() => window.location.href = '/contact'} className="bg-amber-400 text-gray-900 font-bold py-3 px-6 rounded-full shadow-lg hover:bg-amber-300 transition">
-                    {t.projects.premium_overlay2_button}
+                  <button onClick={() => window.location.href = '/contact'} className="btn-cta bg-amber-400 text-gray-900 hover:bg-amber-300">
+                    {ctaFullBrief}
                   </button>
                 </div>
               </div>
@@ -2894,10 +3591,10 @@ const ProjectsView = ({ t, language }: { t: T; language: Language }) => (
                     </div>
                     
                     <div className="flex flex-wrap gap-2 mb-4">
-                      <span className="px-3 py-1 text-xs font-medium bg-gray-200 text-gray-700 rounded-full">Node.js</span>
-                      <span className="px-3 py-1 text-xs font-medium bg-gray-200 text-gray-700 rounded-full">InfluxDB</span>
-                      <span className="px-3 py-1 text-xs font-medium bg-gray-200 text-gray-700 rounded-full">MQTT</span>
-                      <span className="px-3 py-1 text-xs font-medium bg-gray-200 text-gray-700 rounded-full">Docker</span>
+                      <span className="chip-tech">Node.js</span>
+                      <span className="chip-tech">InfluxDB</span>
+                      <span className="chip-tech">MQTT</span>
+                      <span className="chip-tech">Docker</span>
                     </div>
                   </div>
                 </div>
@@ -2905,24 +3602,30 @@ const ProjectsView = ({ t, language }: { t: T; language: Language }) => (
             </div>
           </div>
         </section>
+        </details>
+        )}
 
         {/* CTA */}
-        <section className="py-16 text-white" style={{ backgroundColor: 'var(--primary-indigo)' }}>
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <section
+          className="section-space text-white relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen"
+          style={{ backgroundColor: 'var(--primary-indigo)' }}
+        >
+          <div className="section-shell-narrow text-center">
             <h2 className="text-3xl sm:text-4xl font-extrabold mb-4">{t.projects.cta_title}</h2>
             <p className="text-lg font-light mb-6">{t.projects.cta_body}</p>
-            <button onClick={() => window.location.href = '/contact'} className="inline-block py-3 px-8 rounded-full bg-white text-indigo-900 font-bold text-lg shadow-xl hover:bg-gray-100 transition duration-300">
-              {t.projects.cta_button}
+            <button onClick={() => window.location.href = '/contact'} className="btn-cta btn-cta-light inline-flex items-center">
+              {t.projects.cta_button} <ArrowRight className="w-5 h-5 ml-2" />
             </button>
           </div>
         </section>
       </div> {/* Closes max-w-7xl */}
     </main> {/* Closes main */}
   </div>
-);
+  );
+};
 
 const BlogView = ({ t }: { t: T }) => (
-  <div className="animate-in fade-in duration-1000">
+  <div className="page-fade-in">
     <SectionHeader title={t.blog.hero_title} sub={t.blog.hero_subtitle} />
     <main className="py-4 lg:py-6">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
@@ -2944,7 +3647,7 @@ const BlogView = ({ t }: { t: T }) => (
 
         <section>
           <div className="grid lg:grid-cols-2 gap-8">
-            <div className="bg-white p-8 rounded-xl shadow-lg border-l-4 border-indigo-800">
+            <div className="liquid-card card-pad rounded-xl shadow-lg border-l-4 border-indigo-800">
               <div className="text-sm text-gray-500 mb-2">{t.blog.post_a_label}</div>
               <h3 className="text-2xl font-bold text-gray-900 mb-3">{t.blog.post_a_title}</h3>
               <p className="text-gray-600 mb-6">{t.blog.post_a_body}</p>
@@ -2955,7 +3658,7 @@ const BlogView = ({ t }: { t: T }) => (
               </div>
             </div>
 
-            <div className="bg-white p-8 rounded-xl shadow-lg border-l-4 border-indigo-800">
+            <div className="liquid-card card-pad rounded-xl shadow-lg border-l-4 border-indigo-800">
               <div className="text-sm text-gray-500 mb-2">{t.blog.post_b_label}</div>
               <h3 className="text-2xl font-bold text-gray-900 mb-3">{t.blog.post_b_title}</h3>
               <p className="text-gray-600 mb-6">{t.blog.post_b_body}</p>
@@ -2966,7 +3669,7 @@ const BlogView = ({ t }: { t: T }) => (
               </div>
             </div>
 
-            <div className="bg-white p-8 rounded-xl shadow-lg border-l-4 border-indigo-800">
+            <div className="liquid-card card-pad rounded-xl shadow-lg border-l-4 border-indigo-800">
               <div className="text-sm text-gray-500 mb-2">{t.blog.post_c_label}</div>
               <h3 className="text-2xl font-bold text-gray-900 mb-3">{t.blog.post_c_title}</h3>
               <p className="text-gray-600 mb-6">{t.blog.post_c_body}</p>
@@ -2977,7 +3680,7 @@ const BlogView = ({ t }: { t: T }) => (
               </div>
             </div>
 
-            <div className="bg-white p-8 rounded-xl shadow-lg border-l-4 border-indigo-800">
+            <div className="liquid-card card-pad rounded-xl shadow-lg border-l-4 border-indigo-800">
               <div className="text-sm text-gray-500 mb-2">{t.blog.post_d_label}</div>
               <h3 className="text-2xl font-bold text-gray-900 mb-3">{t.blog.post_d_title}</h3>
               <p className="text-gray-600 mb-6">{t.blog.post_d_body}</p>
@@ -2995,7 +3698,7 @@ const BlogView = ({ t }: { t: T }) => (
             <div className="bg-blue-600 p-8 rounded-xl text-white text-center">
               <h3 className="text-2xl font-bold mb-4">{t.blog.linkedin_title}</h3>
               <p className="text-lg mb-6 opacity-90">{t.blog.linkedin_body}</p>
-              <a href="https://www.linkedin.com/in/clifford-ondieki-559b9771/" target="_blank" rel="noreferrer" className="inline-block py-3 px-6 rounded-full bg-white text-blue-600 font-bold hover:bg-gray-100 transition duration-300">
+              <a href="https://www.linkedin.com/in/clifford-ondieki-559b9771/" target="_blank" rel="noreferrer" className="btn-cta bg-white text-blue-600 border border-white hover:bg-gray-100">
                 {t.blog.linkedin_button}
               </a>
             </div>
@@ -3004,12 +3707,12 @@ const BlogView = ({ t }: { t: T }) => (
 
         <section>
           <div className="max-w-4xl mx-auto">
-            <div className="bg-white p-8 rounded-xl shadow-lg border-l-4 border-indigo-800 text-center">
+            <div className="liquid-card card-pad rounded-xl shadow-lg border-l-4 border-indigo-800 text-center">
               <h3 className="text-2xl font-bold text-gray-900 mb-4">{t.blog.newsletter_title}</h3>
               <p className="text-gray-600 mb-6">{t.blog.newsletter_body}</p>
               <form className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <input type="email" placeholder={t.blog.newsletter_placeholder} className="px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 w-full sm:w-80" />
-                <button type="submit" className="py-3 px-6 rounded-full bg-indigo-800 text-white font-semibold hover:bg-indigo-700 transition duration-300 w-full sm:w-auto">
+                <button type="submit" className="btn-cta btn-cta-primary btn-cta-block">
                   {t.blog.newsletter_button}
                 </button>
               </form>
@@ -3024,7 +3727,7 @@ const BlogView = ({ t }: { t: T }) => (
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 className="text-3xl sm:text-4xl font-extrabold mb-4">{t.blog.cta_title}</h2>
         <p className="text-lg font-light mb-6">{t.blog.cta_body}</p>
-        <button onClick={() => window.location.href = '/contact'} className="inline-block py-3 px-8 rounded-full bg-white text-indigo-900 font-bold text-lg shadow-xl hover:bg-gray-100 transition duration-300">
+        <button onClick={() => window.location.href = '/contact'} className="btn-cta btn-cta-light">
           {t.blog.cta_button}
         </button>
       </div>
@@ -3033,7 +3736,7 @@ const BlogView = ({ t }: { t: T }) => (
 );
 
 const ContactView = ({ t }: { t: T }) => (
-  <div className="animate-in fade-in duration-1000">
+  <div className="page-fade-in">
     <header className="py-16 lg:py-20 text-white" style={{ backgroundColor: 'var(--primary-indigo)' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-4 tracking-tight">
@@ -3049,7 +3752,7 @@ const ContactView = ({ t }: { t: T }) => (
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
         <section>
           <div className="max-w-4xl mx-auto">
-            <div className="bg-white p-8 rounded-xl shadow-lg border-l-4 border-indigo-800">
+            <div className="liquid-card card-pad rounded-xl shadow-lg border-l-4 border-indigo-800">
               <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">{t.contact.form_title}</h2>
               <p className="text-center text-gray-600 mb-8">{t.contact.form_desc}</p>
 
@@ -3064,7 +3767,7 @@ const ContactView = ({ t }: { t: T }) => (
                       type="text"
                       required
                       placeholder={t.contact.form_name_label}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition duration-150"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition duration-300"
                     />
                   </div>
                   <div>
@@ -3075,7 +3778,7 @@ const ContactView = ({ t }: { t: T }) => (
                       type="email"
                       required
                       placeholder={t.contact.form_email_label}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition duration-150"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition duration-300"
                     />
                   </div>
                 </div>
@@ -3085,7 +3788,7 @@ const ContactView = ({ t }: { t: T }) => (
                     id="subject"
                     name="subject"
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition duration-150"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition duration-300"
                     defaultValue=""
                   >
                     <option value="" disabled>{t.contact.form_topic_placeholder}</option>
@@ -3107,11 +3810,11 @@ const ContactView = ({ t }: { t: T }) => (
                     rows={5}
                     required
                     placeholder={t.contact.form_message_placeholder}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition duration-150"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition duration-300"
                   />
                 </div>
                 <div className="text-center">
-                  <button type="submit" className="py-3 px-8 rounded-full bg-indigo-800 text-white font-bold text-lg shadow-xl hover:bg-indigo-700 transition duration-300">
+                  <button type="submit" className="btn-cta btn-cta-primary">
                     {t.contact.btn_send}
                   </button>
                 </div>
@@ -3199,7 +3902,7 @@ const ContactView = ({ t }: { t: T }) => (
         <section>
           <div className="max-w-4xl mx-auto text-center">
             <h3 className="text-2xl font-bold text-gray-900 mb-4">{t.contact.commitment_title}</h3>
-            <p className="text-lg text-gray-600 mb-4">{t.contact.commitment_body}</p>
+            <p className="type-section-sub mb-4">{t.contact.commitment_body}</p>
             <p className="text-base italic text-gray-500">{t.contact.commitment_quote}</p>
           </div>
         </section>
@@ -3210,7 +3913,7 @@ const ContactView = ({ t }: { t: T }) => (
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 className="text-3xl sm:text-4xl font-extrabold mb-4">{t.contact.cta_title}</h2>
         <p className="text-lg font-light mb-6">{t.contact.cta_body}</p>
-        <a href="mailto:engomari6@gmail.com" className="inline-block py-3 px-8 rounded-full bg-white text-indigo-900 font-bold text-lg shadow-xl hover:bg-gray-100 transition duration-300">
+        <a href="mailto:engomari6@gmail.com" className="btn-cta btn-cta-light inline-block">
           {t.contact.cta_button}
         </a>
       </div>
@@ -3223,21 +3926,21 @@ const PrivacyView = ({ t, language, setPage }: { t: T; language: Language; setPa
   const dateString = now.toLocaleDateString(language === 'en' ? 'en-US' : 'de-DE', { year: 'numeric', month: 'long', day: 'numeric' });
 
   return (
-    <div className="animate-in fade-in duration-1000">
+    <div className="page-fade-in">
       <SectionHeader title={t.privacy.title} sub={t.privacy.subtitle} />
-      <section className="py-12 lg:py-20 bg-white">
+      <section className="section-space bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <section className="mb-12">
-            <div className="bg-white p-8 rounded-xl shadow-lg border-l-4 border-indigo-800">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">{t.privacy.commitment_title}</h2>
+            <div className="liquid-card card-pad rounded-xl shadow-lg border-l-4 border-indigo-800">
+              <h2 className="type-section-title mb-4">{t.privacy.commitment_title}</h2>
               <p className="text-lg text-gray-700 mb-4">{t.privacy.commitment_p1}</p>
               <p className="text-gray-600">{t.privacy.commitment_p2}</p>
             </div>
           </section>
 
           <section className="mb-12">
-            <div className="bg-white p-8 rounded-xl shadow-lg border-l-4 border-indigo-800">
+            <div className="liquid-card card-pad rounded-xl shadow-lg border-l-4 border-indigo-800">
               <h2 className="text-3xl font-bold text-gray-900 mb-6">{t.privacy.info_title}</h2>
               
               <div className="space-y-6">
@@ -3290,7 +3993,7 @@ const PrivacyView = ({ t, language, setPage }: { t: T; language: Language; setPa
           </section>
 
           <section className="mb-12">
-            <div className="bg-white p-8 rounded-xl shadow-lg border-l-4 border-indigo-800">
+            <div className="liquid-card card-pad rounded-xl shadow-lg border-l-4 border-indigo-800">
               <h2 className="text-3xl font-bold text-gray-900 mb-6">{t.privacy.use_title}</h2>
               <ul className="space-y-3 text-gray-600">
                 {t.privacy.use_list.map((item: string, i: number) => (
@@ -3304,7 +4007,7 @@ const PrivacyView = ({ t, language, setPage }: { t: T; language: Language; setPa
           </section>
 
           <section className="mb-12">
-            <div className="bg-white p-8 rounded-xl shadow-lg border-l-4 border-indigo-800">
+            <div className="liquid-card card-pad rounded-xl shadow-lg border-l-4 border-indigo-800">
               <h2 className="text-3xl font-bold text-gray-900 mb-6">{t.privacy.rights_title}</h2>
               <p className="text-gray-600 mb-4">{t.privacy.rights_p}</p>
               <div className="grid md:grid-cols-2 gap-4">
@@ -3349,7 +4052,7 @@ const PrivacyView = ({ t, language, setPage }: { t: T; language: Language; setPa
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl sm:text-4xl font-extrabold mb-4">{t.privacy.questions_title}</h2>
           <p className="text-lg font-light mb-6">{t.privacy.questions_p}</p>
-          <button onClick={() => setPage('contact')} className="inline-block py-3 px-8 rounded-full bg-white text-indigo-900 font-bold text-lg shadow-xl hover:bg-gray-100 transition duration-300">
+          <button onClick={() => setPage('contact')} className="btn-cta btn-cta-light">
             {t.privacy.contact_cta}
           </button>
         </div>
@@ -3358,7 +4061,7 @@ const PrivacyView = ({ t, language, setPage }: { t: T; language: Language; setPa
   );
 };
 
-const EVStudyView = ({ t, language, setPage }: { t: T; language: Language; setPage: SetPage }) => {
+const EVStudyView = ({ t }: { t: T }) => {
   const [activeDistrict, setActiveDistrict] = useState<District>(DISTRICT_DATA[10]); // Treptow focus (Fixed Index)
   const sortedDistricts = useMemo<District[]>(
     () => [...DISTRICT_DATA].sort((a, b) => b.ratio - a.ratio),
@@ -3368,6 +4071,9 @@ const EVStudyView = ({ t, language, setPage }: { t: T; language: Language; setPa
   const allocChartRef = useRef<HTMLCanvasElement | null>(null);
   const paretoChartRef = useRef<HTMLCanvasElement | null>(null);
   const resilienceChartRef = useRef<HTMLCanvasElement | null>(null);
+  const allocChartInstanceRef = useRef<any>(null);
+  const paretoChartInstanceRef = useRef<any>(null);
+  const resilienceChartInstanceRef = useRef<any>(null);
 
   // Strategy Allocations (K=100) - From Table III
   const strategies = {
@@ -3405,6 +4111,18 @@ const EVStudyView = ({ t, language, setPage }: { t: T; language: Language; setPa
     };
 
     return () => {
+      if (allocChartInstanceRef.current) {
+        allocChartInstanceRef.current.destroy();
+        allocChartInstanceRef.current = null;
+      }
+      if (paretoChartInstanceRef.current) {
+        paretoChartInstanceRef.current.destroy();
+        paretoChartInstanceRef.current = null;
+      }
+      if (resilienceChartInstanceRef.current) {
+        resilienceChartInstanceRef.current.destroy();
+        resilienceChartInstanceRef.current = null;
+      }
       if (document.head.contains(script)) {
         document.head.removeChild(script);
       }
@@ -3420,7 +4138,7 @@ const EVStudyView = ({ t, language, setPage }: { t: T; language: Language; setPa
     if (!allocCtx) {
       return;
     }
-    new window.Chart(allocCtx, {
+    allocChartInstanceRef.current = new window.Chart(allocCtx, {
       type: 'bar',
       data: {
         labels: DISTRICT_DATA.map(d => d.name),
@@ -3446,7 +4164,7 @@ const EVStudyView = ({ t, language, setPage }: { t: T; language: Language; setPa
     if (!paretoCtx) {
       return;
     }
-    new window.Chart(paretoCtx, {
+    paretoChartInstanceRef.current = new window.Chart(paretoCtx, {
       type: 'scatter',
       data: {
         datasets: [{
@@ -3480,7 +4198,7 @@ const EVStudyView = ({ t, language, setPage }: { t: T; language: Language; setPa
     if (!resilienceCtx) {
       return;
     }
-    new window.Chart(resilienceCtx, {
+    resilienceChartInstanceRef.current = new window.Chart(resilienceCtx, {
       type: 'bar',
       data: {
         labels: ['Utility Guarantee', 'Equity Guarantee'],
@@ -3500,11 +4218,15 @@ const EVStudyView = ({ t, language, setPage }: { t: T; language: Language; setPa
 
   const updateStrategy = (stratKey: keyof typeof strategies) => {
     setCurrentStrategy(stratKey);
-    // Note: In a real implementation, update the chart data here
+    const chart = allocChartInstanceRef.current;
+    if (chart) {
+      chart.data.datasets[0].data = strategies[stratKey].data;
+      chart.update();
+    }
   };
 
   return (
-    <div className="animate-in fade-in duration-1000">
+    <div className="page-fade-in">
       {/* Header / Abstract */}
       <header className="bg-slate-900 text-white pt-16 pb-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
@@ -3625,14 +4347,14 @@ const EVStudyView = ({ t, language, setPage }: { t: T; language: Language; setPa
             </div>
 
             {/* Strategy Controls */}
-            <div className="flex justify-center gap-4 mb-8">
-              <button onClick={() => updateStrategy('equity')} className={`px-6 py-3 rounded-full font-bold transition ${currentStrategy === 'equity' ? 'text-white bg-teal-600 shadow-lg transform scale-105' : 'text-slate-600 bg-white border border-slate-300 hover:bg-slate-50'}`}>
+            <div className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-8">
+              <button onClick={() => updateStrategy('equity')} className={`px-6 py-3 rounded-full font-bold transition duration-300 ${currentStrategy === 'equity' ? 'text-white bg-teal-600 shadow-lg' : 'text-slate-600 bg-white border border-slate-300 hover:bg-slate-50'}`}>
                 {t.ev.strategy_a}
               </button>
-              <button onClick={() => updateStrategy('balanced')} className={`px-6 py-3 rounded-full font-bold transition ${currentStrategy === 'balanced' ? 'text-white bg-teal-600 shadow-lg transform scale-105' : 'text-slate-600 bg-white border border-slate-300 hover:bg-slate-50'}`}>
+              <button onClick={() => updateStrategy('balanced')} className={`px-6 py-3 rounded-full font-bold transition duration-300 ${currentStrategy === 'balanced' ? 'text-white bg-teal-600 shadow-lg' : 'text-slate-600 bg-white border border-slate-300 hover:bg-slate-50'}`}>
                 {t.ev.strategy_b}
               </button>
-              <button onClick={() => updateStrategy('utility')} className={`px-6 py-3 rounded-full font-bold transition ${currentStrategy === 'utility' ? 'text-white bg-teal-600 shadow-lg transform scale-105' : 'text-slate-600 bg-white border border-slate-300 hover:bg-slate-50'}`}>
+              <button onClick={() => updateStrategy('utility')} className={`px-6 py-3 rounded-full font-bold transition duration-300 ${currentStrategy === 'utility' ? 'text-white bg-teal-600 shadow-lg' : 'text-slate-600 bg-white border border-slate-300 hover:bg-slate-50'}`}>
                 {t.ev.strategy_c}
               </button>
             </div>
@@ -3784,25 +4506,6 @@ const EVStudyView = ({ t, language, setPage }: { t: T; language: Language; setPa
 
       </main>
 
-      {/* Footer */}
-      <footer className="bg-slate-900 text-slate-400 py-12 text-center">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-center space-x-6 mb-6">
-            <a href="https://www.linkedin.com/in/clifford-ondieki-tpm/" target="_blank" rel="noreferrer" className="text-gray-400 hover:text-[--highlight-gold] transition duration-300" title="LinkedIn Profile" aria-label="LinkedIn Profile">
-              <Linkedin size={28} />
-            </a>
-          </div>
-
-          <p className="text-gray-400 text-sm mb-4">
-            Copyright &copy; {new Date().getFullYear()} Clifford Ondieki | Bridging technology with purpose — energizing change one system at a time.
-          </p>
-          <p className="text-xs space-x-4">
-            <button onClick={() => setPage('privacy')} className="text-gray-500 hover:text-white transition">Privacy Policy</button>
-            <span className="text-gray-600">|</span>
-            <button onClick={() => setPage('contact')} className="text-gray-500 hover:text-white transition">Contact</button>
-          </p>
-        </div>
-      </footer>
     </div>
   );
 }
@@ -3834,6 +4537,7 @@ const App = () => {
   const [currentPage, setCurrentPage] = useState<PageId>('home');
   const [language, setLanguage] = useState<Language>('en');
   const [menuOpen, setMenuOpen] = useState(false);
+  const pageContentRef = useRef<HTMLDivElement | null>(null);
 
   const t = TRANSLATIONS[language];
 
@@ -3916,12 +4620,18 @@ const App = () => {
     }
   }, [currentPage]);
 
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    pageContentRef.current?.focus({ preventScroll: true });
+    setMenuOpen(false);
+  }, [currentPage]);
+
   const renderPage = () => {
     switch (currentPage) {
       case 'home':
         return <Home setPage={setCurrentPage} t={t} language={language} />;
       case 'about':
-        return <AboutView t={t} language={language} setPage={setCurrentPage} />;
+        return <AboutView t={t} setPage={setCurrentPage} />;
       case 'projects':
         return <ProjectsView t={t} language={language} />;
       case 'philosophy':
@@ -3931,7 +4641,7 @@ const App = () => {
       case 'contact':
         return <ContactView t={t} />;
       case 'ev-study':
-        return <EVStudyView t={t} language={language} setPage={setCurrentPage} />;
+        return <EVStudyView t={t} />;
       case 'privacy':
         return <PrivacyView t={t} language={language} setPage={setCurrentPage} />;
       default:
@@ -3953,7 +4663,7 @@ const App = () => {
       <GlobalStyles />
       <CookieBanner />
 
-      <nav className="fixed top-0 z-50 w-full bg-white shadow-md">
+      <nav className="sticky top-0 inset-x-0 z-50 w-full glass-nav">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <button
@@ -3980,7 +4690,7 @@ const App = () => {
               <button
                 type="button"
                 onClick={() => setMenuOpen((open) => !open)}
-                className="text-gray-500 hover:text-[--primary-indigo] focus:outline-none focus:ring-2 focus:ring-[--primary-indigo] rounded-lg p-2"
+                className="liquid-pill text-slate-700 hover:text-[--primary-indigo] focus:outline-none focus:ring-2 focus:ring-[--primary-indigo] rounded-lg p-2 transition duration-300"
                 aria-controls="mobile-menu"
                 aria-expanded={menuOpen}
               >
@@ -4009,10 +4719,10 @@ const App = () => {
                   key={item.id}
                   type="button"
                   onClick={() => setCurrentPage(item.id)}
-                  className={`px-3 py-2 rounded-md text-sm transition duration-150 ${
+                  className={`px-3 py-2 rounded-full text-sm transition duration-300 ${
                     currentPage === item.id
-                      ? 'text-[--primary-indigo] bg-[--primary-indigo]/10 font-bold'
-                      : 'text-gray-600 hover:text-[--primary-indigo] font-medium'
+                      ? 'liquid-pill-active font-bold'
+                      : 'liquid-pill text-gray-700 hover:text-[--primary-indigo] font-medium'
                   }`}
                 >
                   {item.label}
@@ -4023,10 +4733,10 @@ const App = () => {
                 <button
                   type="button"
                   onClick={() => setLanguage('en')}
-                  className={`language-toggle text-xs font-semibold py-1 px-3 rounded-full border transition whitespace-nowrap ${
+                  className={`language-toggle text-xs font-semibold py-1 px-3 rounded-full transition whitespace-nowrap ${
                     language === 'en'
-                      ? 'active border-[--primary-indigo] text-white bg-[--primary-indigo]'
-                      : 'border-gray-300 hover:bg-gray-100 text-gray-700'
+                      ? 'active liquid-pill-active'
+                      : 'liquid-pill text-gray-700'
                   }`}
                 >
                   EN
@@ -4034,10 +4744,10 @@ const App = () => {
                 <button
                   type="button"
                   onClick={() => setLanguage('de')}
-                  className={`language-toggle text-xs font-semibold py-1 px-3 rounded-full border transition whitespace-nowrap ${
+                  className={`language-toggle text-xs font-semibold py-1 px-3 rounded-full transition whitespace-nowrap ${
                     language === 'de'
-                      ? 'active border-[--primary-indigo] text-white bg-[--primary-indigo]'
-                      : 'border-gray-300 hover:bg-gray-100 text-gray-700'
+                      ? 'active liquid-pill-active'
+                      : 'liquid-pill text-gray-700'
                   }`}
                 >
                   DE
@@ -4048,7 +4758,7 @@ const App = () => {
         </div>
 
         <div className={`md:hidden ${menuOpen ? '' : 'hidden'}`} id="mobile-menu">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 liquid-card rounded-2xl mt-2">
             {navItems.map((item) => (
               <button
                 key={item.id}
@@ -4057,10 +4767,10 @@ const App = () => {
                   setCurrentPage(item.id);
                   setMenuOpen(false);
                 }}
-                className={`block w-full text-left px-3 py-2 rounded-md text-base ${
+                className={`block w-full text-left px-3 py-2 rounded-full text-base transition duration-300 ${
                   currentPage === item.id
-                    ? 'text-[--primary-indigo] bg-[--primary-indigo]/10 font-bold'
-                    : 'text-gray-600 hover:text-[--primary-indigo] font-medium'
+                    ? 'liquid-pill-active font-bold'
+                    : 'liquid-pill text-gray-700 hover:text-[--primary-indigo] font-medium'
                 }`}
               >
                 {item.label}
@@ -4070,10 +4780,10 @@ const App = () => {
               <button
                 type="button"
                 onClick={() => setLanguage('en')}
-                className={`language-toggle text-sm font-semibold py-1 px-3 rounded-full whitespace-nowrap ${
+                className={`language-toggle text-sm font-semibold py-1 px-3 rounded-full whitespace-nowrap transition duration-300 ${
                   language === 'en'
-                    ? 'active bg-[--primary-indigo] text-white'
-                    : 'border border-gray-300 hover:bg-gray-100 text-gray-700'
+                    ? 'active liquid-pill-active'
+                    : 'liquid-pill text-gray-700'
                 }`}
               >
                 EN
@@ -4081,10 +4791,10 @@ const App = () => {
               <button
                 type="button"
                 onClick={() => setLanguage('de')}
-                className={`language-toggle text-sm font-semibold py-1 px-3 rounded-full whitespace-nowrap ${
+                className={`language-toggle text-sm font-semibold py-1 px-3 rounded-full whitespace-nowrap transition duration-300 ${
                   language === 'de'
-                    ? 'active bg-[--primary-indigo] text-white'
-                    : 'border border-gray-300 hover:bg-gray-100 text-gray-700'
+                    ? 'active liquid-pill-active'
+                    : 'liquid-pill text-gray-700'
                 }`}
               >
                 DE
@@ -4094,14 +4804,14 @@ const App = () => {
         </div>
       </nav>
 
-      <div className="pt-0">
+      <div key={currentPage} ref={pageContentRef} tabIndex={-1} className="pt-0 page-fade-in focus:outline-none">
         {renderPage()}
       </div>
 
-      <footer className="bg-slate-900 text-slate-400 py-12 text-center">
+      <footer className="bg-gradient-to-b from-slate-900 to-slate-950 text-slate-400 py-12 text-center">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-center space-x-6 mb-6">
-            <a href="https://www.linkedin.com/in/clifford-ondieki-tpm/" target="_blank" rel="noreferrer" className="text-gray-400 hover:text-[--highlight-gold] transition duration-300" title="LinkedIn Profile" aria-label="LinkedIn Profile">
+          <div className="liquid-card inline-flex items-center justify-center px-5 py-3 rounded-full mb-6">
+            <a href="https://www.linkedin.com/in/clifford-ondieki-tpm/" target="_blank" rel="noreferrer" className="text-gray-500 hover:text-[--highlight-gold] transition duration-300" title="LinkedIn Profile" aria-label="LinkedIn Profile">
               <Linkedin size={28} />
             </a>
           </div>
@@ -4110,11 +4820,11 @@ const App = () => {
             Copyright &copy; {new Date().getFullYear()} {t.nav.brand} | {t.footer.tagline}
           </p>
           <p className="text-xs flex items-center justify-center gap-2">
-            <button onClick={() => setCurrentPage('privacy')} className="text-gray-500 hover:text-white transition">
+            <button onClick={() => setCurrentPage('privacy')} className="liquid-pill px-3 py-1 rounded-full text-slate-700 hover:text-slate-900 transition duration-300">
               {t.footer.privacy}
             </button>
             <span className="text-gray-600">|</span>
-            <button onClick={() => setCurrentPage('home')} className="text-gray-500 hover:text-white transition">
+            <button onClick={() => setCurrentPage('home')} className="liquid-pill px-3 py-1 rounded-full text-slate-700 hover:text-slate-900 transition duration-300">
               {t.footer.home}
             </button>
           </p>
