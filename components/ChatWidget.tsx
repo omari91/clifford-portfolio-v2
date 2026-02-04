@@ -163,6 +163,7 @@ const QUOTES: Record<Language, string[]> = {
 };
 const QUOTE_SEED = 7;
 const FUN_SEED = 13;
+const MAX_CHAT_MESSAGES = 24;
 
 function normalize(text: string) {
   return text
@@ -224,8 +225,8 @@ function getWelcome(language: Language, id: string): ChatMessage {
     role: "assistant",
     text:
       language === "de"
-        ? "Hi! Ich bin Cliffords FAQ-Chat. Frag mich zu Projekten, Skills, Forschung oder Kontakt."
-        : "Hi! I’m Clifford’s FAQ chat. Ask me about projects, skills, research, or contact.",
+        ? "Hi! Ich bin Cliffords VA. Frag mich zu Projekten, Skills, Forschung oder Kontakt."
+        : "Hi! I’m Clifford’s VA . Ask me about projects, skills, research, or contact.",
   };
 }
 
@@ -367,6 +368,23 @@ export default function ChatWidget() {
   const [nudgeOpen, setNudgeOpen] = useState(false);
   const [nudgeDone, setNudgeDone] = useState(false);
 
+  const clampMessages = (items: ChatMessage[]) => {
+    const withoutNotice = items.filter((m) => m.id !== "m-history-trimmed");
+    if (withoutNotice.length <= MAX_CHAT_MESSAGES) return withoutNotice;
+
+    const trimNotice: ChatMessage = {
+      id: "m-history-trimmed",
+      role: "assistant",
+      text:
+        language === "de"
+          ? "Hinweis: Der Chatverlauf wurde gekuerzt, damit das Fenster kompakt bleibt."
+          : "Note: Older messages were trimmed to keep the chat compact.",
+    };
+
+    const tail = withoutNotice.slice(-(MAX_CHAT_MESSAGES - 1));
+    return [trimNotice, ...tail];
+  };
+
   // Auto-scroll
   const scrollRef = useRef<HTMLDivElement | null>(null);
   useEffect(() => {
@@ -393,6 +411,21 @@ export default function ChatWidget() {
   useEffect(() => {
     setMessages((prev) => {
       if (prev.length === 1 && prev[0]?.id === "m-0") return [getWelcome(language, "m-0")];
+      if (prev.some((m) => m.id === "m-history-trimmed")) {
+        const withoutNotice = prev.filter((m) => m.id !== "m-history-trimmed");
+        const trimNotice: ChatMessage = {
+          id: "m-history-trimmed",
+          role: "assistant",
+          text:
+            language === "de"
+              ? "Hinweis: Der Chatverlauf wurde gekuerzt, damit das Fenster kompakt bleibt."
+              : "Note: Older messages were trimmed to keep the chat compact.",
+        };
+        if (withoutNotice.length >= MAX_CHAT_MESSAGES) {
+          return [trimNotice, ...withoutNotice.slice(-(MAX_CHAT_MESSAGES - 1))];
+        }
+        return [trimNotice, ...withoutNotice];
+      }
       return prev;
     });
   }, [language]);
@@ -405,7 +438,7 @@ export default function ChatWidget() {
       setMessages((prev) => {
         // avoid duplicates
         if (prev.some((m) => m.id === "m-softclose")) return prev;
-        return [...prev, buildSoftClose(language)];
+        return clampMessages([...prev, buildSoftClose(language)]);
       });
     }
   };
@@ -424,14 +457,14 @@ export default function ChatWidget() {
         const alreadyExplicit = prev.some((m) => m.text.toLowerCase().includes("fun fact"));
         const exists = prev.some((m) => m.id === "m-funfact");
         if (alreadyExplicit || exists) return prev;
-        return [
+        return clampMessages([
           ...prev,
           {
             id: "m-funfact",
             role: "assistant",
             text: fun,
           },
-        ];
+        ]);
       });
     }
   };
@@ -449,7 +482,7 @@ export default function ChatWidget() {
 
     const newTurns = userTurns + 1;
 
-    setMessages((prev) => [...prev, userMessage, result.message]);
+    setMessages((prev) => clampMessages([...prev, userMessage, result.message]));
     setInput("");
     setUserTurns(newTurns);
     maybeOpenDecisionNudge(newTurns, result.confidence);
@@ -460,7 +493,7 @@ export default function ChatWidget() {
   const handleDecisionNudge = (mode: "active" | "explore") => {
     setNudgeOpen(false);
     setNudgeDone(true);
-    setMessages((prev) => [
+    setMessages((prev) => clampMessages([
       ...prev,
       {
         id: nextMessageId(),
@@ -478,7 +511,7 @@ export default function ChatWidget() {
           { label: language === "de" ? "Kontakt" : "Contact Clifford", href: "#contact" },
         ],
       },
-    ]);
+    ]));
   };
 
   const handleClose = () => {
@@ -543,18 +576,20 @@ export default function ChatWidget() {
               ))}
             </div>
 
-            <div className="mt-3 flex flex-wrap gap-2">
-              {prompts.map((prompt) => (
-                <button
-                  key={prompt}
-                  type="button"
-                  onClick={() => ask(prompt)}
-                  className="rounded-full liquid-pill px-3 py-1 text-xs font-semibold text-slate-700 transition duration-300"
-                >
-                  {prompt}
-                </button>
-              ))}
-            </div>
+            {userTurns === 0 && (
+              <div className="mt-3 flex flex-wrap gap-2">
+                {prompts.map((prompt) => (
+                  <button
+                    key={prompt}
+                    type="button"
+                    onClick={() => ask(prompt)}
+                    className="rounded-full liquid-pill px-3 py-1 text-xs font-semibold text-slate-700 transition duration-300"
+                  >
+                    {prompt}
+                  </button>
+                ))}
+              </div>
+            )}
 
             <form
               className="mt-3 flex gap-2"
